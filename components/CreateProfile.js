@@ -162,7 +162,7 @@ const styles = StyleSheet.create({
           backgroundColor: '#fff',
           marginTop: 50,
           height: 40,
-          borderBottomColor:"#3d9bae",
+          borderBottomColor:"#29abe2",
           borderBottomWidth: 1,
           width:"80%",
       },
@@ -171,7 +171,7 @@ const styles = StyleSheet.create({
           width:"80%",
           height:40,
           borderRadius:15,
-          backgroundColor: '#3d9bae',
+          backgroundColor: '#29abe2',
           justifyContent: 'center',
           alignItems: 'center',
          
@@ -193,7 +193,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         marginTop:0,
         height: 40,
-        borderBottomColor:"#3d9bae",
+        borderBottomColor:"#29abe2",
         borderBottomWidth: 1,
         width:"100%",
         
