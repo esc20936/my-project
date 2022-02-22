@@ -90,7 +90,10 @@ export default function UserLogin({navigation}){
                 {/* Iniciar Sesion */}
                 <TouchableOpacity style={styles.logInButton} onPress={()=>{
                     if(username==="Pablo" && password==="12345"){
-                        navigation.navigate('Home');
+                        let email = "";
+                        let photoUrl='';
+                        let name = username;
+                        navigation.navigate('Home',{name,email,photoUrl});
                     }else{
                         Alert.alert("Error","El inicio de sesión no es válido");
                     }
