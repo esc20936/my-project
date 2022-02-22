@@ -1,16 +1,50 @@
 import { StatusBar } from 'expo-status-bar';
 import React,{useState} from 'react';
-import { StyleSheet, Text, View,SafeAreaView,Image,TextInput,TouchableOpacity,Pressable,Alert} from 'react-native';
-
+import { StyleSheet, Text, View,SafeAreaView,Image,TextInput,TouchableOpacity,Pressable,Alert,ActivityIndicator} from 'react-native';
+import { AntDesign } from '@expo/vector-icons'; 
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { useTogglePasswordVisibility } from './hooks/useTogglePasswordVisibility';
+import * as Google from 'expo-google-app-auth';
+
 export default function UserLogin({navigation}){
 
     const { passwordVisibility, rightIcon, handlePasswordVisibility } =   useTogglePasswordVisibility();
     const [password, setPassword] = useState('');
     const [username,setUsername] = useState('');
-
+    const [googleSubmitting,setGoogleSubmitting] = useState(false);
   
+
+    const handleGoogleSigIn = () => {
+
+        setGoogleSubmitting(true);
+
+        const config = {
+            iosClientId :'835553252178-6fhf0csikmcuit2gh0l2t589mddatrru.apps.googleusercontent.com',
+            androidClientId : '835553252178-bfkmrbdl0n0t8ue2qsia9akdf6ghtrr5.apps.googleusercontent.com',
+            scopes: ['profile','email']
+        };
+
+
+        Google.logInAsync(config)
+        .then((result) => {
+            const {type,user} = result;
+            if(type==='success'){
+                const {email,name,photoUrl} = user;
+                setTimeout(() => navigation.navigate("Home",{email,name,photoUrl}),
+                1000
+                );
+
+            }else{
+                Alert.alert("Error","Inicio de sesión cancelado");
+            }
+            setGoogleSubmitting(false);
+        })
+        .catch((error) => {
+            Alert.alert("Error",error.message);
+            setGoogleSubmitting(false);
+        })
+
+    }
 
 
 
@@ -50,7 +84,7 @@ export default function UserLogin({navigation}){
                         <MaterialCommunityIcons name={rightIcon} size={28} color="#232323" />
                     </Pressable>
 
-      </View>
+             </View>
  
                 
                 {/* Iniciar Sesion */}
@@ -70,6 +104,20 @@ export default function UserLogin({navigation}){
                 }}>
                         <Text style={{color:'#3d9bae'}}>Crear perfil</Text>
                 </TouchableOpacity>
+                <View style={[styles.logInButton,{marginTop:5,height:10,borderTopWidth:1,BorderColor:'#0e93be',borderRadius:0,backgroundColor:'white'}]}/>
+                    {!googleSubmitting && ( 
+                        <TouchableOpacity style={[styles.logInButton,{marginTop:0,flexDirection: 'row',justifyContent: 'space-around'}]} onPress={handleGoogleSigIn} >
+                                <AntDesign name="google" size={24} color="white" />
+                                <Text style={{color:'#fff'}}>Ingresar con Google</Text>
+                        </TouchableOpacity>
+                    )}
+
+                    {googleSubmitting && ( 
+                        <TouchableOpacity style={[styles.logInButton,{marginTop:0,flexDirection: 'row',justifyContent: 'space-around'}]} disabled={true}>
+                                <ActivityIndicator size={24} color="white"/>
+                        </TouchableOpacity>
+                    )}
+                   
             </View>
             
         </SafeAreaView>
@@ -139,6 +187,9 @@ const styles = StyleSheet.create({
         borderBottomWidth: 1,
         width:"100%",
         
+      },
+      googleButtonContainer:{
+          backgroundColor: 'red',
       }
       
       

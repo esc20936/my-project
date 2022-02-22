@@ -4,7 +4,12 @@ import { StyleSheet, Text, View,SafeAreaView,Image,TouchableOpacity } from 'reac
 
 
 
-export default function Home({navigation}) {
+export default function Home({navigation,route}) {
+
+  const {name,email,photoUrl} = route;
+  
+
+
   return (
     <SafeAreaView style={styles.container}>
       {/* Area logo HealtCare */}
