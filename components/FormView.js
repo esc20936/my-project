@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
     formContainer:{
         height:250,
         width:190,
-        backgroundColor: '#3d9bae',
+        backgroundColor: '#29abe2',
         borderRadius:15,
         bottom:20,
         justifyContent: 'center',

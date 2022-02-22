@@ -5,6 +5,7 @@ import { AntDesign } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { useTogglePasswordVisibility } from './hooks/useTogglePasswordVisibility';
 import * as Google from 'expo-google-app-auth';
+import { NavigationContainer , StackActions, NavigationActions } from '@react-navigation/native';
 
 export default function UserLogin({navigation}){
 
@@ -30,7 +31,12 @@ export default function UserLogin({navigation}){
             const {type,user} = result;
             if(type==='success'){
                 const {email,name,photoUrl} = user;
-                setTimeout(() => navigation.navigate("Home",{email,name,photoUrl}),
+                setTimeout(() => {
+
+                    
+
+                    navigation.navigate("Home",{email,name,photoUrl})
+                },
                 1000
                 );
 
@@ -105,9 +111,9 @@ export default function UserLogin({navigation}){
                 <TouchableOpacity style={[styles.logInButton,{marginTop:20,backgroundColor:'white'}]} onPress={()=>{
                     navigation.navigate('CreateProfile');
                 }}>
-                        <Text style={{color:'#3d9bae'}}>Crear perfil</Text>
+                        <Text style={{color:'#29abe2'}}>Crear perfil</Text>
                 </TouchableOpacity>
-                <View style={[styles.logInButton,{marginTop:5,height:10,borderTopWidth:1,BorderColor:'#0e93be',borderRadius:0,backgroundColor:'white'}]}/>
+                <View style={[styles.logInButton,{marginTop:5,height:10,borderTopWidth:1,BorderColor:'#29abe2',borderRadius:0,backgroundColor:'white'}]}/>
                     {!googleSubmitting && ( 
                         <TouchableOpacity style={[styles.logInButton,{marginTop:0,flexDirection: 'row',justifyContent: 'space-around'}]} onPress={handleGoogleSigIn} >
                                 <AntDesign name="google" size={24} color="white" />
@@ -156,7 +162,7 @@ const styles = StyleSheet.create({
           backgroundColor: '#fff',
           marginTop: 50,
           height: 40,
-          borderBottomColor:"#3d9bae",
+          borderBottomColor:"#29abe2",
           borderBottomWidth: 1,
           width:"80%",
       },
@@ -165,7 +171,7 @@ const styles = StyleSheet.create({
           width:"80%",
           height:40,
           borderRadius:15,
-          backgroundColor: '#3d9bae',
+          backgroundColor: '#29abe2',
           justifyContent: 'center',
           alignItems: 'center',
           position:'relative',
@@ -186,7 +192,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         marginTop: 20,
         height: 40,
-        borderBottomColor:"#3d9bae",
+        borderBottomColor:"#29abe2",
         borderBottomWidth: 1,
         width:"100%",
         

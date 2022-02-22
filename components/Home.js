@@ -4,6 +4,7 @@ import { StyleSheet, Text, View,SafeAreaView,Image,TouchableOpacity,Platform,Ale
 import { Ionicons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons'; 
 import FormView from './FormView';
+
 export default function Home({navigation,route}) {
 
   const {name,email,photoUrl} = route.params;
