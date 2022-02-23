@@ -139,7 +139,6 @@ const styles = StyleSheet.create({
         alignItems: 'center', 
         justifyContent: 'flex-start', 
         backgroundColor: '#fff',
-        
     },logo:{
         flex: 0.3,
         alignItems:'flex-end',
