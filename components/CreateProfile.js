@@ -31,9 +31,10 @@ export default function CreateProfile({navigation}){
         <SafeAreaView style={styles.container}>
             {/**LOGO AREA */}
             <View style={styles.logo}>
-                <Image source={require('../assets/src/imgs/logoConTitulo.png')} style={styles.logoImg}/>
+                {/* <Image source={require('../assets/src/imgs/logoConTitulo.png')} style={styles.logoImg}/> */}
+                <Text style={styles.logoText1}>Health</Text>
+                <Text style={styles.logoText2}>Forms</Text>
             </View>
-
             {/** Area de Inputs */}
             <View style = {styles.containerInputs}>
                 
@@ -115,7 +116,7 @@ export default function CreateProfile({navigation}){
                                     <TouchableOpacity style={[styles.logInButton,{marginTop:20,backgroundColor:'white'}]} hitSlop={{backgroundColor:'red'}} onPress={()=>{
                                         navigation.navigate('UserLogin');
                                     }}>
-                                            <Text style={{color:'red'}}>Cancelar</Text>
+                                            <Text style={{color:'black'}}>Cancelar</Text>
                                     </TouchableOpacity>
                 </View >
                 
@@ -135,8 +136,9 @@ const styles = StyleSheet.create({
         
     },logo:{
         flex: 0.2,
+        flexDirection: 'row',
         alignItems:'flex-end',
-        justifyContent: 'flex-end',
+        justifyContent: 'center',
       },
       logoImg: {
         resizeMode: "center", 
@@ -198,7 +200,18 @@ const styles = StyleSheet.create({
         borderBottomWidth: 1,
         width:"100%",
         
+      },
+      logoText1:{
+        fontSize:40,
+        color: '#29abe2',
+        fontWeight: 'bold',
+      },
+      logoText2:{
+        fontSize:40,
+        fontWeight: 'bold',
+
       }
+      
       
       
     

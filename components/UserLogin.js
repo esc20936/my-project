@@ -58,7 +58,9 @@ export default function UserLogin({navigation}){
         <SafeAreaView style={styles.container}>
             {/**LOGO AREA */}
             <View style={styles.logo}>
-                <Image source={require('../assets/src/imgs/logoConTitulo.png')} style={styles.logoImg}/>
+                {/* <Image source={require('../assets/src/imgs/logoConTitulo.png')} style={styles.logoImg}/> */}
+                <Text style={styles.logoText1}>Health</Text>
+                <Text style={styles.logoText2}>Forms</Text>
             </View>
 
             {/** Area de Inputs */}
@@ -141,8 +143,9 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
     },logo:{
         flex: 0.3,
+        flexDirection: 'row',
         alignItems:'flex-end',
-        justifyContent: 'flex-end',
+        justifyContent: 'center',
       },
       logoImg: {
         resizeMode: "center", 
@@ -199,6 +202,16 @@ const styles = StyleSheet.create({
       },
       googleButtonContainer:{
           backgroundColor: 'red',
+      },
+      logoText1:{
+        fontSize:40,
+        color: '#29abe2',
+        fontWeight: 'bold',
+      },
+      logoText2:{
+        fontSize:40,
+        fontWeight: 'bold',
+
       }
       
       

@@ -40,7 +40,9 @@ export default function Home({navigation,route}) {
         </View>
 
         {/* Form view */}
-        <ScrollView style={styles.secondRowContainer} horizontal={true} >
+        <View style={styles.secondRowContainer}>
+
+        <ScrollView  horizontal={true} >
 
           <FormView name="Covid" date="02/02/2022"/>
           <FormView name="Vacuna" date="12/03/2019"/>
@@ -48,6 +50,7 @@ export default function Home({navigation,route}) {
           <FormView name="Extra" date="12/12/2021"/>
 
         </ScrollView>
+        </View>
 
 
 
@@ -132,8 +135,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff'
   },
   secondRowContainer:{
-    marginTop:5,
-    flex:0.2, 
+    marginTop:0,
+    height: 300, 
     backgroundColor: '#fff',
    
     
