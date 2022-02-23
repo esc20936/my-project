@@ -1,5 +1,6 @@
 {
   "expo": {
+    "owner": "healthforms",
     "name": "my-project",
     "slug": "my-project",
     "version": "1.0.0",
