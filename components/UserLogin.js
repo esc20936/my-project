@@ -115,9 +115,9 @@ export default function UserLogin({navigation}){
                 </TouchableOpacity>
                 <View style={[styles.logInButton,{marginTop:5,height:10,borderTopWidth:1,BorderColor:'#29abe2',borderRadius:0,backgroundColor:'white'}]}/>
                     {!googleSubmitting && ( 
-                        <TouchableOpacity style={[styles.logInButton,{marginTop:0,flexDirection: 'row',justifyContent: 'space-around'}]} onPress={handleGoogleSigIn} >
+                        <TouchableOpacity style={[styles.logInButton,{marginTop:0,flexDirection: 'row',justifyContent: 'center'}]} onPress={handleGoogleSigIn} >
                                 <AntDesign name="google" size={24} color="white" />
-                                <Text style={{color:'#fff'}}>Ingresar con Google</Text>
+                                <Text style={{color:'#fff',marginLeft:20}}>Ingresar con Google</Text>
                         </TouchableOpacity>
                     )}
 
