@@ -140,7 +140,8 @@ const styles = StyleSheet.create({
       },
       logoImg: {
         resizeMode: "center", 
-       
+        width:250,
+        height:50,
         bottom: 0,
         backgroundColor: '#fff',
 

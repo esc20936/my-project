@@ -147,7 +147,8 @@ const styles = StyleSheet.create({
       },
       logoImg: {
         resizeMode: "center", 
-        maxWidth: '80%',
+        width:250,
+        height:50,
         bottom: 0,
         backgroundColor: '#fff',
 
