@@ -109,7 +109,7 @@ export default function CreateProfile({navigation}){
                         }
                         
                         }}>
-                                <Text style={{color:'white'}}> Crear Perfil </Text>
+                                <Text style={{ color:'white' }}> Crear Perfil </Text>
                     </TouchableOpacity>
 
                                     {/* Crear Perfil */}

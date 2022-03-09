@@ -40,7 +40,7 @@ export default function Home({navigation,route}) {
         </View>
 
         {/* Form view */}
-        <View style={styles.secondRowContainer}>
+        <View style={ styles.secondRowContainer }>
 
         <ScrollView  horizontal={true} >
 

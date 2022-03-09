@@ -145,9 +145,10 @@ export default function CreateProfile({ navigation, route }) {
               password === passwordC
             ) {
               Alert.alert("Exito", "Datos actualizados");
+              
             } else {
               Alert.alert("Error", "Datos invalidos");
-              
+
             }
           }}
         >

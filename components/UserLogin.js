@@ -35,7 +35,7 @@ export default function UserLogin({navigation}){
 
                     
 
-                    navigation.navigate("Home",{email,name,photoUrl})
+                    navigation.navigate("Home",{ email,name,photoUrl })
                 },
                 1000
                 );
