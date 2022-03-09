@@ -14,7 +14,7 @@ export default function Home({navigation,route}) {
 
   return (
     <SafeAreaView style={styles.container}>
-      {/* User Info Container */}
+      {/* User Info Container.*/}
       <View style={styles.userInfoContainer}>
         <View style={{flexDirection:'row',flex:0.9, backgroundColor:'#fff',alignItems: 'center'}}>
           <View style={styles.userImageContainer}>
@@ -40,7 +40,7 @@ export default function Home({navigation,route}) {
         </View>
 
         {/* Form view */}
-        <View style={styles.secondRowContainer}>
+        <View style={ styles.secondRowContainer }>
 
         <ScrollView  horizontal={true} >
 
