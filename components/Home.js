@@ -4,7 +4,6 @@ import { StyleSheet, Text, View,SafeAreaView,Image,TouchableOpacity,Platform,Ale
 import { Ionicons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons'; 
 import FormView from './FormView';
-
 export default function Home({navigation,route}) {
 
   const {name,email,photoUrl} = route.params;
@@ -49,10 +48,10 @@ export default function Home({navigation,route}) {
 
         <ScrollView  horizontal={true} >
 
-          <FormView name="Covid" date="02/02/2022"/>
-          <FormView name="Vacuna" date="12/03/2019"/>
-          <FormView name="General" date="11/04/2022"/>
-          <FormView name="Extra" date="12/12/2021"/>
+          <FormView name="Covid" date="02/02/2022" />
+          <FormView name="Vacuna" date="12/03/2019" />
+          <FormView name="General" date="11/04/2022" />
+          <FormView name="Extra" date="12/12/2021" />
 
         </ScrollView>
         </View>
