@@ -2,9 +2,12 @@ import { StatusBar } from 'expo-status-bar';
 import React,{useState} from 'react';
 import { StyleSheet, Text, View,SafeAreaView,Image,TouchableOpacity,Platform } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
+import  FormInfo  from './FormInfo.js';
+import { useNavigation } from '@react-navigation/native';
 const FormView = (props) =>{
+    const navigation = useNavigation();
     return (
-        <TouchableOpacity style={styles.formContainer}>
+        <TouchableOpacity style={styles.formContainer} onPress={()=>{navigation.navigate("FormInfo")}}>
             <LinearGradient
                 // Button Linear Gradient
                 colors={['#29abe2','#00567ac9']}

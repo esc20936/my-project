@@ -4,7 +4,6 @@ import { StyleSheet, Text, View,SafeAreaView,Image,TouchableOpacity,Platform,Ale
 import { Ionicons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons'; 
 import FormView from './FormView';
-
 export default function Home({navigation,route}) {
 
   const {name,email,photoUrl} = route.params;
@@ -14,7 +13,7 @@ export default function Home({navigation,route}) {
 
   return (
     <SafeAreaView style={styles.container}>
-      {/* User Info Container */}
+      {/* User Info Container.*/}
       <View style={styles.userInfoContainer}>
         <View style={{flexDirection:'row',flex:0.9, backgroundColor:'#fff',alignItems: 'center'}}>
           <View style={styles.userImageContainer}>
@@ -25,7 +24,12 @@ export default function Home({navigation,route}) {
             <Text style={styles.userInfoText}>{AvatarEmail}</Text>
           </View>
         </View>
-        <TouchableOpacity style={styles.settingsIcon}>
+        <TouchableOpacity style={styles.settingsIcon} onPress={()=>{
+          navigation.navigate('EditProfile',{name,email,photoUrl});
+          
+          
+          
+          }}>
           <Ionicons name="md-settings-sharp" size={28} color="black" />
         </TouchableOpacity>
       </View>
@@ -40,14 +44,14 @@ export default function Home({navigation,route}) {
         </View>
 
         {/* Form view */}
-        <View style={styles.secondRowContainer}>
+        <View style={ styles.secondRowContainer }>
 
         <ScrollView  horizontal={true} >
 
-          <FormView name="Covid" date="02/02/2022"/>
-          <FormView name="Vacuna" date="12/03/2019"/>
-          <FormView name="General" date="11/04/2022"/>
-          <FormView name="Extra" date="12/12/2021"/>
+          <FormView name="Covid" date="02/02/2022" />
+          <FormView name="Vacuna" date="12/03/2019" />
+          <FormView name="General" date="11/04/2022" />
+          <FormView name="Extra" date="12/12/2021" />
 
         </ScrollView>
         </View>
