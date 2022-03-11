@@ -16,7 +16,7 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { useTogglePasswordVisibility } from "./hooks/useTogglePasswordVisibility";
 import { Ionicons } from "@expo/vector-icons";
 
-export default function CreateProfile({ navigation, route }) {
+export default function EditProfile({ navigation, route }) {
   const { name, email, photoUrl } = route.params;
 
   const AvatarImg = photoUrl

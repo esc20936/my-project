@@ -25,7 +25,12 @@ export default function Home({navigation,route}) {
             <Text style={styles.userInfoText}>{AvatarEmail}</Text>
           </View>
         </View>
-        <TouchableOpacity style={styles.settingsIcon}>
+        <TouchableOpacity style={styles.settingsIcon} onPress={()=>{
+          navigation.navigate('EditProfile',{name,email,photoUrl});
+          
+          
+          
+          }}>
           <Ionicons name="md-settings-sharp" size={28} color="black" />
         </TouchableOpacity>
       </View>
