@@ -27,6 +27,10 @@ export default function FormInfo ({navigation}) {
                 <Text style={styles.formatexto3}>FORMULARIO PROTEGICO POR HF</Text>
             </View>
 
+            <TouchableOpacity style={styles.shareButton}>
+                <Text style={styles.shareButtonText}>Compartir</Text>
+            </TouchableOpacity>
+
 
 
 
@@ -38,11 +42,25 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         flexDirection: 'column',
-        backgroundColor:"#fff",
+        backgroundColor:"#f5f5f5",
         alignContent:"center",
         justifyContent:"center",
         margin: 30
 
+    },
+    shareButton:{
+        marginTop:20,
+        backgroundColor:"#29abe2",
+        justifyContent:"center",
+        alignItems: "center",
+        width:"30%",
+        height:50,
+        alignSelf: "center",
+        borderRadius:15
+
+    },
+    shareButtonText:{
+        color:"white",
     },
     header:{
         flex:0.20,
