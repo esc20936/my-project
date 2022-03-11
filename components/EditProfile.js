@@ -75,7 +75,7 @@ export default function EditProfile({ navigation, route }) {
           placeholder="Email"
           value={email}
           onChangeText={(text) => setEmail(text)}
-          keyboardType={"email"}
+          keyboardType={"email-address"}
         />
 
         {/* Area del input contrasena */}
@@ -180,6 +180,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "flex-start",
     backgroundColor: "#fff",
+    marginTop: (Platform.OS === "android")? 20:0,
   },
   userInfoContainer: {
     flex: 0.15,
