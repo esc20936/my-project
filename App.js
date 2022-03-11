@@ -8,6 +8,7 @@ import CreateProfile from "./components/CreateProfile.js";
 import EditProfile from "./components/EditProfile.js";
 import FormInfo from "./components/FormInfo.js";
 import ShareForm from "./components/ShareForm.js";
+import Camara from "./components/Camara.js";
 const Stack = createNativeStackNavigator();
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Stack.Screen name="EditProfile"  component={EditProfile} options={{ headerShown: false }} />
         <Stack.Screen name="FormInfo"  component={FormInfo} options={{ headerShown: false }} />
         <Stack.Screen name="ShareForm"  component={ShareForm} options={{ headerShown: false }}/>
+        <Stack.Screen name="Camara"  component={Camara} options={{ headerShown: false }}/>
 
       </Stack.Navigator>
     </NavigationContainer>

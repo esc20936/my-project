@@ -4,6 +4,7 @@ import { StyleSheet, Text, View,SafeAreaView,Image,TouchableOpacity,Platform,Ale
 import { Ionicons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons'; 
 import FormView from './FormView';
+import Camara from './Camara.js';
 export default function Home({navigation,route}) {
 
   const {name,email,photoUrl} = route.params;
@@ -58,7 +59,7 @@ export default function Home({navigation,route}) {
 
 
 
-        <TouchableOpacity style={styles.scanButton}>
+        <TouchableOpacity style={styles.scanButton} onPress={()=>{navigation.navigate("Camara")}}>
           <Ionicons name="md-scan" size={24} color="white" />
           <Text style={styles.scanButtonText}>ESCANEAR</Text>
         </TouchableOpacity>
