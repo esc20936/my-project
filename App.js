@@ -6,6 +6,7 @@ import Home from "./components/Home.js";
 import UserLogin from "./components/UserLogin.js";
 import CreateProfile from "./components/CreateProfile.js";
 import EditProfile from "./components/EditProfile.js";
+import FormInfo from "./components/FormInfo.js";
 const Stack = createNativeStackNavigator();
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Stack.Screen name="Home" component={Home} options={{headerShown: false}}/>
         <Stack.Screen name="CreateProfile"  component={CreateProfile} options={{ headerShown: false }} />
         <Stack.Screen name="EditProfile"  component={EditProfile} options={{ headerShown: false }} />
+        <Stack.Screen name="FormInfo"  component={FormInfo} options={{ headerShown: false }} />
 
       </Stack.Navigator>
     </NavigationContainer>

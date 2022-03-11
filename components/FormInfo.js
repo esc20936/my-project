@@ -72,7 +72,6 @@ const styles = StyleSheet.create({
     formatexto2:{
         flex: 0.1,
         fontSize: 12,
-        fontFamily: 'italic',
         color:'black',
         textAlign: 'left',
         margin: 15
@@ -80,7 +79,6 @@ const styles = StyleSheet.create({
     formatexto3:{
         flex: 1,
         fontSize:10,
-        fontStyle: 'italic',
         fontWeight: 'bold',
         color:'grey',
         textAlign: 'center',
