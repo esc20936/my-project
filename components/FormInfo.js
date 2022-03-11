@@ -27,7 +27,7 @@ export default function FormInfo ({navigation}) {
                 <Text style={styles.formatexto3}>FORMULARIO PROTEGICO POR HF</Text>
             </View>
 
-            <TouchableOpacity style={styles.shareButton}>
+            <TouchableOpacity style={styles.shareButton} onPress={()=>{navigation.navigate("ShareForm")}}>
                 <Text style={styles.shareButtonText}>Compartir</Text>
             </TouchableOpacity>
 
