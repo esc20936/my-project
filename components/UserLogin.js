@@ -6,6 +6,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { useTogglePasswordVisibility } from './hooks/useTogglePasswordVisibility';
 import * as Google from 'expo-google-app-auth';
 import { NavigationContainer , StackActions, NavigationActions } from '@react-navigation/native';
+import {auth} from './firebase.js';
 
 export default function UserLogin({navigation}){
 
@@ -13,7 +14,25 @@ export default function UserLogin({navigation}){
     const [password, setPassword] = useState('');
     const [username,setUsername] = useState('');
     const [googleSubmitting,setGoogleSubmitting] = useState(false);
-  
+    const [mailSubmitting,setMailSubmitting] = useState(false);
+    
+    const handleLogin = () => {
+        setMailSubmitting(true);
+        auth.signInWithEmailAndPassword(username, password)
+        .then(userCredentials => {
+            const user = userCredentials.user;
+            let name = username.split('.')[0];
+            name = name.charAt(0).toUpperCase() + name.slice(1);
+            let email = username;
+            setMailSubmitting(false);
+            navigation.navigate("Home",{email,name});
+        }).catch(err => {
+            setMailSubmitting(false);
+            alert(err.message);
+
+        });
+    }
+    
 
     const handleGoogleSigIn = () => {
 
@@ -67,9 +86,10 @@ export default function UserLogin({navigation}){
             <View style = {styles.containerInputs}>
                 
                 <TextInput style={styles.input}
-                placeholder="Usuario"  
+                placeholder="Correo"  
                 value={username} 
-                onChangeText={text => setUsername(text)}/>
+                onChangeText={text => setUsername(text)}
+                autoCapitalize='none'/>
                 
                 {/* Area del input contrasena */}
                 <View style={styles.inputContainer}>
@@ -96,18 +116,21 @@ export default function UserLogin({navigation}){
  
                 
                 {/* Iniciar Sesion */}
-                <TouchableOpacity style={styles.logInButton} onPress={()=>{
-                    if(username==="Pablo" && password==="12345"){
-                        let email = "";
-                        let photoUrl='';
-                        let name = username;
-                        navigation.navigate('Home',{name,email,photoUrl});
-                    }else{
-                        Alert.alert("Error","El inicio de sesión no es válido");
-                    }
-                }}>
-                        <Text style={{color:'white'}}>Iniciar Sesión</Text>
-                </TouchableOpacity>
+
+                {!mailSubmitting && ( 
+                         <TouchableOpacity style={styles.logInButton} onPress={handleLogin}>
+                            <Text style={{color:'white'}}>Iniciar Sesión</Text>
+                        </TouchableOpacity>
+                    )}
+
+                    {mailSubmitting && ( 
+                        <TouchableOpacity style={[styles.logInButton,{marginTop:0,flexDirection: 'row',justifyContent: 'space-around'}]} disabled={true}>
+                                <ActivityIndicator size={24} color="white"/>
+                        </TouchableOpacity>
+                    )}
+
+
+               
 
                 {/* Crear Perfil */}
                 <TouchableOpacity style={[styles.logInButton,{marginTop:20,backgroundColor:'white'}]} onPress={()=>{

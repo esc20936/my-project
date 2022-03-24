@@ -9,6 +9,8 @@ import EditProfile from "./components/EditProfile.js";
 import FormInfo from "./components/FormInfo.js";
 import ShareForm from "./components/ShareForm.js";
 import Camara from "./components/Camara.js";
+import * as firebase from "firebase";
+
 const Stack = createNativeStackNavigator();
 
 function App() {
