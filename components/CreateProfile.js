@@ -21,7 +21,7 @@ export default function CreateProfile({navigation}){
     const [password, setPassword] = useState('');
     const [passwordC, setPasswordC] = useState('');
     const [username,setUsername] = useState('');
-    const [DPI,setDPI] = useState(0);
+    const [DPI,setDPI] = useState(null);
 
   
 
@@ -45,9 +45,9 @@ export default function CreateProfile({navigation}){
 
                 <TextInput style={[styles.input,{marginTop:20}]}
                 placeholder="DPI"  
-                value={DPI.toString()} 
+                value={DPI} 
                 onChangeText={text => setDPI(text)}
-                keyboardType={'numeric'}/>
+                keyboardType='numeric'/>
                 
                 {/* Area del input contrasena */}
                 <View style={styles.inputContainer}>
