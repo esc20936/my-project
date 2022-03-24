@@ -9,7 +9,7 @@ export default function Home({navigation,route}) {
 
   const {name,email,photoUrl} = route.params;
 
-  const AvatarImg = (photoUrl)? {uri:photoUrl}: require('../assets/src/icons/user.png');
+  const AvatarImg = (photoUrl)? {uri:photoUrl}: require('../assets/src/icons/user2.png');
   const AvatarEmail = (email)? email:"Aun no se registra un correo";
 
   return (

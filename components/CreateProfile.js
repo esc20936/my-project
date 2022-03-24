@@ -3,10 +3,27 @@ import React,{useState} from 'react';
 import { StyleSheet, Text, View,SafeAreaView,Image,TextInput,TouchableOpacity,Pressable,Alert,KeyboardAvoidingView} from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { useTogglePasswordVisibility } from './hooks/useTogglePasswordVisibility';
-
+import {auth} from './firebase.js';
+import Home from './Home.js';
 export default function CreateProfile({navigation}){
 
-   
+    const validate = (email) => {
+        
+        let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w\w+)+$/;
+        return reg.test(email);
+    }
+
+    const handleSignUp = () => {
+        auth.createUserWithEmailAndPassword(email, password).then(userCredentials => {
+            const user = userCredentials.user;
+            let name = email.split('.')[0];
+            navigation.navigate("Home",{email,name})
+        }).catch(err => {alert(err.message);});
+    }
+
+    
+
+
     const pswUtils = useTogglePasswordVisibility();
     const passwordVisibility = pswUtils.passwordVisibility;
     const rightIcon = pswUtils.rightIcon;
@@ -20,8 +37,7 @@ export default function CreateProfile({navigation}){
 
     const [password, setPassword] = useState('');
     const [passwordC, setPasswordC] = useState('');
-    const [username,setUsername] = useState('');
-    const [DPI,setDPI] = useState(null);
+    const [email,setMail] = useState('');
 
   
 
@@ -39,15 +55,16 @@ export default function CreateProfile({navigation}){
             <View style = {styles.containerInputs}>
                 
                 <TextInput style={[styles.input,{marginTop:20}]}
-                placeholder="Usuario"  
-                value={username} 
-                onChangeText={text => setUsername(text)}/>
+                placeholder="Correo"  
+                value={email} 
+                onChangeText={text => setMail(text)}
+                autoCapitalize='none'/>
 
-                <TextInput style={[styles.input,{marginTop:20}]}
+                {/* <TextInput style={[styles.input,{marginTop:20}]}
                 placeholder="DPI"  
                 value={DPI} 
                 onChangeText={text => setDPI(text)}
-                keyboardType='numeric'/>
+                keyboardType='numeric'/> */}
                 
                 {/* Area del input contrasena */}
                 <View style={styles.inputContainer}>
@@ -102,10 +119,25 @@ export default function CreateProfile({navigation}){
                 <View style={styles.buttonContainer} >
 
                     <TouchableOpacity style={styles.logInButton} onPress={()=>{
-                        if(username!=="" && password===passwordC && DPI.toString().length===13){
-                            navigation.navigate('Home');
+                        if(validate(email)){
+
+                            if(password.length>6){
+                                if(password===passwordC){
+                                    handleSignUp();
+                                 
+    
+                                }else{
+                                    Alert.alert("Error","Las contraseñas no coinciden")
+                                }
+
+                            }else{
+                                Alert.alert("Error","La contraseña debe tener más de 6 caracteres")
+                            }
+                            
+                            
+                            // navigation.navigate('Home');
                         }else{
-                            Alert.alert("Error","Datos invalidos");
+                            Alert.alert("Error","Correo invalido");
                         }
                         
                         }}>
@@ -149,10 +181,11 @@ const styles = StyleSheet.create({
 
       },
       containerInputs:{
-          flex:0.5,
+          flex:0.4,
           backgroundColor: '#fff',
           width:"80%",
-          alignItems:'center'
+          alignItems:'center',
+          marginTop:50
       },
       buttonContainer: {
         backgroundColor: '#fff',
