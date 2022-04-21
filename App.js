@@ -9,15 +9,42 @@ import EditProfile from "./components/EditProfile.js";
 import FormInfo from "./components/FormInfo.js";
 import ShareForm from "./components/ShareForm.js";
 import Camara from "./components/Camara.js";
-import * as firebase from "firebase";
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useEffect } from 'react/cjs/react.production.min';
+import AppIntroduction from './components/AppIntroduction.js'
 
 const Stack = createNativeStackNavigator();
 
 function App() {
+
+  const [pV,setPV] = useState(false);
+
+  const firstTime = async () => {
+    try {
+      const value = await AsyncStorage.getItem('primeraVez')
+      if(value !== null) {
+        // value previously stored
+        return false;
+      }else{
+        return true;
+      }
+    } catch(e) {
+      // error reading value
+      console.log(e.message);
+    }
+  }
+  // useEffect(() => {
+  //   if(firstTime()){
+  //     setPV(true);
+  //   }else{
+  //     setPV(false);
+  //   }
+  // });
+  
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        
+        <Stack.Screen name="AppIntroduction" component={AppIntroduction} options={{ headerShown: false}}/>
         <Stack.Screen name="UserLogin" component={UserLogin} options={{headerShown: false,}}/> 
         <Stack.Screen name="Home" component={Home} options={{headerShown: false}}/>
         <Stack.Screen name="CreateProfile"  component={CreateProfile} options={{ headerShown: false }} />

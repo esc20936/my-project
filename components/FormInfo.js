@@ -1,35 +1,107 @@
 import { StatusBar } from 'expo-status-bar';
 import React,{useState} from 'react';
-import { StyleSheet, Text, View,SafeAreaView,Image,TouchableOpacity,Platform } from 'react-native';
+import { StyleSheet, Text,TextInput, View,SafeAreaView,Image,TouchableOpacity,Platform,ScrollView } from 'react-native';
 
 export default function FormInfo ({navigation}) {
+    const [nombre,setNombre] = useState('Pablo');
+    const [apellido,setApellido] = useState('Escobar');
+    const [edad,setEdad] = useState('20');
+    const [dpi,setDPI] = useState('3250603631401');
+    const [fecha,setFecha] = useState('14/04/2002');
+    const [fumador,setFumador] = useState('No es fumador');
+    const [medicamento,setMedicamento] = useState('No se medica');
+    const [embarazada,setEmbarazada] = useState('No tiene historial medico');
 
+    const [textoBoton,setTextoBoton] = useState('Editar');
+    const [buttonEnabled,setButtonEnabled] = useState(false);
+ 
     return(
         <View style={styles.container}>
-            {/* Seccion1 encabezado */}
-            <View style= {styles.header}>
-                <Text style={styles.formatexto}>Bienvenido al formulario</Text>
-            </View>
-            <View style={styles.content}>
-                <Text style={styles.formatexto2}>Fecha: ________________   Dpto: _______________  </Text>
-                <Text style={styles.formatexto2}>Nombres: ________________    _______________  </Text>
-                <Text style={styles.formatexto2}>Apellidos:__________________  DPI:_____________ </Text>
-                <Text style={styles.formatexto2}>Numero celular: _____________  </Text>
-                <Text style={styles.formatexto2}>Numero adicional: _____________  </Text>
-                <Text style={styles.formatexto2}>Correo electrónico: _____________</Text>
-                <Text style={styles.formatexto2}>Dirección: _____________</Text>
-                <Text style={styles.formatexto2}>Tipo de sangre: ____</Text>
-                <Text style={styles.formatexto2}>Alergias: _______________________________________</Text>
-              
+            
+            <View style={styles.container}>
+                <View style= {styles.header}>
+                    <Text style={styles.formatexto}>Información Formulario</Text>
+                </View>
+                <View style={styles.infoContainer}>
+                    <ScrollView style={styles.infoScroll}>
+                        <View style={styles.infoContainer2}>
+                            <TextInput style={[styles.input,{color: (buttonEnabled)? 'black':'#c9c9c9'}]}
+                                placeholder="Nombre"  
+                                value={nombre} 
+                                onChangeText={text => setNombre(text)}
+                                autoCapitalize='none'
+                                editable={buttonEnabled}/>
+
+                            <TextInput style={[styles.input,{color: (buttonEnabled)? 'black':'#c9c9c9'}]}
+                                placeholder="Apellido"  
+                                value={apellido} 
+                                onChangeText={text => setApellido(text)}
+                                autoCapitalize='none'
+                                editable={buttonEnabled}/>
+
+                            <TextInput style={[styles.input,{color: (buttonEnabled)? 'black':'#c9c9c9'}]}
+                                placeholder="Edad"  
+                                value={edad}  
+                                onChangeText={text => setEdad(text)}
+                                autoCapitalize='none'
+                                editable={buttonEnabled}/>
+
+                            <TextInput style={[styles.input,{color: (buttonEnabled)? 'black':'#c9c9c9'}]}
+                                placeholder="DPI"  
+                                value={dpi} 
+                                onChangeText={text => setDPI(text)}
+                                autoCapitalize='none'
+                                editable={buttonEnabled}/>
+
+                            <TextInput style={[styles.input,{color: (buttonEnabled)? 'black':'#c9c9c9'}]}
+                                placeholder="Fecha de nacimiento"  
+                                value={fecha} 
+                                onChangeText={text => setFecha(text)}
+                                autoCapitalize='none'
+                                editable={buttonEnabled}/>
+
+                            <TextInput style={[styles.input,{color: (buttonEnabled)? 'black':'#c9c9c9'}]}
+                                placeholder="Fumador"  
+                                value={fumador} 
+                                onChangeText={text => setFumador(text)}
+                                autoCapitalize='none'
+                                editable={buttonEnabled}/>
+
+                            <TextInput style={[styles.input,{color: (buttonEnabled)? 'black':'#c9c9c9'}]}
+                                placeholder="Consumes medicamento"  
+                                value={medicamento} 
+                                onChangeText={text => setMedicamento(text)}
+                                autoCapitalize='none'
+                                editable={buttonEnabled}/>
+
+                            <TextInput style={[styles.input,{color: (buttonEnabled)? 'black':'#c9c9c9'}]}
+                                placeholder="Embarazada"  
+                                value={embarazada}  
+                                onChangeText={text => setEmbarazada(text)}
+                                autoCapitalize='none'
+                                editable={buttonEnabled}/>
+
+                            
+                        </View>
+                        
+                    </ScrollView>
+                </View>
 
             </View>
-            <View style={styles.footer}>
-                <Text style={styles.formatexto3}>FORMULARIO PROTEGICO POR HF</Text>
-            </View>
 
-            <TouchableOpacity style={styles.shareButton} onPress={()=>{navigation.navigate("ShareForm")}}>
-                <Text style={styles.shareButtonText}>Compartir</Text>
-            </TouchableOpacity>
+            <View style={styles.buttonArea}>
+                <TouchableOpacity style={styles.shareButton} activeOpacity={0.7} onPress={() => {setButtonEnabled(!buttonEnabled); setTextoBoton((buttonEnabled)? "Editar":"Aceptar");}}>
+                    <Text style={styles.shareButtonText}>{textoBoton}</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity style={styles.shareButton} onPress={()=>{navigation.navigate("ShareForm")}}>
+                    <Text style={styles.shareButtonText}>Compartir</Text>
+                </TouchableOpacity>
+
+            </View>
+            
+
+            
 
 
 
@@ -44,8 +116,9 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         backgroundColor:"#f5f5f5",
         alignContent:"center",
-        justifyContent:"center",
-        margin: 30
+        justifyContent:"flex-start",
+        margin: 10,
+        marginTop:20
 
     },
     shareButton:{
@@ -56,14 +129,15 @@ const styles = StyleSheet.create({
         width:"30%",
         height:50,
         alignSelf: "center",
-        borderRadius:15
+        borderRadius:15,
+        margin:20
 
     },
     shareButtonText:{
         color:"white",
     },
     header:{
-        flex:0.20,
+        flex:0.1,
         backgroundColor:"#29abe2",
         width:'100%',
         flexDirection:"row",
@@ -101,6 +175,34 @@ const styles = StyleSheet.create({
         color:'grey',
         textAlign: 'center',
         margin: 3
+    },
+    infoContainer:{
+        flex:1,
+        width:'100%',
+
+    },infoContainer2:{
+        flex:1,
+        justifyContent: 'center',
+        // backgroundColor:'red',
+        width:'100%',
+
+    },
+    infoScroll:{
+        flex: 1,
+        backgroundColor:'#fefefe',
+    }, input:{
+        backgroundColor: '#fff',
+        marginTop: 22,
+        height: 40,
+        borderBottomColor:"#29abe2",
+        borderBottomWidth: 1,
+        width:"80%",
+        marginLeft: 35,
+        
+    },buttonArea:{
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
     }
 
 });
