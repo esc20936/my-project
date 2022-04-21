@@ -30,7 +30,7 @@ export default function AppIntroduction({navigation}){
                     <View style={styles.proyectDescriptionsContainer}>
                         <Text style={styles.proyectDescription}>
                         Esta aplicación busca impactar a la población guatemalteca en cuanto la agilización
-                        de trámites de la salud (llenado de formularios)
+                        de trámites de la salud  (llenado de formularios)
                         </Text>
 
                     </View>

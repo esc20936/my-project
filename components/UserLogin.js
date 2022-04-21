@@ -18,7 +18,7 @@ export default function UserLogin({navigation}){
     
     const handleLogin = () => {
         setMailSubmitting(true);
-        auth.signInWithEmailAndPassword(username, password)
+        auth.signInWithEmailAndPassword(username.trim(), password)
         .then(userCredentials => {
             const user = userCredentials.user;
             let name = username.split('.')[0];
