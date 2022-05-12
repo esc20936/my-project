@@ -118,7 +118,6 @@ const styles = StyleSheet.create({
         alignContent:"center",
         justifyContent:"flex-start",
         margin: 10,
-        marginTop:20
 
     },
     shareButton:{
