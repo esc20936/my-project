@@ -12,7 +12,7 @@ import Camara from "./components/Camara.js";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useEffect } from 'react/cjs/react.production.min';
 import AppIntroduction from './components/AppIntroduction.js'
-
+import CreateForm from "./components/CreateForm.js";
 const Stack = createNativeStackNavigator();
 
 function App() {
@@ -52,6 +52,7 @@ function App() {
         <Stack.Screen name="FormInfo"  component={FormInfo} options={{ headerShown: true, title: 'Formulario'}} />
         <Stack.Screen name="ShareForm"  component={ShareForm} options={{ headerShown: true, title: 'Compartir perfil' }}/>
         <Stack.Screen name="Camara"  component={Camara} options={{ headerShown: true, title:'Escanear formulario' }}/>
+        <Stack.Screen name="CreateForm"  component={CreateForm} options={{ headerShown: true, title:'Crear formulario' }}/>
 
       </Stack.Navigator>
     </NavigationContainer>
