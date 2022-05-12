@@ -5,6 +5,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons'; 
 import FormView from './FormView';
 import Camara from './Camara.js';
+import CreateProfile from './CreateProfile';
 export default function Home({navigation,route}) {
 
   const {name,email,photoUrl} = route.params;
@@ -63,11 +64,12 @@ export default function Home({navigation,route}) {
           <Ionicons name="md-scan" size={24} color="white" />
           <Text style={styles.scanButtonText}>ESCANEAR</Text>
         </TouchableOpacity>
+        <TouchableOpacity style={styles.scanButton2} onPress={()=>{navigation.navigate("CreateForm")}}>
+          <Text style={styles.scanButtonText2}>Crear Formulario</Text>
+        </TouchableOpacity>
       </View>
 
-      <TouchableOpacity style={styles.addFloatingButton}>
-        <Text style={styles.addFloatingButtonText}>+</Text>
-      </TouchableOpacity>
+     
     </SafeAreaView>
   );
 }
@@ -123,7 +125,7 @@ const styles = StyleSheet.create({
   },
   firstRowContainer:{
     flexDirection: 'row-reverse',
-    flex:0.15,
+    flex:0.3,
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'space-between',
@@ -141,9 +143,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff'
   },
   secondRowContainer:{
-    marginTop:0,
-    height: 300, 
+    marginTop:10,
+    height: 270, 
     backgroundColor: '#fff',
+    marginBottom:20
+
    
     
     
@@ -154,13 +158,29 @@ const styles = StyleSheet.create({
     backgroundColor: '#29abe2',
     borderRadius:8,
     height: 50,
-    marginTop:'auto',
+    marginTop:10,
+    bottom:10,
+    width:'80%',
+    alignSelf: 'center',
+    
+  },scanButton2:{
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#fff',
+    borderRadius:8,
+    height: 50,
+    marginTop:10,
     bottom:10,
     width:'80%',
     alignSelf: 'center',
     
   },scanButtonText:{
     color: 'white',
+    fontSize:20,
+    marginLeft:20
+  },scanButtonText2:{
+    color: '#29abe2',
     fontSize:20,
     marginLeft:20
   },
