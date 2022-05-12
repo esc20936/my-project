@@ -1,8 +1,61 @@
 import { StatusBar } from 'expo-status-bar';
 import React,{useState} from 'react';
-import { StyleSheet, Text,TextInput, View,SafeAreaView,Image,TouchableOpacity,Platform,ScrollView } from 'react-native';
+import { KeyboardAvoidingView,Alert, StyleSheet, Text,TextInput, View,SafeAreaView,Image,TouchableOpacity,Platform,ScrollView } from 'react-native';
+import { getDatabase, ref, set } from "firebase/database";
+import firebase from './firebase2.js';
 
-export default function CreateForm ({navigation}) {
+function saveFormInfo(navigation,email,title,name,lastName,age,document,birth,smoker,medicamento,pregnant){
+    const TT = title;
+
+    if(title!=='' && name!=='' && lastName!=='' && parseInt(age)!==NaN && smoker!=='' && document!=='' && Date.parse(birth)!==NaN){
+        // set(ref(db,'users/'+email),{
+        //     [TT] : {
+        //         nombre: name,
+        //         apellidos: lastName,
+        //         edad: age,
+        //         dpi: document,
+        //         birth: birth,
+        //         smoker: smoker,
+        //         med: medicamento,
+        //         pregnant: pregnant
+        //     }  
+        // });
+        try{
+            firebase.db.collection(email).add(
+                {
+                titulo: title,
+                nombre: name,
+                apellido: lastName,
+                edad: age,
+                dpi: document,
+                birth: birth,
+                smoker: smoker,
+                med: medicamento,
+                pregnant: pregnant,
+                date:new Date().toLocaleDateString()
+    })
+
+
+
+    Alert.alert('Formulario','Se creo el formulario')
+    navigation.goBack();
+
+        }
+        catch(err){
+            Alert.alert('Error','Algo salio mal, intentalo más tarde');
+            navigation.goBack()
+        }
+       
+    }else{
+        Alert.alert("Datos invalidos","Asegurese que todos los campos estan llenos en el formato correcto")
+    }
+
+
+    
+}
+
+export default function CreateForm ({navigation, route}) {
+    const [titulo,setTitulo] = useState('');
     const [nombre,setNombre] = useState('');
     const [apellido,setApellido] = useState('');
     const [edad,setEdad] = useState('');
@@ -11,18 +64,29 @@ export default function CreateForm ({navigation}) {
     const [fumador,setFumador] = useState('');
     const [medicamento,setMedicamento] = useState('');
     const [embarazada,setEmbarazada] = useState('');
+    const { name, email, photoUrl } = route.params;
 
     // const [textoBoton,setTextoBoton] = useState('Editar');
     const [buttonEnabled,setButtonEnabled] = useState(true);
  
     return(
-        <View style={styles.container}>
+        <KeyboardAvoidingView
+        behavior={Platform.OS === "ios" ? "padding" : "height"}
+        style={styles.container}
+      >
             
             <View style={styles.container}>
                 
                 <View style={styles.infoContainer}>
                     <ScrollView style={styles.infoScroll}>
                         <View style={styles.infoContainer2}>
+                        <TextInput style={[styles.input,{color: (buttonEnabled)? 'black':'#c9c9c9'}]}
+                                placeholder="Titulo formulario"  
+                                value={titulo} 
+                                onChangeText={text => setTitulo(text)}
+                                autoCapitalize='none'
+                                editable={buttonEnabled}/>
+
                             <TextInput style={[styles.input,{color: (buttonEnabled)? 'black':'#c9c9c9'}]}
                                 placeholder="Nombre"  
                                 value={nombre} 
@@ -92,7 +156,9 @@ export default function CreateForm ({navigation}) {
                     <Text style={styles.shareButtonText}>{textoBoton}</Text>
                 </TouchableOpacity> */}
 
-                <TouchableOpacity style={styles.shareButton}>
+                <TouchableOpacity style={styles.shareButton} onPress={()=>{
+                    saveFormInfo(navigation,email,titulo,nombre,apellido,edad,dpi,fecha,fumador,medicamento,embarazada);
+                }}>
                     <Text style={styles.shareButtonText}>Crear</Text>
                 </TouchableOpacity>
 
@@ -104,7 +170,7 @@ export default function CreateForm ({navigation}) {
 
 
 
-        </View>
+        </KeyboardAvoidingView>
     );
 
 }

@@ -2,15 +2,16 @@ import { StatusBar } from 'expo-status-bar';
 import React,{useState} from 'react';
 import { StyleSheet, Text,TextInput, View,SafeAreaView,Image,TouchableOpacity,Platform,ScrollView } from 'react-native';
 
-export default function FormInfo ({navigation}) {
-    const [nombre,setNombre] = useState('Pablo');
-    const [apellido,setApellido] = useState('Escobar');
-    const [edad,setEdad] = useState('20');
-    const [dpi,setDPI] = useState('3250603631401');
-    const [fecha,setFecha] = useState('14/04/2002');
-    const [fumador,setFumador] = useState('No es fumador');
-    const [medicamento,setMedicamento] = useState('No se medica');
-    const [embarazada,setEmbarazada] = useState('No tiene historial medico');
+export default function FormInfo ({navigation,route}) {
+    const {name,lastName,age,document,birth,smoker,med,pregnant} = route.params;
+    const [nombre,setNombre] = useState(name);
+    const [apellido,setApellido] = useState(lastName);
+    const [edad,setEdad] = useState(age);
+    const [dpi,setDPI] = useState(document);
+    const [fecha,setFecha] = useState(birth);
+    const [fumador,setFumador] = useState(smoker);
+    const [medicamento,setMedicamento] = useState((med==='')? "medicado (vacio)":med);
+    const [embarazada,setEmbarazada] = useState((pregnant==='')? "embarazada (vacio)":pregnant);
 
     const [textoBoton,setTextoBoton] = useState('Editar');
     const [buttonEnabled,setButtonEnabled] = useState(false);
@@ -90,7 +91,7 @@ export default function FormInfo ({navigation}) {
             </View>
 
             <View style={styles.buttonArea}>
-                <TouchableOpacity style={styles.shareButton} activeOpacity={0.7} onPress={() => {setButtonEnabled(!buttonEnabled); setTextoBoton((buttonEnabled)? "Editar":"Aceptar");}}>
+                <TouchableOpacity style={styles.shareButton} activeOpacity={0.7} onPress={() => {setButtonEnabled(!buttonEnabled); setTextoBoton((buttonEnabled)? "Editar":"Guardar");}}>
                     <Text style={styles.shareButtonText}>{textoBoton}</Text>
                 </TouchableOpacity>
 
