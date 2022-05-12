@@ -49,7 +49,6 @@ export default function Home({navigation,route}) {
     })
 
   },[])
-  console.log(listaFormularios)
 
   // useEffect(() =>{
   //   setListaFormularios(getForms(email));
