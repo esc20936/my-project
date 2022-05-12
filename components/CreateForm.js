@@ -3,6 +3,7 @@ import React,{useState} from 'react';
 import { StyleSheet, Text,TextInput, View,SafeAreaView,Image,TouchableOpacity,Platform,ScrollView } from 'react-native';
 
 export default function CreateForm ({navigation}) {
+    const [titulo,setTitulo] = useState('');
     const [nombre,setNombre] = useState('');
     const [apellido,setApellido] = useState('');
     const [edad,setEdad] = useState('');
@@ -23,6 +24,13 @@ export default function CreateForm ({navigation}) {
                 <View style={styles.infoContainer}>
                     <ScrollView style={styles.infoScroll}>
                         <View style={styles.infoContainer2}>
+                        <TextInput style={[styles.input,{color: (buttonEnabled)? 'black':'#c9c9c9'}]}
+                                placeholder="Titulo formulario"  
+                                value={nombre} 
+                                onChangeText={text => setTitulo(text)}
+                                autoCapitalize='none'
+                                editable={buttonEnabled}/>
+                                
                             <TextInput style={[styles.input,{color: (buttonEnabled)? 'black':'#c9c9c9'}]}
                                 placeholder="Nombre"  
                                 value={nombre} 

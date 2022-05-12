@@ -90,7 +90,7 @@ export default function FormInfo ({navigation}) {
             </View>
 
             <View style={styles.buttonArea}>
-                <TouchableOpacity style={styles.shareButton} activeOpacity={0.7} onPress={() => {setButtonEnabled(!buttonEnabled); setTextoBoton((buttonEnabled)? "Editar":"Aceptar");}}>
+                <TouchableOpacity style={styles.shareButton} activeOpacity={0.7} onPress={() => {setButtonEnabled(!buttonEnabled); setTextoBoton((buttonEnabled)? "Editar":"Guardar");}}>
                     <Text style={styles.shareButtonText}>{textoBoton}</Text>
                 </TouchableOpacity>
 
