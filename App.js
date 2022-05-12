@@ -47,11 +47,11 @@ function App() {
         <Stack.Screen name="AppIntroduction" component={AppIntroduction} options={{ headerShown: false}}/>
         <Stack.Screen name="UserLogin" component={UserLogin} options={{headerShown: false,}}/> 
         <Stack.Screen name="Home" component={Home} options={{headerShown: false}}/>
-        <Stack.Screen name="CreateProfile"  component={CreateProfile} options={{ headerShown: false }} />
-        <Stack.Screen name="EditProfile"  component={EditProfile} options={{ headerShown: false }} />
-        <Stack.Screen name="FormInfo"  component={FormInfo} options={{ headerShown: false }} />
-        <Stack.Screen name="ShareForm"  component={ShareForm} options={{ headerShown: false }}/>
-        <Stack.Screen name="Camara"  component={Camara} options={{ headerShown: true }}/>
+        <Stack.Screen name="CreateProfile"  component={CreateProfile} options={{ headerShown: true, title: 'Crear perfil'}} />
+        <Stack.Screen name="EditProfile"  component={EditProfile} options={{ headerShown: true, title: 'Editar perfil'}} />
+        <Stack.Screen name="FormInfo"  component={FormInfo} options={{ headerShown: true, title: 'Formulario'}} />
+        <Stack.Screen name="ShareForm"  component={ShareForm} options={{ headerShown: true, title: 'Compartir perfil' }}/>
+        <Stack.Screen name="Camara"  component={Camara} options={{ headerShown: true, title:'Escanear formulario' }}/>
 
       </Stack.Navigator>
     </NavigationContainer>
