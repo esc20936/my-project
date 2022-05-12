@@ -6,8 +6,9 @@ import  FormInfo  from './FormInfo.js';
 import { useNavigation } from '@react-navigation/native';
 const FormView = (props) =>{
     const navigation = useNavigation();
+    const {name,lastName,age,document,birth,smoker,med,pregnant} = props.data;
     return (
-        <TouchableOpacity style={styles.formContainer} onPress={()=>{navigation.navigate("FormInfo")}}>
+        <TouchableOpacity style={styles.formContainer} onPress={()=>{navigation.navigate("FormInfo",{name,lastName,age,document,birth,smoker,med,pregnant})}}>
             <LinearGradient
                 // Button Linear Gradient
                 colors={['#29abe2','#00567ac9']}
