@@ -20,7 +20,7 @@ function getForms(email){
 export default function Home({navigation,route}) {
 
   const {name,email,photoUrl} = route.params;
-  const AvatarImg = (photoUrl)? {uri:photoUrl}: require('../assets/src/icons/user2.png');
+  const AvatarImg = (photoUrl)? {uri:photoUrl}: require('../assets/src/icons/avatar.png');
   const AvatarEmail = (email)? email:"Aun no se registra un correo";
   const [listaFormularios,setListaFormularios] = useState([]);
   
@@ -42,12 +42,11 @@ export default function Home({navigation,route}) {
           pregnant: pregnant,
         }
         lista.push(
-          <FormView name={titulo} fecha={date} data={data}/>
+          <FormView name={titulo} date={date} data={data}/>
         );
       })
       setListaFormularios(lista);
     })
-
   },[])
 
   // useEffect(() =>{
@@ -58,7 +57,7 @@ export default function Home({navigation,route}) {
     <SafeAreaView style={styles.container}>
       {/* User Info Container.*/}
       <View style={styles.userInfoContainer}>
-        <View style={{flexDirection:'row',flex:0.9, backgroundColor:'#fff',alignItems: 'center'}}>
+        <View style={{flexDirection:'row',flex:0.9, backgroundColor:'#143590',alignItems: 'center'}}>
           <View style={styles.userImageContainer}>
             <Image source={AvatarImg} style={styles.userImage}/>
           </View>
@@ -73,7 +72,7 @@ export default function Home({navigation,route}) {
           
           
           }}>
-          <Ionicons name="md-settings-sharp" size={28} color="black" />
+          <Ionicons name="md-settings-sharp" size={28} color="#fff" />
         </TouchableOpacity>
       </View>
 
@@ -81,7 +80,7 @@ export default function Home({navigation,route}) {
       <View style={styles.mainAreaContainer}>
         <View style={styles.firstRowContainer}>
           <TouchableOpacity style={styles.searchIconContainer}>
-            <FontAwesome name="search" size={28} color="black" />
+            <FontAwesome name="search" size={28} color="#fff" />
           </TouchableOpacity>
           <Text style={styles.formsTitle}>Formularios</Text>
         </View>
@@ -119,14 +118,14 @@ export default function Home({navigation,route}) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#143590',
     alignItems: 'center',
     justifyContent: 'flex-start',
     paddingTop: (Platform.OS === 'android')? 30:0,
   },
   userInfoContainer:{
     flex: 0.15,
-    backgroundColor: 'white',
+    backgroundColor: '#143590',
     width: '90%',
     flexDirection: 'row',
     alignItems: 'center',
@@ -141,7 +140,7 @@ const styles = StyleSheet.create({
     borderRadius:150,
   },
   userTextInfoContainer:{
-    backgroundColor: '#fff',
+    backgroundColor: '#143590',
     height:'100%',
     justifyContent: 'flex-start',
     marginLeft:20,
@@ -149,26 +148,27 @@ const styles = StyleSheet.create({
   },
   userNameText:{
     fontWeight: 'bold',
-    fontSize:16
+    fontSize:16,
+    color: '#fff',
   },
   userInfoText:{
     fontSize:13,
-    color:'#616161'
+    color:'#bbbfc3'
   },
   settingsIcon:{
-    backgroundColor: '#fff',
+    backgroundColor: '#143590',
     right:20,
    
   },
   mainAreaContainer:{
     flex:0.8,
-    backgroundColor: '#fff',
+    backgroundColor: '#143590',
     width:'90%',
   },
   firstRowContainer:{
     flexDirection: 'row-reverse',
     flex:0.3,
-    backgroundColor: '#fff',
+    backgroundColor: '#143590',
     alignItems: 'center',
     justifyContent: 'space-between',
     marginBottom:10
@@ -177,17 +177,18 @@ const styles = StyleSheet.create({
   formsTitle:{
     fontSize:20,
     fontWeight: 'bold',
-    marginLeft:20
+    marginLeft:20,
+    color: '#fff',
     
 
   },searchIconContainer:{
     left:20,
-    backgroundColor: '#fff'
+    backgroundColor: '#143590'
   },
   secondRowContainer:{
     marginTop:10,
     height: 270, 
-    backgroundColor: '#fff',
+    backgroundColor: '#143590',
     marginBottom:20
 
    
@@ -197,7 +198,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#29abe2',
+    backgroundColor: '#0657a2',
     borderRadius:8,
     height: 50,
     marginTop:10,
@@ -209,22 +210,23 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#fff',
+    backgroundColor: '#143590',
     borderRadius:8,
     height: 50,
     marginTop:10,
     bottom:10,
     width:'80%',
     alignSelf: 'center',
+    color: 'white',
     
   },scanButtonText:{
     color: 'white',
-    fontSize:20,
-    marginLeft:20
+    fontSize:15,
+    marginLeft:10
   },scanButtonText2:{
-    color: '#29abe2',
-    fontSize:20,
-    marginLeft:20
+    color: 'white',
+    fontSize:15,
+    marginLeft:10
   },
   addFloatingButton:{
     position:'absolute',

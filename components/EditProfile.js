@@ -21,7 +21,7 @@ export default function EditProfile({ navigation, route }) {
 
   const AvatarImg = photoUrl
     ? { uri: photoUrl }
-    : require("../assets/src/icons/user.png");
+    : require("../assets/src/icons/avatar.png");
   const AvatarEmail = email ? email : "Aun no se registra un correo";
 
   const pswUtils = useTogglePasswordVisibility();

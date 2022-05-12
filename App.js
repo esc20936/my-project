@@ -47,12 +47,12 @@ function App() {
         <Stack.Screen name="AppIntroduction" component={AppIntroduction} options={{ headerShown: false}}/>
         <Stack.Screen name="UserLogin" component={UserLogin} options={{headerShown: false,}}/> 
         <Stack.Screen name="Home" component={Home} options={{headerShown: false}}/>
-        <Stack.Screen name="CreateProfile"  component={CreateProfile} options={{ headerShown: true, title: 'Crear perfil'}} />
-        <Stack.Screen name="EditProfile"  component={EditProfile} options={{ headerShown: true, title: 'Editar perfil'}} />
-        <Stack.Screen name="FormInfo"  component={FormInfo} options={{ headerShown: true, title: 'Formulario'}} />
-        <Stack.Screen name="ShareForm"  component={ShareForm} options={{ headerShown: true, title: 'Compartir perfil' }}/>
-        <Stack.Screen name="Camara"  component={Camara} options={{ headerShown: true, title:'Escanear formulario' }}/>
-        <Stack.Screen name="CreateForm"  component={CreateForm} options={{ headerShown: true, title:'Crear formulario' }}/>
+        <Stack.Screen name="CreateProfile"  component={CreateProfile} options={{ headerShown: true, title: 'Crear perfil', headerStyle:{ backgroundColor:"#143590"}, headerTitleStyle:{color:"#fff"}, headerTintColor:'#fff'}} />
+        <Stack.Screen name="EditProfile"  component={EditProfile} options={{ headerShown: true, title: 'Editar perfil', headerStyle:{ backgroundColor:"#143590"}, headerTitleStyle:{color:"#fff"}, headerTintColor:'#fff'}} />
+        <Stack.Screen name="FormInfo"  component={FormInfo} options={{ headerShown: true, title: 'Formulario', headerStyle:{ backgroundColor:"#143590"}, headerTitleStyle:{color:"#fff"}, headerTintColor:'#fff'}} />
+        <Stack.Screen name="ShareForm"  component={ShareForm} options={{ headerShown: true, title: 'Compartir perfil', headerStyle:{ backgroundColor:"#143590"}, headerTitleStyle:{color:"#fff"}, headerTintColor:'#fff' }}/>
+        <Stack.Screen name="Camara"  component={Camara} options={{ headerShown: true, title:'Escanear formulario', headerStyle:{ backgroundColor:"#143590"}, headerTitleStyle:{color:"#fff"}, headerTintColor:'#fff' }}/>
+        <Stack.Screen name="CreateForm"  component={CreateForm} options={{ headerShown: true, title:'Crear formulario', headerStyle:{ backgroundColor:"#143590"}, headerTitleStyle:{color:"#fff"}, headerTintColor:'#fff' }}/>
 
       </Stack.Navigator>
     </NavigationContainer>

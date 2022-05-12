@@ -1,4 +1,5 @@
 import React from 'react';
+import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View,SafeAreaView,Image,TextInput,TouchableOpacity,Pressable,Alert,ActivityIndicator} from 'react-native';
 import LottieView from 'lottie-react-native';
 
@@ -36,7 +37,7 @@ export default function AppIntroduction({navigation}){
                     </View>
 
                     <TouchableOpacity style={styles.logInButton} activeOpacity={0.8} onPress={() => navigation.navigate("UserLogin")}>
-                            <Text style={{color:'#29abe2'}}>Iniciar</Text>
+                            <Text style={{color:'#fff',fontSize:15, fontWeight:'bold'}}>Iniciar</Text>
                     </TouchableOpacity>
 
                 </View>
@@ -51,7 +52,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'flex-start',
         alignItems: 'center',
-        backgroundColor:'#29abe2',
+        backgroundColor:'#143590',
         width: '100%',
     },
     logo:{
@@ -85,11 +86,11 @@ const styles = StyleSheet.create({
           flex: 1,
         //   backgroundColor: '#fff',
           justifyContent: 'flex-end',
-          width: '90%',
+          width: '100%',
 
       },mainContainer:{
-          flex: 0.43,
-          backgroundColor: '#29abe2',
+          flex: 0.40,
+          backgroundColor: '#143590',
           width: "100%",
           borderTopRightRadius:30,
           borderTopLeftRadius:30,
@@ -100,7 +101,7 @@ const styles = StyleSheet.create({
           height:'auto',
           width: "70%",
         //   backgroundColor: 'red',
-          marginTop: 50,
+          marginTop: 25,
           marginLeft:0, 
       },
       proyectDescription:{
@@ -119,7 +120,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         position:'relative',
         top:20,
-        color: '#29abe2',
+        color: '#fff',
+        backgroundColor: '#0657a2'
     }
 
 })

@@ -1,21 +1,24 @@
 import { StatusBar } from 'expo-status-bar';
 import React,{useState} from 'react';
-import { StyleSheet, Text, View,SafeAreaView,Image,TouchableOpacity,Platform } from 'react-native';
+import { StyleSheet, Text, View,ImageBackground,Image,TouchableOpacity,Platform } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import  FormInfo  from './FormInfo.js';
 import { useNavigation } from '@react-navigation/native';
+const fondo = require('../assets/src/icons/fondo.png');
 const FormView = (props) =>{
     const navigation = useNavigation();
     const {name,lastName,age,document,birth,smoker,med,pregnant} = props.data;
     return (
-        <TouchableOpacity style={styles.formContainer} onPress={()=>{navigation.navigate("FormInfo",{name,lastName,age,document,birth,smoker,med,pregnant})}}>
+        <TouchableOpacity activeOpacity={0.7} style={styles.formContainer} onPress={()=>{navigation.navigate("FormInfo",{name,lastName,age,document,birth,smoker,med,pregnant})}}>
+            <ImageBackground source={fondo} resizeMode="cover" style={{height:190,width:250}}>
             <LinearGradient
                 // Button Linear Gradient
-                colors={['#29abe2','#00567ac9']}
+                colors={['#04879587','#04879587']}
                 style={styles.button}>
                 <Text style={styles.title}>{props.name}</Text>
                 <Text style={styles.date}>{props.date}</Text>
             </LinearGradient>
+            </ImageBackground>
            
         </TouchableOpacity>
     );
@@ -23,9 +26,9 @@ const FormView = (props) =>{
 
 const styles = StyleSheet.create({
     formContainer:{
-        height:250,
-        width:190,
-        backgroundColor: '#29abe2',
+        height:190,
+        width:250,
+        backgroundColor: '#143590',
         borderRadius:15,
         bottom:20,
         justifyContent: 'center',
@@ -33,6 +36,7 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         marginLeft:20,
         marginTop:20,
+        overflow: 'hidden',
     },
     button: {
         height:'100%',
@@ -46,10 +50,11 @@ const styles = StyleSheet.create({
         color: '#fff'
     },
     date: {
-        fontSize:20,
+        fontSize:17,
         color: '#fff',
         alignSelf:'flex-end',
-        top:90,
+        justifyContent: 'flex-end',
+        top:50,
         right:10
     },
     
