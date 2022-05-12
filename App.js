@@ -51,7 +51,7 @@ function App() {
         <Stack.Screen name="EditProfile"  component={EditProfile} options={{ headerShown: false }} />
         <Stack.Screen name="FormInfo"  component={FormInfo} options={{ headerShown: false }} />
         <Stack.Screen name="ShareForm"  component={ShareForm} options={{ headerShown: false }}/>
-        <Stack.Screen name="Camara"  component={Camara} options={{ headerShown: false }}/>
+        <Stack.Screen name="Camara"  component={Camara} options={{ headerShown: true }}/>
 
       </Stack.Navigator>
     </NavigationContainer>
