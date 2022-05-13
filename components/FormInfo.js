@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React,{useState} from 'react';
-import { StyleSheet, Text,TextInput, View,SafeAreaView,Image,TouchableOpacity,Platform,ScrollView } from 'react-native';
+import { KeyboardAvoidingView,StyleSheet, Text,TextInput, View,SafeAreaView,Image,TouchableOpacity,Platform,ScrollView } from 'react-native';
 
 export default function FormInfo ({navigation,route}) {
     const {name,lastName,age,document,birth,smoker,med,pregnant} = route.params;
@@ -20,62 +20,62 @@ export default function FormInfo ({navigation,route}) {
         <View style={styles.container}>
             
             <View style={styles.container}>
-                <View style= {styles.header}>
+                {/* <View style= {styles.header}>
                     <Text style={styles.formatexto}>Información Formulario</Text>
-                </View>
+                </View> */}
                 <View style={styles.infoContainer}>
                     <ScrollView style={styles.infoScroll}>
                         <View style={styles.infoContainer2}>
-                            <TextInput style={[styles.input,{color: (buttonEnabled)? 'black':'#c9c9c9'}]}
+                            <TextInput style={[styles.input,{color: (!buttonEnabled)? 'black':'#c9c9c9'}]}
                                 placeholder="Nombre"  
                                 value={nombre} 
                                 onChangeText={text => setNombre(text)}
                                 autoCapitalize='none'
                                 editable={buttonEnabled}/>
 
-                            <TextInput style={[styles.input,{color: (buttonEnabled)? 'black':'#c9c9c9'}]}
+                            <TextInput style={[styles.input,{color: (!buttonEnabled)? 'black':'#c9c9c9'}]}
                                 placeholder="Apellido"  
                                 value={apellido} 
                                 onChangeText={text => setApellido(text)}
                                 autoCapitalize='none'
                                 editable={buttonEnabled}/>
 
-                            <TextInput style={[styles.input,{color: (buttonEnabled)? 'black':'#c9c9c9'}]}
+                            <TextInput style={[styles.input,{color: (!buttonEnabled)? 'black':'#c9c9c9'}]}
                                 placeholder="Edad"  
                                 value={edad}  
                                 onChangeText={text => setEdad(text)}
                                 autoCapitalize='none'
                                 editable={buttonEnabled}/>
 
-                            <TextInput style={[styles.input,{color: (buttonEnabled)? 'black':'#c9c9c9'}]}
+                            <TextInput style={[styles.input,{color: (!buttonEnabled)? 'black':'#c9c9c9'}]}
                                 placeholder="DPI"  
                                 value={dpi} 
                                 onChangeText={text => setDPI(text)}
                                 autoCapitalize='none'
                                 editable={buttonEnabled}/>
 
-                            <TextInput style={[styles.input,{color: (buttonEnabled)? 'black':'#c9c9c9'}]}
+                            <TextInput style={[styles.input,{color: (!buttonEnabled)? 'black':'#c9c9c9'}]}
                                 placeholder="Fecha de nacimiento"  
                                 value={fecha} 
                                 onChangeText={text => setFecha(text)}
                                 autoCapitalize='none'
                                 editable={buttonEnabled}/>
 
-                            <TextInput style={[styles.input,{color: (buttonEnabled)? 'black':'#c9c9c9'}]}
+                            <TextInput style={[styles.input,{color: (!buttonEnabled)? 'black':'#c9c9c9'}]}
                                 placeholder="Fumador"  
                                 value={fumador} 
                                 onChangeText={text => setFumador(text)}
                                 autoCapitalize='none'
                                 editable={buttonEnabled}/>
 
-                            <TextInput style={[styles.input,{color: (buttonEnabled)? 'black':'#c9c9c9'}]}
+                            <TextInput style={[styles.input,{color: (!buttonEnabled)? 'black':'#c9c9c9'}]}
                                 placeholder="Consumes medicamento"  
                                 value={medicamento} 
                                 onChangeText={text => setMedicamento(text)}
                                 autoCapitalize='none'
                                 editable={buttonEnabled}/>
 
-                            <TextInput style={[styles.input,{color: (buttonEnabled)? 'black':'#c9c9c9'}]}
+                            <TextInput style={[styles.input,{color: (!buttonEnabled)? 'black':'#c9c9c9'}]}
                                 placeholder="Embarazada"  
                                 value={embarazada}  
                                 onChangeText={text => setEmbarazada(text)}
@@ -123,7 +123,7 @@ const styles = StyleSheet.create({
     },
     shareButton:{
         marginTop:20,
-        backgroundColor:"#29abe2",
+        backgroundColor:"#143590",
         justifyContent:"center",
         alignItems: "center",
         width:"30%",
@@ -194,7 +194,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         marginTop: 22,
         height: 40,
-        borderBottomColor:"#29abe2",
+        borderBottomColor:"#143590",
         borderBottomWidth: 1,
         width:"80%",
         marginLeft: 35,

@@ -44,7 +44,7 @@ export default function CreateProfile({navigation}){
 
 
     return (
-        <SafeAreaView style={styles.container}>
+        <KeyboardAvoidingView behavior="height" style={styles.container}>
             {/**LOGO AREA */}
             <View style={styles.logo}>
                 {/* <Image source={require('../assets/src/imgs/logoConTitulo.png')} style={styles.logoImg}/> */}
@@ -58,7 +58,9 @@ export default function CreateProfile({navigation}){
                 placeholder="Correo"  
                 value={email} 
                 onChangeText={text => setMail(text)}
-                autoCapitalize='none'/>
+                autoCapitalize='none'
+                placeholderTextColor="#fff"
+                />
 
                 {/* <TextInput style={[styles.input,{marginTop:20}]}
                 placeholder="DPI"  
@@ -80,11 +82,12 @@ export default function CreateProfile({navigation}){
                     value={password}
                     enablesReturnKeyAutomatically
                     onChangeText={text => setPassword(text)}
+                    placeholderTextColor="#fff"
                     />
 
                     {/* Area del icono */}
                     <Pressable onPress={handlePasswordVisibility} style={{top:0,right:20}}>
-                        <MaterialCommunityIcons name={rightIcon} size={28} color="#232323" />
+                        <MaterialCommunityIcons name={rightIcon} size={28} color="#fff" />
                     </Pressable>
 
                 </View>
@@ -103,11 +106,12 @@ export default function CreateProfile({navigation}){
                     value={passwordC}
                     enablesReturnKeyAutomatically
                     onChangeText={text => setPasswordC(text)}
+                    placeholderTextColor="#fff"
                     />
 
                     {/* Area del icono */}
                     <Pressable onPress={handlePasswordVisibility2} style={{top:0,right:20}}>
-                        <MaterialCommunityIcons name={rightIcon} size={28} color="#232323" />
+                        <MaterialCommunityIcons name={rightIcon} size={28} color="#fff" />
                     </Pressable>
 
                 </View>
@@ -145,15 +149,15 @@ export default function CreateProfile({navigation}){
                     </TouchableOpacity>
 
                                     {/* Crear Perfil */}
-                                    <TouchableOpacity style={[styles.logInButton,{marginTop:20,backgroundColor:'white'}]} hitSlop={{backgroundColor:'red'}} onPress={()=>{
+                                    <TouchableOpacity style={[styles.logInButton,{marginTop:20,backgroundColor:'#143590'}]} hitSlop={{backgroundColor:'red'}} onPress={()=>{
                                         navigation.navigate('UserLogin');
                                     }}>
-                                            <Text style={{color:'black'}}>Cancelar</Text>
+                                            <Text style={{color:'#fff'}}>Cancelar</Text>
                                     </TouchableOpacity>
                 </View >
                 
             
-        </SafeAreaView>
+        </KeyboardAvoidingView>
     );
 }
 
@@ -163,7 +167,7 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         alignItems: 'center', 
         justifyContent: 'flex-start', 
-        backgroundColor: '#fff',
+        backgroundColor: '#143590',
         
         
     },logo:{
@@ -182,32 +186,33 @@ const styles = StyleSheet.create({
       },
       containerInputs:{
           flex:0.4,
-          backgroundColor: '#fff',
+          backgroundColor: '#143590',
           width:"80%",
           alignItems:'center',
           marginTop:50
       },
       buttonContainer: {
-        backgroundColor: '#fff',
+        backgroundColor: '#143590',
         flex: 0.3,
         alignItems:'center',
         width:"80%"
       }
       ,
       input:{
-          backgroundColor: '#fff',
+          backgroundColor: '#143590',
           marginTop: 50,
           height: 40,
-          borderBottomColor:"#29abe2",
+          borderBottomColor:"#fff",
           borderBottomWidth: 1,
           width:"80%",
+          color: '#fff',
       },
       logInButton:{
 
           width:"80%",
           height:40,
           borderRadius:15,
-          backgroundColor: '#29abe2',
+          backgroundColor: '#0657a2',
           justifyContent: 'center',
           alignItems: 'center',
          
@@ -217,7 +222,7 @@ const styles = StyleSheet.create({
       
       inputContainer: {
         marginTop:20,
-        backgroundColor: 'white',
+        backgroundColor: '#143590',
         width: '80%',
         height: 40,
         flexDirection: 'row',
@@ -226,22 +231,24 @@ const styles = StyleSheet.create({
       },
       inputField: {
 
-        backgroundColor: '#fff',
+        backgroundColor: '#143590',
         marginTop:0,
         height: 40,
-        borderBottomColor:"#29abe2",
+        borderBottomColor:"#fff",
         borderBottomWidth: 1,
         width:"100%",
+        color: '#fff',
         
       },
       logoText1:{
         fontSize:40,
-        color: '#29abe2',
+        color: '#fff',
         fontWeight: 'bold',
       },
       logoText2:{
         fontSize:40,
         fontWeight: 'bold',
+        color:'#fac400'
 
       }
       

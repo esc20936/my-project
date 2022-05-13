@@ -21,7 +21,7 @@ export default function EditProfile({ navigation, route }) {
 
   const AvatarImg = photoUrl
     ? { uri: photoUrl }
-    : require("../assets/src/icons/user.png");
+    : require("../assets/src/icons/avatar.png");
   const AvatarEmail = email ? email : "Aun no se registra un correo";
 
   const pswUtils = useTogglePasswordVisibility();
@@ -246,7 +246,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     marginTop: 50,
     height: 40,
-    borderBottomColor: "#29abe2",
+    borderBottomColor: "#143590",
     borderBottomWidth: 1,
     width: "80%",
   },
@@ -254,7 +254,7 @@ const styles = StyleSheet.create({
     width: "80%",
     height: 40,
     borderRadius: 15,
-    backgroundColor: "#29abe2",
+    backgroundColor: "#143590",
     justifyContent: "center",
     alignItems: "center",
 
@@ -275,7 +275,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     marginTop: 0,
     height: 40,
-    borderBottomColor: "#29abe2",
+    borderBottomColor: "#143590",
     borderBottomWidth: 1,
     width: "100%",
   },

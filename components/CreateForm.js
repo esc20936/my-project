@@ -68,14 +68,118 @@ export default function CreateForm ({navigation, route}) {
 
     // const [textoBoton,setTextoBoton] = useState('Editar');
     const [buttonEnabled,setButtonEnabled] = useState(true);
- 
+    const isIOS = (Platform.OS === 'ios')? true : false;
     return(
-        <KeyboardAvoidingView
-        behavior={Platform.OS === "ios" ? "padding" : "height"}
-        style={styles.container}
-      >
-            
-            <View style={styles.container}>
+        <View style={styles.container}>
+        {!isIOS && ( 
+            <View
+            behavior={Platform.OS === "ios" ? "padding" : "padding"}
+            style={styles.container}
+          >
+              <View style={styles.container}>
+                 
+                 <View style={styles.infoContainer}>
+                     <ScrollView style={styles.infoScroll}>
+                         <View style={styles.infoContainer2}>
+                         <TextInput style={[styles.input,{color: (buttonEnabled)? 'black':'#c9c9c9'}]}
+                                 placeholder="Titulo formulario"  
+                                 value={titulo} 
+                                 onChangeText={text => setTitulo(text)}
+                                 autoCapitalize='none'
+                                 editable={buttonEnabled}/>
+ 
+                             <TextInput style={[styles.input,{color: (buttonEnabled)? 'black':'#c9c9c9'}]}
+                                 placeholder="Nombre"  
+                                 value={nombre} 
+                                 onChangeText={text => setNombre(text)}
+                                 autoCapitalize='none'
+                                 editable={buttonEnabled}/>
+ 
+                             <TextInput style={[styles.input,{color: (buttonEnabled)? 'black':'#c9c9c9'}]}
+                                 placeholder="Apellido"  
+                                 value={apellido} 
+                                 onChangeText={text => setApellido(text)}
+                                 autoCapitalize='none'
+                                 editable={buttonEnabled}/>
+ 
+                             <TextInput style={[styles.input,{color: (buttonEnabled)? 'black':'#c9c9c9'}]}
+                                 placeholder="Edad"  
+                                 value={edad}  
+                                 onChangeText={text => setEdad(text)}
+                                 autoCapitalize='none'
+                                 editable={buttonEnabled}/>
+ 
+                             <TextInput style={[styles.input,{color: (buttonEnabled)? 'black':'#c9c9c9'}]}
+                                 placeholder="DPI"  
+                                 value={dpi} 
+                                 onChangeText={text => setDPI(text)}
+                                 autoCapitalize='none'
+                                 editable={buttonEnabled}/>
+ 
+                             <TextInput style={[styles.input,{color: (buttonEnabled)? 'black':'#c9c9c9'}]}
+                                 placeholder="Fecha de nacimiento"  
+                                 value={fecha} 
+                                 onChangeText={text => setFecha(text)}
+                                 autoCapitalize='none'
+                                 editable={buttonEnabled}/>
+ 
+                             <TextInput style={[styles.input,{color: (buttonEnabled)? 'black':'#c9c9c9'}]}
+                                 placeholder="Fumador"  
+                                 value={fumador} 
+                                 onChangeText={text => setFumador(text)}
+                                 autoCapitalize='none'
+                                 editable={buttonEnabled}/>
+ 
+                             <TextInput style={[styles.input,{color: (buttonEnabled)? 'black':'#c9c9c9'}]}
+                                 placeholder="Consumes medicamento"  
+                                 value={medicamento} 
+                                 onChangeText={text => setMedicamento(text)}
+                                 autoCapitalize='none'
+                                 editable={buttonEnabled}/>
+ 
+                             <TextInput style={[styles.input,{color: (buttonEnabled)? 'black':'#c9c9c9'}]}
+                                 placeholder="Embarazada"  
+                                 value={embarazada}  
+                                 onChangeText={text => setEmbarazada(text)}
+                                 autoCapitalize='none'
+                                 editable={buttonEnabled}/>
+ 
+                             
+                         </View>
+                         
+                     </ScrollView>
+                 </View>
+ 
+             </View>
+ 
+             <View style={styles.buttonArea}>
+                 {/* <TouchableOpacity style={styles.shareButton} activeOpacity={0.7} onPress={() => {setButtonEnabled(!buttonEnabled); setTextoBoton((buttonEnabled)? "Editar":"Aceptar");}}>
+                     <Text style={styles.shareButtonText}>{textoBoton}</Text>
+                 </TouchableOpacity> */}
+ 
+                 <TouchableOpacity style={styles.shareButton} onPress={()=>{
+                     saveFormInfo(navigation,email,titulo,nombre,apellido,edad,dpi,fecha,fumador,medicamento,embarazada);
+                 }}>
+                     <Text style={styles.shareButtonText}>Crear</Text>
+                 </TouchableOpacity>
+ 
+             </View>
+             
+ 
+             
+ 
+ 
+ 
+ 
+         </View>
+       )}
+
+       {isIOS && ( 
+           <KeyboardAvoidingView
+           behavior={Platform.OS === "ios" ? "padding" : "padding"}
+           style={styles.container}
+         >
+             <View style={styles.container}>
                 
                 <View style={styles.infoContainer}>
                     <ScrollView style={styles.infoScroll}>
@@ -171,6 +275,11 @@ export default function CreateForm ({navigation, route}) {
 
 
         </KeyboardAvoidingView>
+       )}
+        
+            
+            
+        </View>
     );
 
 }
@@ -186,7 +295,7 @@ const styles = StyleSheet.create({
     },
     shareButton:{
         marginTop:20,
-        backgroundColor:"#29abe2",
+        backgroundColor:"#143590",
         justifyContent:"center",
         alignItems: "center",
         width:"30%",
@@ -257,7 +366,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         marginTop: 22,
         height: 40,
-        borderBottomColor:"#29abe2",
+        borderBottomColor:"#143590",
         borderBottomWidth: 1,
         width:"80%",
         marginLeft: 35,
