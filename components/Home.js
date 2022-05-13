@@ -20,10 +20,11 @@ function getForms(email){
 export default function Home({navigation,route}) {
 
   const {name,email,photoUrl} = route.params;
-  const AvatarImg = (photoUrl)? {uri:photoUrl}: require('../assets/src/icons/avatar.png');
+  const AvatarImg = require('../assets/src/icons/avatar.png');
+  const AvatarImg2 = require('../assets/src/icons/avatar2.png');
   const AvatarEmail = (email)? email:"Aun no se registra un correo";
   const [listaFormularios,setListaFormularios] = useState([]);
-  
+  const [avatar,setAvatar] = useState(true);
   
   useEffect(() => {
     
@@ -58,9 +59,11 @@ export default function Home({navigation,route}) {
       {/* User Info Container.*/}
       <View style={styles.userInfoContainer}>
         <View style={{flexDirection:'row',flex:0.9, backgroundColor:'#143590',alignItems: 'center'}}>
-          <View style={styles.userImageContainer}>
-            <Image source={AvatarImg} style={styles.userImage}/>
-          </View>
+          <TouchableOpacity style={styles.userImageContainer} activeOpacity={0.7} onPress={() =>{
+            setAvatar(!avatar)
+          }}>
+            <Image source={(avatar)? AvatarImg:AvatarImg2} style={styles.userImage}/>
+          </TouchableOpacity>
           <View style={styles.userTextInfoContainer}>
             <Text style={styles.userNameText}>{name}</Text>
             <Text style={styles.userInfoText}>{AvatarEmail}</Text>

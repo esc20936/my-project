@@ -5,7 +5,7 @@ import { AntDesign } from '@expo/vector-icons';
 export default function ShareForm({navigation}){
     return (
         <View style={styles.container}>
-            <AntDesign name="qrcode" size={200} color="#29abe2" />
+            <AntDesign name="qrcode" size={200} color="#fff" />
             
         </View>
 
@@ -15,7 +15,7 @@ export default function ShareForm({navigation}){
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor:"#fff",
+        backgroundColor:"#143590",
         justifyContent: "center",
         alignItems: "center",
     }

@@ -6,6 +6,7 @@ import LottieView from 'lottie-react-native';
 export default function AppIntroduction({navigation}){
     return (
         <SafeAreaView style={styles.container}>
+            <StatusBar style='light'/>
            <View style={styles.logo}>
                 <Text style={styles.logoText1}>Health</Text>
                 <Text style={styles.logoText2}>Forms</Text>

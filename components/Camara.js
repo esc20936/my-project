@@ -65,14 +65,14 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
   },icon: {
       marginBottom:15,
-      alignSelf:"flex-start",
+      alignSelf:"center",
   },
   shareButton:{
     marginTop:20,
-    backgroundColor:"#29abe2",
+    backgroundColor:"#143590",
     justifyContent:"center",
     alignItems: "center",
-    width:80,
+    width:120,
     height:50,
     alignSelf: "center",
     borderRadius:15,
