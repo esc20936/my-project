@@ -248,7 +248,7 @@ const styles = StyleSheet.create({
       logoText2:{
         fontSize:40,
         fontWeight: 'bold',
-        color:'#fac400'
+        color:'#00c9cc'
 
       }
       
