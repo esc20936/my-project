@@ -81,13 +81,8 @@ export default function Home({navigation,route}) {
 
       {/* MAIN AREA   */}
       <View style={styles.mainAreaContainer}>
-        <View style={styles.firstRowContainer}>
-          <TouchableOpacity style={styles.searchIconContainer}>
-            <FontAwesome name="search" size={28} color="#fff" />
-          </TouchableOpacity>
-          <Text style={styles.formsTitle}>Formularios</Text>
-        </View>
-
+        
+        <Text style={styles.formsTitle}>Formularios</Text>
         {/* Form view */}
         <View style={ styles.secondRowContainer }>
 
@@ -110,6 +105,10 @@ export default function Home({navigation,route}) {
         </TouchableOpacity>
         <TouchableOpacity style={styles.scanButton2} onPress={()=>{navigation.navigate("CreateForm",{name,email,photoUrl})}}>
           <Text style={styles.scanButtonText2}>Crear Formulario</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={[styles.scanButton2, {marginTop:40}]} onPress={()=>{navigation.navigate("Terminos")}}>
+          <Text style={styles.scanButtonText2}>Terminos y condiciones</Text>
         </TouchableOpacity>
       </View>
 
