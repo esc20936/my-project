@@ -13,6 +13,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useEffect } from 'react/cjs/react.production.min';
 import AppIntroduction from './components/AppIntroduction.js'
 import CreateForm from "./components/CreateForm.js";
+import Terminos from "./components/Terminos.js";
 const Stack = createNativeStackNavigator();
 
 function App() {
@@ -53,6 +54,7 @@ function App() {
         <Stack.Screen name="ShareForm"  component={ShareForm} options={{ headerShown: true, title: 'Compartir perfil', headerStyle:{ backgroundColor:"#143590"}, headerTitleStyle:{color:"#fff"}, headerTintColor:'#fff' }}/>
         <Stack.Screen name="Camara"  component={Camara} options={{ headerShown: true, title:'Escanear formulario', headerStyle:{ backgroundColor:"#143590"}, headerTitleStyle:{color:"#fff"}, headerTintColor:'#fff' }}/>
         <Stack.Screen name="CreateForm"  component={CreateForm} options={{ headerShown: true, title:'Crear formulario', headerStyle:{ backgroundColor:"#143590"}, headerTitleStyle:{color:"#fff"}, headerTintColor:'#fff' }}/>
+        <Stack.Screen name="Terminos"  component={Terminos} options={{ headerShown: true, title:'Términos y condiciones', headerStyle:{ backgroundColor:"#143590"}, headerTitleStyle:{color:"#fff"}, headerTintColor:'#fff' }}/>
 
       </Stack.Navigator>
     </NavigationContainer>
