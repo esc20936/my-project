@@ -3,7 +3,7 @@ import React,{useState} from 'react';
 import { KeyboardAvoidingView,StyleSheet, Text,TextInput, View,SafeAreaView,Image,TouchableOpacity,Platform,ScrollView } from 'react-native';
 
 export default function FormInfo ({navigation,route}) {
-    const {name,lastName,age,document,birth,smoker,med,pregnant} = route.params;
+    const {name,lastName,age,document,birth,smoker,med,pregnant,titulo,fechaCreacion} = route.params;
     const [nombre,setNombre] = useState(name);
     const [apellido,setApellido] = useState(lastName);
     const [edad,setEdad] = useState(age);
@@ -95,7 +95,7 @@ export default function FormInfo ({navigation,route}) {
                     <Text style={styles.shareButtonText}>{textoBoton}</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.shareButton} onPress={()=>{navigation.navigate("ShareForm")}}>
+                <TouchableOpacity style={styles.shareButton} onPress={()=>{navigation.navigate("ShareForm", {name,lastName,age,document,birth,smoker,med,pregnant,titulo,fechaCreacion})}}>
                     <Text style={styles.shareButtonText}>Compartir</Text>
                 </TouchableOpacity>
 
