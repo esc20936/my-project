@@ -23,10 +23,19 @@ export default function Camara({navigation}) {
 
 
   const handleBarcode = ({type, data}) => {
+    var alphabet = "abcdefghijklmnopqrstuvwxyz0123456789[]{}";
+    var decifrado = "";
+    for (var i = 0; i < data.length; i++) {
+      if(alphabet.includes(data[i].toLocaleLowerCase())){
+        let pos = alphabet.indexOf(data[i].toLocaleLowerCase());
+        decifrado += alphabet[(((pos-5)%alphabet.length) + alphabet.length) % alphabet.length]
+      }else {decifrado += data[i].toLocaleLowerCase();}
+    }
+    console.log(decifrado)
     setScanned(true);
-    const parsedData = JSON.parse(data);
+    const parsedData = JSON.parse(decifrado);
     const name = parsedData.name;
-    const lastName = parsedData.lastName;
+    const lastName = parsedData.lastname;
     const age = parsedData.age;
     const document = parsedData.document;
     const birth = parsedData.birth;
@@ -34,7 +43,7 @@ export default function Camara({navigation}) {
     const med = parsedData.med;
     const pregnant = parsedData.pregnant;
     const titulo = parsedData.titulo;
-    const fechaCreacion = parsedData.fechaCreacion;
+    const fechaCreacion = parsedData.fechacreacion;
     navigation.navigate("UserInfoView", {name,lastName,age,document,birth,smoker,med,pregnant,titulo,fechaCreacion})
   }
 
@@ -62,7 +71,7 @@ export default function Camara({navigation}) {
         <BarCodeScanner
         onBarCodeScanned={scanned ? undefined : handleBarcode}
         style={{height:900,width:200}}/>
-      </View>
+      </View> 
       {/* <Text style={styles.pTexto}>{text}</Text> */}
 
       {/* {scanned && 
