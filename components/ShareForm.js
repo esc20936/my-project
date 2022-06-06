@@ -8,7 +8,7 @@ export default function ShareForm({navigation, route}){
     const json = JSON.stringify({name:name,lastName:lastName,age:age,document:document,birth:birth,smoker:smoker,med:med,pregnant:pregnant, titulo:titulo,fechaCreacion:fechaCreacion});
     var alphabet = "abcdefghijklmnopqrstuvwxyz0123456789[]{}";
     var cifrado = "";
-    console.log(json)
+    // console.log(json)
     for(let i = 0; i<json.length; i++){
         if(alphabet.includes(json[i].toLocaleLowerCase())){
             let pos = alphabet.indexOf(json[i].toLocaleLowerCase());

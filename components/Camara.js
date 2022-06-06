@@ -31,7 +31,7 @@ export default function Camara({navigation}) {
         decifrado += alphabet[(((pos-5)%alphabet.length) + alphabet.length) % alphabet.length]
       }else {decifrado += data[i].toLocaleLowerCase();}
     }
-    console.log(decifrado)
+    // console.log(decifrado)
     setScanned(true);
     const parsedData = JSON.parse(decifrado);
     const name = parsedData.name;
