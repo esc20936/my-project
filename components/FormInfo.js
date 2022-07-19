@@ -14,7 +14,7 @@ export default function FormInfo ({navigation,route}) {
     const [embarazada,setEmbarazada] = useState((pregnant==='')? "embarazada (vacio)":pregnant);
 
     const [textoBoton,setTextoBoton] = useState('Editar');
-    const [buttonEnabled,setButtonEnabled] = useState(false);
+    const [buttonEnabled,setButtonEnabled] = useState(true);
  
     return(
         <View style={styles.container}>
@@ -26,6 +26,10 @@ export default function FormInfo ({navigation,route}) {
                 <View style={styles.infoContainer}>
                     <ScrollView style={styles.infoScroll}>
                         <View style={styles.infoContainer2}>
+                            <View style={styles.row}>
+                            <Text style={styles.fieldLabel}>
+                                Nombre:
+                            </Text>
                             <TextInput style={[styles.input,{color: (!buttonEnabled)? 'black':'#c9c9c9'}]}
                                 placeholder="Nombre"  
                                 value={nombre} 
@@ -33,33 +37,45 @@ export default function FormInfo ({navigation,route}) {
                                 autoCapitalize='none'
                                 editable={buttonEnabled}/>
 
+                            </View>
+                            <View style={styles.row}>
+                            <Text style={styles.fieldLabel}>Apellido: </Text>
                             <TextInput style={[styles.input,{color: (!buttonEnabled)? 'black':'#c9c9c9'}]}
                                 placeholder="Apellido"  
                                 value={apellido} 
                                 onChangeText={text => setApellido(text)}
                                 autoCapitalize='none'
                                 editable={buttonEnabled}/>
-
+                            </View>
+                            <View style={styles.row}>
+                            <Text style={styles.fieldLabel}>Edad: </Text>
                             <TextInput style={[styles.input,{color: (!buttonEnabled)? 'black':'#c9c9c9'}]}
                                 placeholder="Edad"  
                                 value={edad}  
                                 onChangeText={text => setEdad(text)}
                                 autoCapitalize='none'
                                 editable={buttonEnabled}/>
-
+                            </View>
+                            <View style={styles.row}>
+                            <Text style={styles.fieldLabel}>DPI: </Text>
                             <TextInput style={[styles.input,{color: (!buttonEnabled)? 'black':'#c9c9c9'}]}
                                 placeholder="DPI"  
                                 value={dpi} 
                                 onChangeText={text => setDPI(text)}
                                 autoCapitalize='none'
                                 editable={buttonEnabled}/>
-
+                            </View>
+                            <View style={styles.row}>
+                            <Text style={styles.fieldLabel}>nacimiento: </Text>
                             <TextInput style={[styles.input,{color: (!buttonEnabled)? 'black':'#c9c9c9'}]}
                                 placeholder="Fecha de nacimiento"  
                                 value={fecha} 
                                 onChangeText={text => setFecha(text)}
                                 autoCapitalize='none'
                                 editable={buttonEnabled}/>
+                            </View>
+                            <View style={styles.row}>
+                            <Text style={styles.fieldLabel}>Fumador: </Text>
 
                             <TextInput style={[styles.input,{color: (!buttonEnabled)? 'black':'#c9c9c9'}]}
                                 placeholder="Fumador"  
@@ -67,20 +83,25 @@ export default function FormInfo ({navigation,route}) {
                                 onChangeText={text => setFumador(text)}
                                 autoCapitalize='none'
                                 editable={buttonEnabled}/>
-
+                            </View>
+                            <View style={styles.row}>
+                            <Text style={styles.fieldLabel}>Medicamento: </Text>
                             <TextInput style={[styles.input,{color: (!buttonEnabled)? 'black':'#c9c9c9'}]}
                                 placeholder="Consumes medicamento"  
                                 value={medicamento} 
                                 onChangeText={text => setMedicamento(text)}
                                 autoCapitalize='none'
                                 editable={buttonEnabled}/>
-
+                            </View>
+                            <View style={styles.row}>
+                            <Text style={styles.fieldLabel}>Embarazada: </Text>
                             <TextInput style={[styles.input,{color: (!buttonEnabled)? 'black':'#c9c9c9'}]}
                                 placeholder="Embarazada"  
                                 value={embarazada}  
                                 onChangeText={text => setEmbarazada(text)}
                                 autoCapitalize='none'
                                 editable={buttonEnabled}/>
+                            </View>
 
                             
                         </View>
@@ -192,18 +213,31 @@ const styles = StyleSheet.create({
         backgroundColor:'#fefefe',
     }, input:{
         backgroundColor: '#fff',
-        marginTop: 22,
+        marginTop: 0,
         height: 40,
         borderBottomColor:"#143590",
         borderBottomWidth: 1,
-        width:"80%",
-        marginLeft: 35,
+        width:"50%",
+        marginLeft: 5,
+        marginTop: 10,
         
     },buttonArea:{
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
-    }
+    },
+    row:{
+        flexDirection: 'row',
+        alignItems: 'baseline',
+        justifyContent: 'space-evenly',
+        marginTop: 12,
+        marginBottom: 12,
+        paddingHorizontal: 10,
+    },
+    fieldLabel:{
+        marginBottom: 10,
+    },
+
 
 });
 
