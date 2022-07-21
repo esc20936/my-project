@@ -6,6 +6,7 @@ import { FontAwesome } from '@expo/vector-icons';
 import FormView from './FormView';
 import Camara from './Camara.js';
 import CreateProfile from './CreateProfile';
+import MedicalHistoryView from './MedicalHistoryView';
 import firebase from './firebase2.js';
 
 
@@ -92,6 +93,7 @@ export default function Home({navigation,route}) {
           <FormView name="Vacuna" date="12/03/2019" />
           <FormView name="General" date="11/04/2022" />
           <FormView name="Extra" date="12/12/2021" /> */}
+          <MedicalHistoryView name={name} date="historial medico" ></MedicalHistoryView>
           {listaFormularios}
 
         </ScrollView>
