@@ -53,10 +53,10 @@ const styles = StyleSheet.create({
     date: {
         fontSize:17,
         color: '#fff',
-        alignSelf:'flex-end',
-        justifyContent: 'flex-end',
+        alignSelf:'center',
+        justifyContent: 'center',
         top:50,
-        right:10
+        right:0
     },
     
 });
