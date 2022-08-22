@@ -10,7 +10,7 @@ const MedicalHistoryView = (props) => {
     const titulo = props.name;
     const fechaCreacion = props.date;
     return (
-        <TouchableOpacity activeOpacity={0.7} style={styles.formContainer} onPress={()=>{navigation.navigate("FormInfo",{name,lastName,age,document,birth,smoker,med,pregnant,titulo,fechaCreacion})}}>
+        <TouchableOpacity activeOpacity={0.7} style={styles.formContainer} onPress={()=>{navigation.navigate("MedicalHistory")}}>
             <ImageBackground source={fondo} resizeMode="cover" style={{height:190,width:250}}>
             <LinearGradient
                 // Button Linear Gradient

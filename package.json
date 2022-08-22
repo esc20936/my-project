@@ -20,7 +20,7 @@
     "expo-google-app-auth": "~8.3.0",
     "expo-linear-gradient": "~11.0.3",
     "expo-status-bar": "~1.2.0",
-    "expo-updates": "~0.11.6",
+    "expo-updates": "~0.11.7",
     "firebase": "^8.2.3",
     "lottie-react-native": "5.0.1",
     "react": "17.0.1",
@@ -30,7 +30,7 @@
     "react-native-qrcode-svg": "^6.1.2",
     "react-native-safe-area-context": "3.3.2",
     "react-native-screens": "~3.10.1",
-    "react-native-svg": "^12.3.0",
+    "react-native-svg": "12.1.1",
     "react-native-web": "0.17.1"
   },
   "devDependencies": {
