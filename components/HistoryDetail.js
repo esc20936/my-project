@@ -1,8 +1,8 @@
 import React from "react";
 import { StyleSheet, Text, TextInput, View,SafeAreaView,Image,TouchableOpacity,Platform,ScrollView } from 'react-native';
 
-export default function HistoryDetail(){
-
+export default function HistoryDetail({title, date, description='lorem ipsum dolor sit amet, consectetur adipiscing'}) {
+    description = (description.length > 27) ? description.substring(0,27) + '...' : description;
     return (
         <TouchableOpacity style={styles.container}>
             <View style={styles.row}>
@@ -10,7 +10,7 @@ export default function HistoryDetail(){
                     Titulo:
                 </Text>
                 <Text style={styles.fieldValue}>
-                    Operación de cabeza
+                    {title}
                 </Text>
             </View>
             <View style={styles.row}>
@@ -18,7 +18,7 @@ export default function HistoryDetail(){
                     Fecha:
                 </Text>
                 <Text style={styles.fieldValue}>
-                    12/05/2019
+                    {date}
                 </Text>
             </View>
             <View style={[styles.row, {position:'relative',marginTop: 'auto'}]}>
@@ -26,7 +26,7 @@ export default function HistoryDetail(){
                     Descripción:
                 </Text>
                 <Text style={styles.fieldValue}>
-                    lorem ipsum dolor sit amet consec   
+                    {description}
                 </Text>
             </View>
         </TouchableOpacity>
