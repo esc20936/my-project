@@ -17,160 +17,168 @@ import { useTogglePasswordVisibility } from "./hooks/useTogglePasswordVisibility
 import { Ionicons } from "@expo/vector-icons";
 
 export default function EditProfile({ navigation, route }) {
-  const { name, email, photoUrl } = route.params;
+  if(route){
+    const { name, email, photoUrl } = route.params;
 
-  const AvatarImg = photoUrl
-    ? { uri: photoUrl }
-    : require("../assets/src/icons/avatar.png");
-  const AvatarEmail = email ? email : "Aun no se registra un correo";
+    const AvatarImg = photoUrl
+      ? { uri: photoUrl }
+      : require("../assets/src/icons/avatar.png");
+    const AvatarEmail = email ? email : "Aun no se registra un correo";
 
-  const pswUtils = useTogglePasswordVisibility();
-  const passwordVisibility = pswUtils.passwordVisibility;
-  const rightIcon = pswUtils.rightIcon;
-  const handlePasswordVisibility = pswUtils.handlePasswordVisibility;
+    const pswUtils = useTogglePasswordVisibility();
+    const passwordVisibility = pswUtils.passwordVisibility;
+    const rightIcon = pswUtils.rightIcon;
+    const handlePasswordVisibility = pswUtils.handlePasswordVisibility;
 
-  const pswUtils2 = useTogglePasswordVisibility();
-  const passwordVisibility2 = pswUtils2.passwordVisibility;
+    const pswUtils2 = useTogglePasswordVisibility();
+    const passwordVisibility2 = pswUtils2.passwordVisibility;
 
-  const handlePasswordVisibility2 = pswUtils2.handlePasswordVisibility;
+    const handlePasswordVisibility2 = pswUtils2.handlePasswordVisibility;
 
-  const [password, setPassword] = useState("");
-  const [passwordC, setPasswordC] = useState("");
-  const [username, setUsername] = useState(name);
-  const [DPI, setEmail] = useState(0);
+    const [password, setPassword] = useState("");
+    const [passwordC, setPasswordC] = useState("");
+    const [username, setUsername] = useState(name);
+    const [DPI, setEmail] = useState(0);
 
-  return (
-    <SafeAreaView style={styles.container}>
-      {/**LOGO AREA */}
-      <View style={styles.userInfoContainer}>
-        <View
-          style={{
-            flexDirection: "row",
-            flex: 0.9,
-            backgroundColor: "#fff",
-            alignItems: "center",
-          }}
-        >
-          <View style={styles.userImageContainer}>
-            <Image source={AvatarImg} style={styles.userImage} />
+    return (
+      <SafeAreaView style={styles.container}>
+        {/**LOGO AREA */}
+        <View style={styles.userInfoContainer}>
+          <View
+            style={{
+              flexDirection: "row",
+              flex: 0.9,
+              backgroundColor: "#fff",
+              alignItems: "center",
+            }}
+          >
+            <View style={styles.userImageContainer}>
+              <Image source={AvatarImg} style={styles.userImage} />
+            </View>
+            <View style={styles.userTextInfoContainer}>
+              <Text style={styles.userNameText}>{name}</Text>
+              <Text style={styles.userInfoText}>{AvatarEmail}</Text>
+            </View>
           </View>
-          <View style={styles.userTextInfoContainer}>
-            <Text style={styles.userNameText}>{name}</Text>
-            <Text style={styles.userInfoText}>{AvatarEmail}</Text>
-          </View>
+        
         </View>
-       
-      </View>
-      {/** Area de Inputs */}
-      <View style={styles.containerInputs}>
-        <TextInput
-          style={[styles.input, { marginTop: 20 }]}
-          placeholder="Usuario"
-          value={username}
-          onChangeText={(text) => setUsername(text)}
-        />
-
-        <TextInput
-          style={[styles.input, { marginTop: 20 }]}
-          placeholder="Email"
-          value={email}
-          onChangeText={(text) => setEmail(text)}
-          keyboardType={"email-address"}
-        />
-
-        {/* Area del input contrasena */}
-        <View style={styles.inputContainer}>
+        {/** Area de Inputs */}
+        <View style={styles.containerInputs}>
           <TextInput
-            style={styles.inputField}
-            name="password"
-            placeholder="Contraseña"
-            autoCapitalize="none"
-            autoCorrect={false}
-            textContentType="newPassword"
-            secureTextEntry={passwordVisibility}
-            value={password}
-            enablesReturnKeyAutomatically
-            onChangeText={(text) => setPassword(text)}
+            style={[styles.input, { marginTop: 20 }]}
+            placeholder="Usuario"
+            value={username}
+            onChangeText={(text) => setUsername(text)}
           />
 
-          {/* Area del icono */}
-          <Pressable
-            onPress={handlePasswordVisibility}
-            style={{ top: 0, right: 20 }}
-          >
-            <MaterialCommunityIcons
-              name={rightIcon}
-              size={28}
-              color="#232323"
-            />
-          </Pressable>
-        </View>
-
-        {/* Area del input contrasena */}
-        <View style={styles.inputContainer}>
           <TextInput
-            style={styles.inputField}
-            name="password"
-            placeholder="Confirmar Contraseña"
-            autoCapitalize="none"
-            autoCorrect={false}
-            textContentType="newPassword"
-            secureTextEntry={passwordVisibility2}
-            value={passwordC}
-            enablesReturnKeyAutomatically
-            onChangeText={(text) => setPasswordC(text)}
+            style={[styles.input, { marginTop: 20 }]}
+            placeholder="Email"
+            value={email}
+            onChangeText={(text) => setEmail(text)}
+            keyboardType={"email-address"}
           />
 
-          {/* Area del icono */}
-          <Pressable
-            onPress={handlePasswordVisibility2}
-            style={{ top: 0, right: 20 }}
-          >
-            <MaterialCommunityIcons
-              name={rightIcon}
-              size={28}
-              color="#232323"
+          {/* Area del input contrasena */}
+          <View style={styles.inputContainer}>
+            <TextInput
+              style={styles.inputField}
+              name="password"
+              placeholder="Contraseña"
+              autoCapitalize="none"
+              autoCorrect={false}
+              textContentType="newPassword"
+              secureTextEntry={passwordVisibility}
+              value={password}
+              enablesReturnKeyAutomatically
+              onChangeText={(text) => setPassword(text)}
             />
-          </Pressable>
+
+            {/* Area del icono */}
+            <Pressable
+              onPress={handlePasswordVisibility}
+              style={{ top: 0, right: 20 }}
+            >
+              <MaterialCommunityIcons
+                name={rightIcon}
+                size={28}
+                color="#232323"
+              />
+            </Pressable>
+          </View>
+
+          {/* Area del input contrasena */}
+          <View style={styles.inputContainer}>
+            <TextInput
+              style={styles.inputField}
+              name="password"
+              placeholder="Confirmar Contraseña"
+              autoCapitalize="none"
+              autoCorrect={false}
+              textContentType="newPassword"
+              secureTextEntry={passwordVisibility2}
+              value={passwordC}
+              enablesReturnKeyAutomatically
+              onChangeText={(text) => setPasswordC(text)}
+            />
+
+            {/* Area del icono */}
+            <Pressable
+              onPress={handlePasswordVisibility2}
+              style={{ top: 0, right: 20 }}
+            >
+              <MaterialCommunityIcons
+                name={rightIcon}
+                size={28}
+                color="#232323"
+              />
+            </Pressable>
+          </View>
         </View>
+
+        {/* Iniciar Sesion */}
+        <View style={styles.buttonContainer}>
+          <TouchableOpacity
+            style={styles.logInButton}
+            onPress={() => {
+              if (
+                username !== "" &&
+                password === passwordC
+              ) {
+                Alert.alert("Exito", "Datos actualizados");
+                
+              } else {
+                Alert.alert("Error", "Datos invalidos");
+
+              }
+            }}
+          >
+            <Text style={{ color: "white" }}> Guardar </Text>
+          </TouchableOpacity>
+
+          {/* Crear Perfil */}
+          <TouchableOpacity
+            style={[
+              styles.logInButton,
+              { marginTop: 20, backgroundColor: "white" },
+            ]}
+            hitSlop={{ backgroundColor: "red" }}
+            onPress={() => {
+              navigation.navigate("Home", { email, name, photoUrl });
+            }}
+          >
+            <Text style={{ color: "black" }}>Volver</Text>
+          </TouchableOpacity>
+        </View>
+      </SafeAreaView>
+    );
+  }else{
+    return(
+      <View>
+        <Text>error</Text>
       </View>
-
-      {/* Iniciar Sesion */}
-      <View style={styles.buttonContainer}>
-        <TouchableOpacity
-          style={styles.logInButton}
-          onPress={() => {
-            if (
-              username !== "" &&
-              password === passwordC
-            ) {
-              Alert.alert("Exito", "Datos actualizados");
-              
-            } else {
-              Alert.alert("Error", "Datos invalidos");
-
-            }
-          }}
-        >
-          <Text style={{ color: "white" }}> Guardar </Text>
-        </TouchableOpacity>
-
-        {/* Crear Perfil */}
-        <TouchableOpacity
-          style={[
-            styles.logInButton,
-            { marginTop: 20, backgroundColor: "white" },
-          ]}
-          hitSlop={{ backgroundColor: "red" }}
-          onPress={() => {
-            navigation.navigate("Home", { email, name, photoUrl });
-          }}
-        >
-          <Text style={{ color: "black" }}>Volver</Text>
-        </TouchableOpacity>
-      </View>
-    </SafeAreaView>
-  );
+    )
+  }
 }
 
 const styles = StyleSheet.create({
@@ -180,7 +188,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "flex-start",
     backgroundColor: "#fff",
-    marginTop: (Platform.OS === "android")? 20:0,
+    // marginTop: (Platform.OS === "android")? 20:0,
   },
   userInfoContainer: {
     flex: 0.15,

@@ -3,79 +3,89 @@ import React,{useState} from 'react';
 import { KeyboardAvoidingView,StyleSheet, Text,TextInput, View,SafeAreaView,Image,TouchableOpacity,Platform,ScrollView } from 'react-native';
 
 export default function UserInfoView ({navigation,route}) {
-    const {name,lastName,age,document,birth,smoker,med,pregnant,titulo,fechaCreacion} = route.params;
-    const [nombre,setNombre] = useState(name);
-    const [apellido,setApellido] = useState(lastName);
-    const [edad,setEdad] = useState(age);
-    const [dpi,setDPI] = useState(document);
-    const [fecha,setFecha] = useState(birth);
-    const [fumador,setFumador] = useState(smoker);
-    const [medicamento,setMedicamento] = useState((med==='')? "medicado (vacio)":med);
-    const [embarazada,setEmbarazada] = useState((pregnant==='')? "embarazada (vacio)":pregnant);
 
+    if(route){
+
+        const {name,lastName,age,document,birth,smoker,med,pregnant,titulo,fechaCreacion} = route.params;
+        const [nombre,setNombre] = useState(name);
+        const [apellido,setApellido] = useState(lastName);
+        const [edad,setEdad] = useState(age);
+        const [dpi,setDPI] = useState(document);
+        const [fecha,setFecha] = useState(birth);
+        const [fumador,setFumador] = useState(smoker);
+        const [medicamento,setMedicamento] = useState((med==='')? "medicado (vacio)":med);
+        const [embarazada,setEmbarazada] = useState((pregnant==='')? "embarazada (vacio)":pregnant);
+
+        
     
- 
-    return(
-        <View style={styles.container}>
-            
+        return(
             <View style={styles.container}>
-                {/* <View style= {styles.header}>
-                    <Text style={styles.formatexto}>Información Formulario</Text>
-                </View> */}
-                <View style={styles.infoContainer}>
-                    <ScrollView style={styles.infoScroll}>
-                        <View style={styles.infoContainer2}>
-                            <View style={styles.row}>
-                                <Text style={styles.campo}>Titulo:</Text>
-                                <Text style={styles.valor}>{titulo}</Text>
-                            </View>
+                
+                <View style={styles.container}>
+                    {/* <View style= {styles.header}>
+                        <Text style={styles.formatexto}>Información Formulario</Text>
+                    </View> */}
+                    <View style={styles.infoContainer}>
+                        <ScrollView style={styles.infoScroll}>
+                            <View style={styles.infoContainer2}>
+                                <View style={styles.row}>
+                                    <Text style={styles.campo}>Titulo:</Text>
+                                    <Text style={styles.valor}>{titulo}</Text>
+                                </View>
 
-                            <View style={styles.row}>
-                                <Text style={styles.campo}>F. Creación:</Text>
-                                <Text style={styles.valor}>{fechaCreacion}</Text>
+                                <View style={styles.row}>
+                                    <Text style={styles.campo}>F. Creación:</Text>
+                                    <Text style={styles.valor}>{fechaCreacion}</Text>
+                                </View>
+                                <View style={styles.row}>
+                                    <Text style={styles.campo}>Nombre:</Text>
+                                    <Text style={styles.valor}>{nombre}</Text>
+                                </View>
+                                <View style={styles.row}>
+                                    <Text style={styles.campo}>Apellido:</Text>
+                                    <Text style={styles.valor}>{apellido}</Text>
+                                </View>
+                                <View style={styles.row}>
+                                    <Text style={styles.campo}>Edad:</Text>
+                                    <Text style={styles.valor}>{edad}</Text>
+                                </View>
+                                <View style={styles.row}>
+                                    <Text style={styles.campo}>DPI:</Text>
+                                    <Text style={styles.valor}>{dpi}</Text>
+                                </View>
+                                <View style={styles.row}>
+                                    <Text style={styles.campo}>F. Nacimiento:</Text>
+                                    <Text style={styles.valor}>{fecha}</Text>
+                                </View>
+                                <View style={styles.row}>
+                                    <Text style={styles.campo}>Fumador:</Text>
+                                    <Text style={styles.valor}>{fumador}</Text>
+                                </View>
+                                <View style={styles.row}>
+                                    <Text style={styles.campo}>Medicamento:</Text>
+                                    <Text style={styles.valor}>{medicamento}</Text>
+                                </View>
+                                <View style={styles.row}>
+                                    <Text style={styles.campo}>Embarazada:</Text>
+                                    <Text style={styles.valor}>{embarazada}</Text>
+                                </View>
+                            
                             </View>
-                            <View style={styles.row}>
-                                <Text style={styles.campo}>Nombre:</Text>
-                                <Text style={styles.valor}>{nombre}</Text>
-                            </View>
-                            <View style={styles.row}>
-                                <Text style={styles.campo}>Apellido:</Text>
-                                <Text style={styles.valor}>{apellido}</Text>
-                            </View>
-                            <View style={styles.row}>
-                                <Text style={styles.campo}>Edad:</Text>
-                                <Text style={styles.valor}>{edad}</Text>
-                            </View>
-                            <View style={styles.row}>
-                                <Text style={styles.campo}>DPI:</Text>
-                                <Text style={styles.valor}>{dpi}</Text>
-                            </View>
-                            <View style={styles.row}>
-                                <Text style={styles.campo}>F. Nacimiento:</Text>
-                                <Text style={styles.valor}>{fecha}</Text>
-                            </View>
-                            <View style={styles.row}>
-                                <Text style={styles.campo}>Fumador:</Text>
-                                <Text style={styles.valor}>{fumador}</Text>
-                            </View>
-                            <View style={styles.row}>
-                                <Text style={styles.campo}>Medicamento:</Text>
-                                <Text style={styles.valor}>{medicamento}</Text>
-                            </View>
-                            <View style={styles.row}>
-                                <Text style={styles.campo}>Embarazada:</Text>
-                                <Text style={styles.valor}>{embarazada}</Text>
-                            </View>
-                           
-                        </View>
-                        
-                    </ScrollView>
+                            
+                        </ScrollView>
+                    </View>
+
                 </View>
 
             </View>
-
-        </View>
-    );
+        );
+    }else{
+        return(
+            <View style={styles.container}>
+                <Text style={styles.formatexto}>No hay datos</Text>
+            </View>
+        );
+    }
 
 }
 const styles = StyleSheet.create({

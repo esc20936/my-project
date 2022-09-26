@@ -9,155 +9,148 @@ import { NavigationContainer , StackActions, NavigationActions } from '@react-na
 import {auth} from './firebase.js';
 
 export default function UserLogin({navigation}){
+    if(navigation){
+        const { passwordVisibility, rightIcon, handlePasswordVisibility } =   useTogglePasswordVisibility();
+        const [password, setPassword] = useState('');
+        const [username,setUsername] = useState('');
+        const [googleSubmitting,setGoogleSubmitting] = useState(false);
+        const [mailSubmitting,setMailSubmitting] = useState(false);
+        
+        const handleLogin = () => {
+            setMailSubmitting(true);
+            auth.signInWithEmailAndPassword(username.trim(), password)
+            .then(userCredentials => {
+                const user = userCredentials.user;
+                let name = username.split('.')[0];
+                name = name.split('@')[0];
+                name = name.charAt(0).toUpperCase() + name.slice(1);
+                let email = username;
+                setMailSubmitting(false);
+                navigation.navigate("Home",{email,name});
+            }).catch(err => {
+                setMailSubmitting(false);
+                alert(err.message);
 
-    const { passwordVisibility, rightIcon, handlePasswordVisibility } =   useTogglePasswordVisibility();
-    const [password, setPassword] = useState('');
-    const [username,setUsername] = useState('');
-    const [googleSubmitting,setGoogleSubmitting] = useState(false);
-    const [mailSubmitting,setMailSubmitting] = useState(false);
-    
-    const handleLogin = () => {
-        setMailSubmitting(true);
-        auth.signInWithEmailAndPassword(username.trim(), password)
-        .then(userCredentials => {
-            const user = userCredentials.user;
-            let name = username.split('.')[0];
-            name = name.split('@')[0];
-            name = name.charAt(0).toUpperCase() + name.slice(1);
-            let email = username;
-            setMailSubmitting(false);
-            navigation.navigate("Home",{email,name});
-        }).catch(err => {
-            setMailSubmitting(false);
-            alert(err.message);
+            });
+        }
+        
 
-        });
-    }
-    
+        const handleGoogleSigIn = () => {
 
-    const handleGoogleSigIn = () => {
+            setGoogleSubmitting(true);
 
-        setGoogleSubmitting(true);
-
-        const config = {
-            iosClientId :'835553252178-6fhf0csikmcuit2gh0l2t589mddatrru.apps.googleusercontent.com',
-            androidClientId : '835553252178-bfkmrbdl0n0t8ue2qsia9akdf6ghtrr5.apps.googleusercontent.com',
-            scopes: ['profile','email']
-        };
+            const config = {
+                iosClientId :'835553252178-6fhf0csikmcuit2gh0l2t589mddatrru.apps.googleusercontent.com',
+                androidClientId : '835553252178-bfkmrbdl0n0t8ue2qsia9akdf6ghtrr5.apps.googleusercontent.com',
+                scopes: ['profile','email']
+            };
 
 
-        Google.logInAsync(config)
-        .then((result) => {
-            const {type,user} = result;
-            if(type==='success'){
-                const {email,name,photoUrl} = user;
-                setTimeout(() => {
+            Google.logInAsync(config)
+            .then((result) => {
+                const {type,user} = result;
+                if(type==='success'){
+                    const {email,name,photoUrl} = user;
+                    setTimeout(() => {
 
+                        
+
+                        navigation.navigate("Home",{ email,name,photoUrl })
+                    },
+                    1000
+                    );
+
+                }else{
+                    Alert.alert("Error","Inicio de sesión cancelado");
+                }
+                setGoogleSubmitting(false);
+            })
+            .catch((error) => {
+                Alert.alert("Error",error.message);
+                setGoogleSubmitting(false);
+            })
+
+        }
+
+
+
+        return (
+            <SafeAreaView style={styles.container}>
+                {/**LOGO AREA */}
+                <View style={styles.logo}>
+                    {/* <Image source={require('../assets/src/imgs/logoConTitulo.png')} style={styles.logoImg}/> */}
+                    <Text style={styles.logoText1}>Health</Text>
+                    <Text style={styles.logoText2}>Forms</Text>
+                </View>
+
+                {/** Area de Inputs */}
+                <View style = {styles.containerInputs}>
                     
-
-                    navigation.navigate("Home",{ email,name,photoUrl })
-                },
-                1000
-                );
-
-            }else{
-                Alert.alert("Error","Inicio de sesión cancelado");
-            }
-            setGoogleSubmitting(false);
-        })
-        .catch((error) => {
-            Alert.alert("Error",error.message);
-            setGoogleSubmitting(false);
-        })
-
-    }
-
-
-
-    return (
-        <SafeAreaView style={styles.container}>
-            {/**LOGO AREA */}
-            <View style={styles.logo}>
-                {/* <Image source={require('../assets/src/imgs/logoConTitulo.png')} style={styles.logoImg}/> */}
-                <Text style={styles.logoText1}>Health</Text>
-                <Text style={styles.logoText2}>Forms</Text>
-            </View>
-
-            {/** Area de Inputs */}
-            <View style = {styles.containerInputs}>
-                
-                <TextInput style={styles.input}
-                placeholder="Correo"  
-                value={username} 
-                onChangeText={text => setUsername(text)}
-                autoCapitalize='none'
-                placeholderTextColor="#fff"/>
-                
-                {/* Area del input contrasena */}
-                <View style={styles.inputContainer}>
-
-                    <TextInput
-                    style={styles.inputField}
-                    name='password'
-                    placeholder='Contraseña'
+                    <TextInput style={styles.input}
+                    placeholder="Correo"  
+                    value={username} 
+                    onChangeText={text => setUsername(text)}
                     autoCapitalize='none'
-                    autoCorrect={false}
-                    textContentType='newPassword'
-                    secureTextEntry={passwordVisibility}
-                    value={password}
-                    enablesReturnKeyAutomatically
-                    onChangeText={text => setPassword(text)}
                     placeholderTextColor="#fff"/>
+                    
+                    {/* Area del input contrasena */}
+                    <View style={styles.inputContainer}>
 
-                    {/* Area del icono */}
-                    <Pressable onPress={handlePasswordVisibility} style={{top:10,right:20}}>
-                        <MaterialCommunityIcons name={rightIcon} size={28} color="#f5f5f5" />
-                    </Pressable>
+                        <TextInput
+                        style={styles.inputField}
+                        name='password'
+                        placeholder='Contraseña'
+                        autoCapitalize='none'
+                        autoCorrect={false}
+                        textContentType='newPassword'
+                        secureTextEntry={passwordVisibility}
+                        value={password}
+                        enablesReturnKeyAutomatically
+                        onChangeText={text => setPassword(text)}
+                        placeholderTextColor="#fff"/>
 
-             </View>
- 
+                        {/* Area del icono */}
+                        <Pressable onPress={handlePasswordVisibility} style={{top:10,right:20}}>
+                            <MaterialCommunityIcons name={rightIcon} size={28} color="#f5f5f5" />
+                        </Pressable>
+
+                </View>
+    
+                    
+                    {/* Iniciar Sesion */}
+
+                    {!mailSubmitting && ( 
+                            <TouchableOpacity style={styles.logInButton} onPress={handleLogin}>
+                                <Text style={{color:'white'}}>Iniciar Sesión</Text>
+                            </TouchableOpacity>
+                        )}
+
+                        {mailSubmitting && ( 
+                            <TouchableOpacity style={[styles.logInButton,{marginTop:0,flexDirection: 'row',justifyContent: 'space-around'}]} disabled={true}>
+                                    <ActivityIndicator size={24} color="white"/>
+                            </TouchableOpacity>
+                        )}
+
+
                 
-                {/* Iniciar Sesion */}
 
-                {!mailSubmitting && ( 
-                         <TouchableOpacity style={styles.logInButton} onPress={handleLogin}>
-                            <Text style={{color:'white'}}>Iniciar Sesión</Text>
-                        </TouchableOpacity>
-                    )}
-
-                    {mailSubmitting && ( 
-                        <TouchableOpacity style={[styles.logInButton,{marginTop:0,flexDirection: 'row',justifyContent: 'space-around'}]} disabled={true}>
-                                <ActivityIndicator size={24} color="white"/>
-                        </TouchableOpacity>
-                    )}
-
-
-               
-
-                {/* Crear Perfil */}
-                <TouchableOpacity style={[styles.logInButton,{marginTop:20,backgroundColor:'#143590'}]} onPress={()=>{
-                    navigation.navigate('CreateProfile');
-                }}>
-                        <Text style={{color:'#fff'}}>Crear perfil</Text>
-                </TouchableOpacity>
-                {/* <View style={[styles.logInButton,{marginTop:5,height:10,borderTopWidth:1,BorderColor:'#fff',borderRadius:0,backgroundColor:'#143590'}]}/> */}
-                    {/* {!googleSubmitting && ( 
-                        <TouchableOpacity style={[styles.logInButton,{marginTop:20,flexDirection: 'row',justifyContent: 'center',backgroundColor:'#143590'}]} onPress={handleGoogleSigIn} >
-                                <AntDesign name="google" size={24} color="white" />
-                                <Text style={{color:'#fff',marginLeft:20}}>Ingresar con Google</Text>
-                        </TouchableOpacity>
-                    )}
-
-                    {googleSubmitting && ( 
-                        <TouchableOpacity style={[styles.logInButton,{marginTop:20,flexDirection: 'row',justifyContent: 'space-around', backgroundColor:"#143590"}]} disabled={true}>
-                                <ActivityIndicator size={24} color="white"/>
-                        </TouchableOpacity>
-                    )} */}
-                   
+                    <TouchableOpacity style={[styles.logInButton,{marginTop:20,backgroundColor:'#143590'}]} onPress={()=>{
+                        navigation.navigate('CreateProfile');
+                    }}>
+                            <Text style={{color:'#fff'}}>Crear perfil</Text>
+                    </TouchableOpacity>
+                    
+                </View>
+                
+            </SafeAreaView>
+        );
+    }else{
+        return(
+            <View>
+                <Text>ERROR</Text>
             </View>
-            
-        </SafeAreaView>
-    );
+        )
+    }
 }
 
 const styles = StyleSheet.create({

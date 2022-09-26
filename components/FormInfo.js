@@ -3,133 +3,142 @@ import React,{useState} from 'react';
 import { KeyboardAvoidingView,StyleSheet, Text,TextInput, View,SafeAreaView,Image,TouchableOpacity,Platform,ScrollView } from 'react-native';
 
 export default function FormInfo ({navigation,route}) {
-    const {name,lastName,age,document,birth,smoker,med,pregnant,titulo,fechaCreacion} = route.params;
-    const [nombre,setNombre] = useState(name);
-    const [apellido,setApellido] = useState(lastName);
-    const [edad,setEdad] = useState(age);
-    const [dpi,setDPI] = useState(document);
-    const [fecha,setFecha] = useState(birth);
-    const [fumador,setFumador] = useState(smoker);
-    const [medicamento,setMedicamento] = useState((med==='')? "medicado (vacio)":med);
-    const [embarazada,setEmbarazada] = useState((pregnant==='')? "embarazada (vacio)":pregnant);
+    if(route){
+        const {name,lastName,age,document,birth,smoker,med,pregnant,titulo,fechaCreacion} = route.params;
+        const [nombre,setNombre] = useState(name);
+        const [apellido,setApellido] = useState(lastName);
+        const [edad,setEdad] = useState(age);
+        const [dpi,setDPI] = useState(document);
+        const [fecha,setFecha] = useState(birth);
+        const [fumador,setFumador] = useState(smoker);
+        const [medicamento,setMedicamento] = useState((med==='')? "medicado (vacio)":med);
+        const [embarazada,setEmbarazada] = useState((pregnant==='')? "embarazada (vacio)":pregnant);
 
-    const [textoBoton,setTextoBoton] = useState('Editar');
-    const [buttonEnabled,setButtonEnabled] = useState(true);
+        const [textoBoton,setTextoBoton] = useState('Editar');
+        const [buttonEnabled,setButtonEnabled] = useState(true);
  
-    return(
-        <View style={styles.container}>
-            
+        return(
             <View style={styles.container}>
-                {/* <View style= {styles.header}>
-                    <Text style={styles.formatexto}>Información Formulario</Text>
-                </View> */}
-                <View style={styles.infoContainer}>
-                    <ScrollView style={styles.infoScroll}>
-                        <View style={styles.infoContainer2}>
-                            <View style={styles.row}>
-                            <Text style={styles.fieldLabel}>
-                                Nombre:
-                            </Text>
-                            <TextInput style={[styles.input,{color: (!buttonEnabled)? 'black':'#c9c9c9'}]}
-                                placeholder="Nombre"  
-                                value={nombre} 
-                                onChangeText={text => setNombre(text)}
-                                autoCapitalize='none'
-                                editable={buttonEnabled}/>
+                
+                <View style={styles.container}>
+                    {/* <View style= {styles.header}>
+                        <Text style={styles.formatexto}>Información Formulario</Text>
+                    </View> */}
+                    <View style={styles.infoContainer}>
+                        <ScrollView style={styles.infoScroll}>
+                            <View style={styles.infoContainer2}>
+                                <View style={styles.row}>
+                                <Text style={styles.fieldLabel}>
+                                    Nombre:
+                                </Text>
+                                <TextInput style={[styles.input,{color: (!buttonEnabled)? 'black':'#c9c9c9'}]}
+                                    placeholder="Nombre"  
+                                    value={nombre} 
+                                    onChangeText={text => setNombre(text)}
+                                    autoCapitalize='none'
+                                    editable={buttonEnabled}/>
 
-                            </View>
-                            <View style={styles.row}>
-                            <Text style={styles.fieldLabel}>Apellido: </Text>
-                            <TextInput style={[styles.input,{color: (!buttonEnabled)? 'black':'#c9c9c9'}]}
-                                placeholder="Apellido"  
-                                value={apellido} 
-                                onChangeText={text => setApellido(text)}
-                                autoCapitalize='none'
-                                editable={buttonEnabled}/>
-                            </View>
-                            <View style={styles.row}>
-                            <Text style={styles.fieldLabel}>Edad: </Text>
-                            <TextInput style={[styles.input,{color: (!buttonEnabled)? 'black':'#c9c9c9'}]}
-                                placeholder="Edad"  
-                                value={edad}  
-                                onChangeText={text => setEdad(text)}
-                                autoCapitalize='none'
-                                editable={buttonEnabled}/>
-                            </View>
-                            <View style={styles.row}>
-                            <Text style={styles.fieldLabel}>DPI: </Text>
-                            <TextInput style={[styles.input,{color: (!buttonEnabled)? 'black':'#c9c9c9'}]}
-                                placeholder="DPI"  
-                                value={dpi} 
-                                onChangeText={text => setDPI(text)}
-                                autoCapitalize='none'
-                                editable={buttonEnabled}/>
-                            </View>
-                            <View style={styles.row}>
-                            <Text style={styles.fieldLabel}>nacimiento: </Text>
-                            <TextInput style={[styles.input,{color: (!buttonEnabled)? 'black':'#c9c9c9'}]}
-                                placeholder="Fecha de nacimiento"  
-                                value={fecha} 
-                                onChangeText={text => setFecha(text)}
-                                autoCapitalize='none'
-                                editable={buttonEnabled}/>
-                            </View>
-                            <View style={styles.row}>
-                            <Text style={styles.fieldLabel}>Fumador: </Text>
+                                </View>
+                                <View style={styles.row}>
+                                <Text style={styles.fieldLabel}>Apellido: </Text>
+                                <TextInput style={[styles.input,{color: (!buttonEnabled)? 'black':'#c9c9c9'}]}
+                                    placeholder="Apellido"  
+                                    value={apellido} 
+                                    onChangeText={text => setApellido(text)}
+                                    autoCapitalize='none'
+                                    editable={buttonEnabled}/>
+                                </View>
+                                <View style={styles.row}>
+                                <Text style={styles.fieldLabel}>Edad: </Text>
+                                <TextInput style={[styles.input,{color: (!buttonEnabled)? 'black':'#c9c9c9'}]}
+                                    placeholder="Edad"  
+                                    value={edad}  
+                                    onChangeText={text => setEdad(text)}
+                                    autoCapitalize='none'
+                                    editable={buttonEnabled}/>
+                                </View>
+                                <View style={styles.row}>
+                                <Text style={styles.fieldLabel}>DPI: </Text>
+                                <TextInput style={[styles.input,{color: (!buttonEnabled)? 'black':'#c9c9c9'}]}
+                                    placeholder="DPI"  
+                                    value={dpi} 
+                                    onChangeText={text => setDPI(text)}
+                                    autoCapitalize='none'
+                                    editable={buttonEnabled}/>
+                                </View>
+                                <View style={styles.row}>
+                                <Text style={styles.fieldLabel}>nacimiento: </Text>
+                                <TextInput style={[styles.input,{color: (!buttonEnabled)? 'black':'#c9c9c9'}]}
+                                    placeholder="Fecha de nacimiento"  
+                                    value={fecha} 
+                                    onChangeText={text => setFecha(text)}
+                                    autoCapitalize='none'
+                                    editable={buttonEnabled}/>
+                                </View>
+                                <View style={styles.row}>
+                                <Text style={styles.fieldLabel}>Fumador: </Text>
 
-                            <TextInput style={[styles.input,{color: (!buttonEnabled)? 'black':'#c9c9c9'}]}
-                                placeholder="Fumador"  
-                                value={fumador} 
-                                onChangeText={text => setFumador(text)}
-                                autoCapitalize='none'
-                                editable={buttonEnabled}/>
-                            </View>
-                            <View style={styles.row}>
-                            <Text style={styles.fieldLabel}>Medicamento: </Text>
-                            <TextInput style={[styles.input,{color: (!buttonEnabled)? 'black':'#c9c9c9'}]}
-                                placeholder="Consumes medicamento"  
-                                value={medicamento} 
-                                onChangeText={text => setMedicamento(text)}
-                                autoCapitalize='none'
-                                editable={buttonEnabled}/>
-                            </View>
-                            <View style={styles.row}>
-                            <Text style={styles.fieldLabel}>Embarazada: </Text>
-                            <TextInput style={[styles.input,{color: (!buttonEnabled)? 'black':'#c9c9c9'}]}
-                                placeholder="Embarazada"  
-                                value={embarazada}  
-                                onChangeText={text => setEmbarazada(text)}
-                                autoCapitalize='none'
-                                editable={buttonEnabled}/>
-                            </View>
+                                <TextInput style={[styles.input,{color: (!buttonEnabled)? 'black':'#c9c9c9'}]}
+                                    placeholder="Fumador"  
+                                    value={fumador} 
+                                    onChangeText={text => setFumador(text)}
+                                    autoCapitalize='none'
+                                    editable={buttonEnabled}/>
+                                </View>
+                                <View style={styles.row}>
+                                <Text style={styles.fieldLabel}>Medicamento: </Text>
+                                <TextInput style={[styles.input,{color: (!buttonEnabled)? 'black':'#c9c9c9'}]}
+                                    placeholder="Consumes medicamento"  
+                                    value={medicamento} 
+                                    onChangeText={text => setMedicamento(text)}
+                                    autoCapitalize='none'
+                                    editable={buttonEnabled}/>
+                                </View>
+                                <View style={styles.row}>
+                                <Text style={styles.fieldLabel}>Embarazada: </Text>
+                                <TextInput style={[styles.input,{color: (!buttonEnabled)? 'black':'#c9c9c9'}]}
+                                    placeholder="Embarazada"  
+                                    value={embarazada}  
+                                    onChangeText={text => setEmbarazada(text)}
+                                    autoCapitalize='none'
+                                    editable={buttonEnabled}/>
+                                </View>
 
+                                
+                            </View>
                             
-                        </View>
-                        
-                    </ScrollView>
+                        </ScrollView>
+                    </View>
+
                 </View>
 
+                <View style={styles.buttonArea}>
+                    <TouchableOpacity style={styles.shareButton} activeOpacity={0.7} onPress={() => {setButtonEnabled(!buttonEnabled); setTextoBoton((buttonEnabled)? "Editar":"Guardar");}}>
+                        <Text style={styles.shareButtonText}>{textoBoton}</Text>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity style={styles.shareButton} onPress={()=>{navigation.navigate("ShareForm", {name,lastName,age,document,birth,smoker,med,pregnant,titulo,fechaCreacion})}}>
+                        <Text style={styles.shareButtonText}>Compartir</Text>
+                    </TouchableOpacity>
+
+                </View>
+                
+
+                
+
+
+
+
             </View>
-
-            <View style={styles.buttonArea}>
-                <TouchableOpacity style={styles.shareButton} activeOpacity={0.7} onPress={() => {setButtonEnabled(!buttonEnabled); setTextoBoton((buttonEnabled)? "Editar":"Guardar");}}>
-                    <Text style={styles.shareButtonText}>{textoBoton}</Text>
-                </TouchableOpacity>
-
-                <TouchableOpacity style={styles.shareButton} onPress={()=>{navigation.navigate("ShareForm", {name,lastName,age,document,birth,smoker,med,pregnant,titulo,fechaCreacion})}}>
-                    <Text style={styles.shareButtonText}>Compartir</Text>
-                </TouchableOpacity>
-
+        );
+    }
+    else{
+        return(
+            <View style={styles.container}>
+                <Text style={styles.formatexto}>No se encontró el formulario</Text>
             </View>
-            
-
-            
-
-
-
-
-        </View>
-    );
+        );
+    }
 
 }
 const styles = StyleSheet.create({

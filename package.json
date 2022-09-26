@@ -7,16 +7,19 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "eject": "expo eject"
+    "eject": "expo eject",
+    "test": "jest"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "~1.15.0",
     "@react-navigation/native": "^6.0.8",
     "@react-navigation/native-stack": "^6.5.0",
+    "@testing-library/react-native": "^11.1.0",
     "appium": "^1.22.3",
     "appium-doctor": "^1.16.0",
+    "caniuse-lite": "^1.0.30001412",
     "crypto-js": "^4.1.1",
-    "expo": "~44.0.0",
+    "expo": "^46.0.0",
     "expo-barcode-scanner": "~11.2.0",
     "expo-camera": "~12.1.2",
     "expo-google-app-auth": "~8.3.0",
@@ -24,6 +27,8 @@
     "expo-status-bar": "~1.2.0",
     "expo-updates": "~0.11.7",
     "firebase": "^8.2.3",
+    "jest": "^26.6.3",
+    "jest-expo": "^46.0.1",
     "lottie-react-native": "5.0.1",
     "react": "17.0.1",
     "react-dom": "17.0.1",
@@ -37,7 +42,8 @@
     "wd": "^1.14.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.9"
+    "@babel/core": "^7.12.9",
+    "react-test-renderer": "^17.0.2"
   },
   "private": true
 }

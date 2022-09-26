@@ -5,13 +5,20 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { useTogglePasswordVisibility } from './hooks/useTogglePasswordVisibility';
 import {auth} from './firebase.js';
 import Home from './Home.js';
-export default function CreateProfile({navigation}){
 
-    const validate = (email) => {
-        
+const validate = (email) => {
+    if(email){
+
         let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w\w+)+$/;
         return reg.test(email);
-    }
+    }else{
+        return false;
+    }   
+}
+
+function CreateProfile({navigation}){
+
+    
 
     const handleSignUp = () => {
         auth.createUserWithEmailAndPassword(email, password).then(userCredentials => {
@@ -21,144 +28,151 @@ export default function CreateProfile({navigation}){
         }).catch(err => {alert(err.message);});
     }
 
+    if(navigation){
+
+
+        const pswUtils = useTogglePasswordVisibility();
+        const passwordVisibility = pswUtils.passwordVisibility;
+        const rightIcon = pswUtils.rightIcon;
+        const handlePasswordVisibility = pswUtils.handlePasswordVisibility;
+
+        const pswUtils2 = useTogglePasswordVisibility();
+        const passwordVisibility2 = pswUtils2.passwordVisibility;
+    
+
+        const handlePasswordVisibility2 = pswUtils2.handlePasswordVisibility;
+
+        const [password, setPassword] = useState('');
+        const [passwordC, setPasswordC] = useState('');
+        const [email,setMail] = useState('');
+
     
 
 
-    const pswUtils = useTogglePasswordVisibility();
-    const passwordVisibility = pswUtils.passwordVisibility;
-    const rightIcon = pswUtils.rightIcon;
-    const handlePasswordVisibility = pswUtils.handlePasswordVisibility;
 
-    const pswUtils2 = useTogglePasswordVisibility();
-    const passwordVisibility2 = pswUtils2.passwordVisibility;
- 
-
-    const handlePasswordVisibility2 = pswUtils2.handlePasswordVisibility;
-
-    const [password, setPassword] = useState('');
-    const [passwordC, setPasswordC] = useState('');
-    const [email,setMail] = useState('');
-
-  
-
-
-
-    return (
-        <KeyboardAvoidingView behavior="height" style={styles.container}>
-            {/**LOGO AREA */}
-            <View style={styles.logo}>
-                {/* <Image source={require('../assets/src/imgs/logoConTitulo.png')} style={styles.logoImg}/> */}
-                <Text style={styles.logoText1}>Health</Text>
-                <Text style={styles.logoText2}>Forms</Text>
-            </View>
-            {/** Area de Inputs */}
-            <View style = {styles.containerInputs}>
-                
-                <TextInput style={[styles.input,{marginTop:20}]}
-                placeholder="Correo"  
-                value={email} 
-                onChangeText={text => setMail(text)}
-                autoCapitalize='none'
-                placeholderTextColor="#fff"
-                />
-
-                {/* <TextInput style={[styles.input,{marginTop:20}]}
-                placeholder="DPI"  
-                value={DPI} 
-                onChangeText={text => setDPI(text)}
-                keyboardType='numeric'/> */}
-                
-                {/* Area del input contrasena */}
-                <View style={styles.inputContainer}>
-
-                    <TextInput
-                    style={styles.inputField}
-                    name='password'
-                    placeholder='Contraseña'
+        return (
+            <KeyboardAvoidingView behavior="height" style={styles.container}>
+                {/**LOGO AREA */}
+                <View style={styles.logo}>
+                    {/* <Image source={require('../assets/src/imgs/logoConTitulo.png')} style={styles.logoImg}/> */}
+                    <Text style={styles.logoText1}>Health</Text>
+                    <Text style={styles.logoText2}>Forms</Text>
+                </View>
+                {/** Area de Inputs */}
+                <View style = {styles.containerInputs}>
+                    
+                    <TextInput style={[styles.input,{marginTop:20}]}
+                    placeholder="Correo"  
+                    value={email} 
+                    onChangeText={text => setMail(text)}
                     autoCapitalize='none'
-                    autoCorrect={false}
-                    textContentType='newPassword'
-                    secureTextEntry={passwordVisibility}
-                    value={password}
-                    enablesReturnKeyAutomatically
-                    onChangeText={text => setPassword(text)}
                     placeholderTextColor="#fff"
                     />
 
-                    {/* Area del icono */}
-                    <Pressable onPress={handlePasswordVisibility} style={{top:0,right:20}}>
-                        <MaterialCommunityIcons name={rightIcon} size={28} color="#fff" />
-                    </Pressable>
+                    {/* <TextInput style={[styles.input,{marginTop:20}]}
+                    placeholder="DPI"  
+                    value={DPI} 
+                    onChangeText={text => setDPI(text)}
+                    keyboardType='numeric'/> */}
+                    
+                    {/* Area del input contrasena */}
+                    <View style={styles.inputContainer}>
 
+                        <TextInput
+                        style={styles.inputField}
+                        name='password'
+                        placeholder='Contraseña'
+                        autoCapitalize='none'
+                        autoCorrect={false}
+                        textContentType='newPassword'
+                        secureTextEntry={passwordVisibility}
+                        value={password}
+                        enablesReturnKeyAutomatically
+                        onChangeText={text => setPassword(text)}
+                        placeholderTextColor="#fff"
+                        />
+
+                        {/* Area del icono */}
+                        <Pressable onPress={handlePasswordVisibility} style={{top:0,right:20}}>
+                            <MaterialCommunityIcons name={rightIcon} size={28} color="#fff" />
+                        </Pressable>
+
+                    </View>
+
+                    {/* Area del input contrasena */}
+                    <View style={styles.inputContainer}>
+
+                        <TextInput
+                        style={styles.inputField}
+                        name='password'
+                        placeholder='Confirmar Contraseña'
+                        autoCapitalize='none'
+                        autoCorrect={false}
+                        textContentType='newPassword'
+                        secureTextEntry={passwordVisibility2}
+                        value={passwordC}
+                        enablesReturnKeyAutomatically
+                        onChangeText={text => setPasswordC(text)}
+                        placeholderTextColor="#fff"
+                        />
+
+                        {/* Area del icono */}
+                        <Pressable onPress={handlePasswordVisibility2} style={{top:0,right:20}}>
+                            <MaterialCommunityIcons name={rightIcon} size={28} color="#fff" />
+                        </Pressable>
+
+                    </View>
                 </View>
 
-                {/* Area del input contrasena */}
-                <View style={styles.inputContainer}>
-
-                    <TextInput
-                    style={styles.inputField}
-                    name='password'
-                    placeholder='Confirmar Contraseña'
-                    autoCapitalize='none'
-                    autoCorrect={false}
-                    textContentType='newPassword'
-                    secureTextEntry={passwordVisibility2}
-                    value={passwordC}
-                    enablesReturnKeyAutomatically
-                    onChangeText={text => setPasswordC(text)}
-                    placeholderTextColor="#fff"
-                    />
-
-                    {/* Area del icono */}
-                    <Pressable onPress={handlePasswordVisibility2} style={{top:0,right:20}}>
-                        <MaterialCommunityIcons name={rightIcon} size={28} color="#fff" />
-                    </Pressable>
-
-                </View>
-            </View>
-
- 
-                
-                {/* Iniciar Sesion */}
-                <View style={styles.buttonContainer} >
-
-                    <TouchableOpacity style={styles.logInButton} onPress={()=>{
-                        if(validate(email)){
-
-                            if(password.length>6){
-                                if(password===passwordC){
-                                    handleSignUp();
-                                 
     
+                    
+                    {/* Iniciar Sesion */}
+                    <View style={styles.buttonContainer} >
+
+                        <TouchableOpacity style={styles.logInButton} onPress={()=>{
+                            if(validate(email)){
+
+                                if(password.length>6){
+                                    if(password===passwordC){
+                                        handleSignUp();
+                                    
+        
+                                    }else{
+                                        Alert.alert("Error","Las contraseñas no coinciden")
+                                    }
+
                                 }else{
-                                    Alert.alert("Error","Las contraseñas no coinciden")
+                                    Alert.alert("Error","La contraseña debe tener más de 6 caracteres")
                                 }
-
+                                
+                                
+                                // navigation.navigate('Home');
                             }else{
-                                Alert.alert("Error","La contraseña debe tener más de 6 caracteres")
+                                Alert.alert("Error","Correo invalido");
                             }
                             
-                            
-                            // navigation.navigate('Home');
-                        }else{
-                            Alert.alert("Error","Correo invalido");
-                        }
-                        
-                        }}>
-                                <Text style={{ color:'white' }}> Crear Perfil </Text>
-                    </TouchableOpacity>
+                            }}>
+                                    <Text style={{ color:'white' }}> Crear Perfil </Text>
+                        </TouchableOpacity>
 
-                                    {/* Crear Perfil */}
-                                    <TouchableOpacity style={[styles.logInButton,{marginTop:20,backgroundColor:'#143590'}]} hitSlop={{backgroundColor:'red'}} onPress={()=>{
-                                        navigation.navigate('UserLogin');
-                                    }}>
-                                            <Text style={{color:'#fff'}}>Cancelar</Text>
-                                    </TouchableOpacity>
-                </View >
+                                        {/* Crear Perfil */}
+                                        <TouchableOpacity style={[styles.logInButton,{marginTop:20,backgroundColor:'#143590'}]} hitSlop={{backgroundColor:'red'}} onPress={()=>{
+                                            navigation.navigate('UserLogin');
+                                        }}>
+                                                <Text style={{color:'#fff'}}>Cancelar</Text>
+                                        </TouchableOpacity>
+                    </View >
+                    
                 
-            
-        </KeyboardAvoidingView>
-    );
+            </KeyboardAvoidingView>
+        );
+    }else{
+        return(
+            <View>
+                <Text>error</Text>
+            </View>
+        )
+    }
 }
 
 const styles = StyleSheet.create({
@@ -256,3 +270,5 @@ const styles = StyleSheet.create({
       
     
 })
+
+export {CreateProfile,validate}

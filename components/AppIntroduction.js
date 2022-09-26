@@ -4,49 +4,57 @@ import { StyleSheet, Text, View,SafeAreaView,Image,TextInput,TouchableOpacity,Pr
 import LottieView from 'lottie-react-native';
 
 export default function AppIntroduction({navigation}){
-    return (
-        <SafeAreaView style={styles.container}>
-            <StatusBar style='light'/>
-           <View style={styles.logo}>
-                <Text style={styles.logoText1}>Health</Text>
-                <Text style={styles.logoText2}>Forms</Text>
-            </View>
-            <LottieView
-                source={require('../assets/Lottie/clouds.json')}
-                autoPlay={true}
-                loop={true}
-                speed={0.5}
-                style={styles.nubes}
-            
-            />
-            <LottieView
-                    source={require('../assets/Lottie/doctor.json')}
+    if(navigation){
+        return (
+            <SafeAreaView style={styles.container}>
+                <StatusBar style='light'/>
+            <View style={styles.logo}>
+                    <Text style={styles.logoText1}>Health</Text>
+                    <Text style={styles.logoText2}>Forms</Text>
+                </View>
+                <LottieView
+                    source={require('../assets/Lottie/clouds.json')}
                     autoPlay={true}
                     loop={true}
-                    style={styles.animation}
+                    speed={0.5}
+                    style={styles.nubes}
+                
                 />
-            <View style={styles.textContainer}>
+                <LottieView
+                        source={require('../assets/Lottie/doctor.json')}
+                        autoPlay={true}
+                        loop={true}
+                        style={styles.animation}
+                    />
+                <View style={styles.textContainer}>
 
-                <View style={styles.mainContainer}>
-                    
-                    <View style={styles.proyectDescriptionsContainer}>
-                        <Text style={styles.proyectDescription}>
-                        Esta aplicación busca impactar a la población guatemalteca en cuanto la agilización
-                        de trámites de la salud  (llenado de formularios)
-                        </Text>
+                    <View style={styles.mainContainer}>
+                        
+                        <View style={styles.proyectDescriptionsContainer}>
+                            <Text style={styles.proyectDescription}>
+                            Esta aplicación busca impactar a la población guatemalteca en cuanto la agilización
+                            de trámites de la salud  (llenado de formularios)
+                            </Text>
+
+                        </View>
+
+                        <TouchableOpacity style={styles.logInButton} activeOpacity={0.8} onPress={() => navigation.navigate("UserLogin")}>
+                                <Text style={{color:'#fff',fontSize:15, fontWeight:'bold'}}>Iniciar</Text>
+                        </TouchableOpacity>
 
                     </View>
-
-                    <TouchableOpacity style={styles.logInButton} activeOpacity={0.8} onPress={() => navigation.navigate("UserLogin")}>
-                            <Text style={{color:'#fff',fontSize:15, fontWeight:'bold'}}>Iniciar</Text>
-                    </TouchableOpacity>
-
+                
                 </View>
-               
+                
+            </SafeAreaView>
+        );
+    }else{
+        return (
+            <View style={styles.container}>
+                <Text style={{color: '#fff'}}>No hay datos para mostrar</Text>
             </View>
-            
-        </SafeAreaView>
-    )
+        );
+    }
 }
 const styles = StyleSheet.create({
     container: {

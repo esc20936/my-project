@@ -3,120 +3,119 @@ import React,{useState,useEffect} from 'react';
 import { StyleSheet, Text, View,SafeAreaView,Image,TouchableOpacity,Platform,Alert,ScrollView} from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons'; 
-import FormView from './FormView';
+// import FormView from './FormView';
 import Camara from './Camara.js';
 import CreateProfile from './CreateProfile';
 import MedicalHistoryView from './MedicalHistoryView';
 import firebase from './firebase2.js';
 
 
-function getForms(email){
-  let lista = [];
-  
-  return lista;
-}
-
-
-
 export default function Home({navigation,route}) {
-
-  const {name,email,photoUrl} = route.params;
-  const AvatarImg = require('../assets/src/icons/avatar.png');
-  const AvatarImg2 = require('../assets/src/icons/avatar2.png');
-  const AvatarEmail = (email)? email:"Aun no se registra un correo";
-  const [listaFormularios,setListaFormularios] = useState([]);
-  const [avatar,setAvatar] = useState(true);
-  
-  useEffect(() => {
+  if(route){
+    const {name,email,photoUrl} = route.params;
+    const AvatarImg = require('../assets/src/icons/avatar.png');
+    const AvatarImg2 = require('../assets/src/icons/avatar2.png');
+    const AvatarEmail = (email)? email:"Aun no se registra un correo";
+    const [listaFormularios,setListaFormularios] = useState([]);
+    const [avatar,setAvatar] = useState(true);
     
-    firebase.db.collection(email).onSnapshot(querySnapshot => {
-      let lista = [];
-      querySnapshot.docs.forEach(doc => {
-        const {titulo,nombre,apellido,edad,dpi,birth,smoker,med,pregnant,date} = doc.data();
-        const data = {
-          name: nombre,
-          lastName: apellido,
-          age: edad,
-          document: dpi,
-          birth: birth,
-          smoker:smoker,
-          med:med,
-          pregnant: pregnant,
-        }
-        lista.push(
-          <FormView name={titulo} date={date} data={data}/>
-        );
+    useEffect(() => {
+      
+      firebase.db.collection(email).onSnapshot(querySnapshot => {
+        let lista = [];
+        querySnapshot.docs.forEach(doc => {
+          const {titulo,nombre,apellido,edad,dpi,birth,smoker,med,pregnant,date} = doc.data();
+          const data = {
+            name: nombre,
+            lastName: apellido,
+            age: edad,
+            document: dpi,
+            birth: birth,
+            smoker:smoker,
+            med:med,
+            pregnant: pregnant,
+          }
+          lista.push(
+            <FormView name={titulo} date={date} data={data}/>
+          );
+        })
+        setListaFormularios(lista);
       })
-      setListaFormularios(lista);
-    })
-  },[])
+    },[])
 
-  // useEffect(() =>{
-  //   setListaFormularios(getForms(email));
-  // },[])
+    // useEffect(() =>{
+    //   setListaFormularios(getForms(email));
+    // },[])
 
-  return (
-    <SafeAreaView style={styles.container}>
-      {/* User Info Container.*/}
-      <View style={styles.userInfoContainer}>
-        <View style={{flexDirection:'row',flex:0.9, backgroundColor:'#143590',alignItems: 'center'}}>
-          <TouchableOpacity style={styles.userImageContainer} activeOpacity={0.7} onPress={() =>{
-            setAvatar(!avatar)
-          }}>
-            <Image source={(avatar)? AvatarImg:AvatarImg2} style={styles.userImage}/>
-          </TouchableOpacity>
-          <View style={styles.userTextInfoContainer}>
-            <Text style={styles.userNameText}>{name}</Text>
-            <Text style={styles.userInfoText}>{AvatarEmail}</Text>
+    return (
+      <SafeAreaView style={styles.container}>
+        {/* User Info Container.*/}
+        <View style={styles.userInfoContainer}>
+          <View style={{flexDirection:'row',flex:0.9, backgroundColor:'#143590',alignItems: 'center'}}>
+            <TouchableOpacity style={styles.userImageContainer} activeOpacity={0.7} onPress={() =>{
+              setAvatar(!avatar)
+            }}>
+              <Image source={(avatar)? AvatarImg:AvatarImg2} style={styles.userImage}/>
+            </TouchableOpacity>
+            <View style={styles.userTextInfoContainer}>
+              <Text style={styles.userNameText}>{name}</Text>
+              <Text style={styles.userInfoText}>{AvatarEmail}</Text>
+            </View>
           </View>
-        </View>
-        <TouchableOpacity style={styles.settingsIcon} onPress={()=>{
-          navigation.navigate('EditProfile',{name,email,photoUrl});
-          
-          
-          
-          }}>
-          <Ionicons name="md-settings-sharp" size={28} color="#fff" />
-        </TouchableOpacity>
-      </View>
-
-      {/* MAIN AREA   */}
-      <View style={styles.mainAreaContainer}>
-        
-        <Text style={styles.formsTitle}>Formularios</Text>
-        {/* Form view */}
-        <View style={ styles.secondRowContainer }>
-
-        <ScrollView  horizontal={true} >
-
-          {/* <FormView name="Covid" date="02/02/2022" />
-          <FormView name="Vacuna" date="12/03/2019" />
-          <FormView name="General" date="11/04/2022" />
-          <FormView name="Extra" date="12/12/2021" /> */}
-          <MedicalHistoryView name={name} date="Historial médico" ></MedicalHistoryView>
-          {listaFormularios}
-
-        </ScrollView>
+          <TouchableOpacity style={styles.settingsIcon} onPress={()=>{
+            navigation.navigate('EditProfile',{name,email,photoUrl});
+            
+            
+            
+            }}>
+            <Ionicons name="md-settings-sharp" size={28} color="#fff" />
+          </TouchableOpacity>
         </View>
 
+        {/* MAIN AREA   */}
+        <View style={styles.mainAreaContainer}>
+          
+          <Text style={styles.formsTitle}>Formularios</Text>
+          {/* Form view */}
+          <View style={ styles.secondRowContainer }>
+
+          <ScrollView  horizontal={true} >
+
+            {/* <FormView name="Covid" date="02/02/2022" />
+            <FormView name="Vacuna" date="12/03/2019" />
+            <FormView name="General" date="11/04/2022" />
+            <FormView name="Extra" date="12/12/2021" /> */}
+            <MedicalHistoryView name={name} date="Historial médico" ></MedicalHistoryView>
+            {listaFormularios}
+
+          </ScrollView>
+          </View>
 
 
-        <TouchableOpacity style={styles.scanButton} onPress={()=>{navigation.navigate("Camara")}}>
-          <Ionicons name="md-scan" size={24} color="white" />
-          <Text style={styles.scanButtonText}>ESCANEAR</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.scanButton2} onPress={()=>{navigation.navigate("CreateForm",{name,email,photoUrl})}}>
-          <Text style={styles.scanButtonText2}>Crear Formulario</Text>
-        </TouchableOpacity>
 
-        <TouchableOpacity style={[styles.scanButton2, {marginTop:40}]} onPress={()=>{navigation.navigate("Terminos")}}>
-          <Text style={styles.scanButtonText2}>Terminos y condiciones</Text>
-        </TouchableOpacity>
+          <TouchableOpacity style={styles.scanButton} onPress={()=>{navigation.navigate("Camara")}}>
+            <Ionicons name="md-scan" size={24} color="white" />
+            <Text style={styles.scanButtonText}>ESCANEAR</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.scanButton2} onPress={()=>{navigation.navigate("CreateForm",{name,email,photoUrl})}}>
+            <Text style={styles.scanButtonText2}>Crear Formulario</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={[styles.scanButton2, {marginTop:40}]} onPress={()=>{navigation.navigate("Terminos")}}>
+            <Text style={styles.scanButtonText2}>Terminos y condiciones</Text>
+          </TouchableOpacity>
+        </View>
+
+      
+      </SafeAreaView>
+    );
+  }else{
+    return(
+      <View>
+        <Text>ERROR</Text>
       </View>
-
-     
-    </SafeAreaView>
-  );
+    )
+  }
 }
 
 const styles = StyleSheet.create({
