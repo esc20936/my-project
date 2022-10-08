@@ -5,45 +5,44 @@ import { getDatabase, ref, set } from "firebase/database";
 import firebase from './firebase.js';
 // import firebase from './firebase2.js';
 
-function saveFormInfo(navigation,email,title,name,lastName,age,document,birth,smoker,medicamento,pregnant){
+function saveFormInfo(navigation,email,title,name,lastName,age,document,birth,smoker,medicamento,pregnant,f){
     const TT = title;
 
     if(title!=='' && name!=='' && lastName!=='' && parseInt(age)!==NaN && smoker!=='' && document!=='' && Date.parse(birth)!==NaN){
         try{
-            firebase.db.collection(email).add(
+            if(f){
+                firebase.db.collection(email).add(
                 {
-                titulo: title,
-                nombre: name,
-                apellido: lastName,
-                edad: age,
-                dpi: document,
-                birth: birth,
-                smoker: smoker,
-                med: medicamento,
-                pregnant: pregnant,
-                date:new Date().toLocaleDateString()
-    })
+                    titulo: title,
+                    nombre: name,
+                    apellido: lastName,
+                    edad: age,
+                    dpi: document,
+                    birth: birth,
+                    smoker: smoker,
+                    med: medicamento,
+                    pregnant: pregnant,
+                    date:new Date().toLocaleDateString()
+                })
+
+            }
 
 
-
-    Alert.alert('Formulario','Se creo el formulario')
-    navigation.goBack();
+            return true;
+       
 
         }
         catch(err){
-            Alert.alert('Error','Algo salio mal, intentalo más tarde');
-            navigation.goBack()
+            return false;
+            
         }
        
-    }else{
-        Alert.alert("Datos invalidos","Asegurese que todos los campos estan llenos en el formato correcto")
     }
 
 
     
 }
-
-export default function CreateForm ({navigation, route}) {
+function CreateForm ({navigation, route}) {
     if(route){
         const [titulo,setTitulo] = useState('');
         const [nombre,setNombre] = useState('');
@@ -61,133 +60,7 @@ export default function CreateForm ({navigation, route}) {
         const isIOS = (Platform.OS === 'ios')? true : false;
         return(
             <View style={styles.container}>
-            {!isIOS && ( 
-                <View
-                behavior={Platform.OS === "ios" ? "padding" : "padding"}
-                style={styles.container}
-            >
-                <View style={styles.container}>
-                    
-                    <View style={styles.infoContainer}>
-                        <ScrollView style={styles.infoScroll}>
-                            <View style={styles.infoContainer2}>
-                            
-                            <View style={styles.row}>
-                                <Text>Titulo: </Text>
-                            <TextInput style={[styles.input,{color: (buttonEnabled)? 'black':'#c9c9c9'}]}
-                                    placeholder="Titulo formulario"  
-                                    value={titulo} 
-                                    onChangeText={text => setTitulo(text)}
-                                    autoCapitalize='none'
-                                    editable={buttonEnabled}/>
-                            </View>
-
-                            <View style={styles.row}>
-                            <Text>Nombre: </Text>
-                            <TextInput style={[styles.input,{color: (buttonEnabled)? 'black':'#c9c9c9'}]}
-                                placeholder="Nombre"  
-                                value={nombre} 
-                                onChangeText={text => setNombre(text)}
-                                autoCapitalize='none'
-                                editable={buttonEnabled}/>
-
-                            </View>
-                            <View style={styles.row}>
-                            <Text>Apellido: </Text>
-                                <TextInput style={[styles.input,{color: (buttonEnabled)? 'black':'#c9c9c9'}]}
-                                    placeholder="Apellido"  
-                                    value={apellido} 
-                                    onChangeText={text => setApellido(text)}
-                                    autoCapitalize='none'
-                                    editable={buttonEnabled}/>
-                            </View>
-                            <View style={styles.row}>
-                            <Text>Edad: </Text>
-                            <TextInput style={[styles.input,{color: (buttonEnabled)? 'black':'#c9c9c9'}]}
-                                placeholder="Edad"  
-                                value={edad}  
-                                onChangeText={text => setEdad(text)}
-                                autoCapitalize='none'
-                                editable={buttonEnabled}/>
-                            </View>
-    
-                            <View style={styles.row}>
-                            <Text>DPI: </Text>
-                            <TextInput style={[styles.input,{color: (buttonEnabled)? 'black':'#c9c9c9'}]}
-                                placeholder="DPI"  
-                                value={dpi} 
-                                onChangeText={text => setDPI(text)}
-                                autoCapitalize='none'
-                                editable={buttonEnabled}/>
-                            </View>
-                            <View style={styles.row}>
-                            <Text>F. nacimiento: </Text>
-                            <TextInput style={[styles.input,{color: (buttonEnabled)? 'black':'#c9c9c9'}]}
-                                placeholder="Fecha de nacimiento"  
-                                value={fecha} 
-                                onChangeText={text => setFecha(text)}
-                                autoCapitalize='none'
-                                editable={buttonEnabled}/>
-                            </View>
-                            <View style={styles.row}>
-                            <Text>Fumador: </Text>
-                                <TextInput style={[styles.input,{color: (buttonEnabled)? 'black':'#c9c9c9'}]}
-                                    placeholder="Fumador"  
-                                    value={fumador} 
-                                    onChangeText={text => setFumador(text)}
-                                    autoCapitalize='none'
-                                    editable={buttonEnabled}/>
-                            </View>
-                            <View style={styles.row}>
-                            <Text>Medicamento: </Text>
-                                <TextInput style={[styles.input,{color: (buttonEnabled)? 'black':'#c9c9c9'}]}
-                                    placeholder="Consumes medicamento"  
-                                    value={medicamento} 
-                                    onChangeText={text => setMedicamento(text)}
-                                    autoCapitalize='none'
-                                    editable={buttonEnabled}/>
-                            </View>
-                            <View style={styles.row}>
-                            <Text>Número: </Text>
-                                <TextInput style={[styles.input,{color: (buttonEnabled)? 'black':'#c9c9c9'}]}
-                                    placeholder="Embarazada"  
-                                    value={embarazada}  
-                                    onChangeText={text => setEmbarazada(text)}
-                                    autoCapitalize='none'
-                                    editable={buttonEnabled}/>
-                            </View>
-    
-                                
-                            </View>
-                            
-                        </ScrollView>
-                    </View>
-    
-                </View>
-    
-                <View style={styles.buttonArea}>
-                    {/* <TouchableOpacity style={styles.shareButton} activeOpacity={0.7} onPress={() => {setButtonEnabled(!buttonEnabled); setTextoBoton((buttonEnabled)? "Editar":"Aceptar");}}>
-                        <Text style={styles.shareButtonText}>{textoBoton}</Text>
-                    </TouchableOpacity> */}
-    
-                    <TouchableOpacity style={styles.shareButton} onPress={()=>{
-                        saveFormInfo(navigation,email,titulo,nombre,apellido,edad,dpi,fecha,fumador,medicamento,embarazada);
-                    }}>
-                        <Text style={styles.shareButtonText}>Crear</Text>
-                    </TouchableOpacity>
-    
-                </View>
-                
-    
-                
-    
-    
-    
-    
-            </View>
-        )}
-
-        {isIOS && ( 
+           
             <KeyboardAvoidingView
             behavior={Platform.OS === "ios" ? "padding" : "padding"}
             style={styles.container}
@@ -202,7 +75,6 @@ export default function CreateForm ({navigation, route}) {
                             <TextInput style={[styles.input,{color: (buttonEnabled)? 'black':'#c9c9c9'}]}
                                     placeholder="Titulo formulario"  
                                     value={titulo} 
-                                    onChangeText={text => setTitulo(text)}
                                     autoCapitalize='none'
                                     editable={buttonEnabled}/>
                             </View>
@@ -212,7 +84,6 @@ export default function CreateForm ({navigation, route}) {
                             <TextInput style={[styles.input,{color: (buttonEnabled)? 'black':'#c9c9c9'}]}
                                 placeholder="Nombre"  
                                 value={nombre} 
-                                onChangeText={text => setNombre(text)}
                                 autoCapitalize='none'
                                 editable={buttonEnabled}/>
 
@@ -222,7 +93,6 @@ export default function CreateForm ({navigation, route}) {
                                 <TextInput style={[styles.input,{color: (buttonEnabled)? 'black':'#c9c9c9'}]}
                                     placeholder="Apellido"  
                                     value={apellido} 
-                                    onChangeText={text => setApellido(text)}
                                     autoCapitalize='none'
                                     editable={buttonEnabled}/>
                             </View>
@@ -231,7 +101,6 @@ export default function CreateForm ({navigation, route}) {
                             <TextInput style={[styles.input,{color: (buttonEnabled)? 'black':'#c9c9c9'}]}
                                 placeholder="Edad"  
                                 value={edad}  
-                                onChangeText={text => setEdad(text)}
                                 autoCapitalize='none'
                                 editable={buttonEnabled}/>
                             </View>
@@ -241,7 +110,6 @@ export default function CreateForm ({navigation, route}) {
                             <TextInput style={[styles.input,{color: (buttonEnabled)? 'black':'#c9c9c9'}]}
                                 placeholder="DPI"  
                                 value={dpi} 
-                                onChangeText={text => setDPI(text)}
                                 autoCapitalize='none'
                                 editable={buttonEnabled}/>
                             </View>
@@ -250,7 +118,6 @@ export default function CreateForm ({navigation, route}) {
                             <TextInput style={[styles.input,{color: (buttonEnabled)? 'black':'#c9c9c9'}]}
                                 placeholder="Fecha de nacimiento"  
                                 value={fecha} 
-                                onChangeText={text => setFecha(text)}
                                 autoCapitalize='none'
                                 editable={buttonEnabled}/>
                             </View>
@@ -259,7 +126,6 @@ export default function CreateForm ({navigation, route}) {
                                 <TextInput style={[styles.input,{color: (buttonEnabled)? 'black':'#c9c9c9'}]}
                                     placeholder="Fumador"  
                                     value={fumador} 
-                                    onChangeText={text => setFumador(text)}
                                     autoCapitalize='none'
                                     editable={buttonEnabled}/>
                             </View>
@@ -268,7 +134,6 @@ export default function CreateForm ({navigation, route}) {
                                 <TextInput style={[styles.input,{color: (buttonEnabled)? 'black':'#c9c9c9'}]}
                                     placeholder="Consumes medicamento"  
                                     value={medicamento} 
-                                    onChangeText={text => setMedicamento(text)}
                                     autoCapitalize='none'
                                     editable={buttonEnabled}/>
                             </View>
@@ -277,7 +142,6 @@ export default function CreateForm ({navigation, route}) {
                                 <TextInput style={[styles.input,{color: (buttonEnabled)? 'black':'#c9c9c9'}]}
                                     placeholder="Embarazada"  
                                     value={embarazada}  
-                                    onChangeText={text => setEmbarazada(text)}
                                     autoCapitalize='none'
                                     editable={buttonEnabled}/>
                             </View>
@@ -294,9 +158,7 @@ export default function CreateForm ({navigation, route}) {
                         <Text style={styles.shareButtonText}>{textoBoton}</Text>
                     </TouchableOpacity> */}
 
-                    <TouchableOpacity style={styles.shareButton} onPress={()=>{
-                        saveFormInfo(navigation,email,titulo,nombre,apellido,edad,dpi,fecha,fumador,medicamento,embarazada);
-                    }}>
+                    <TouchableOpacity style={styles.shareButton} >
                         <Text style={styles.shareButtonText}>Crear</Text>
                     </TouchableOpacity>
 
@@ -309,7 +171,6 @@ export default function CreateForm ({navigation, route}) {
 
 
             </KeyboardAvoidingView>
-        )}
             
                 
                 
@@ -428,3 +289,5 @@ const styles = StyleSheet.create({
     },
 
 });
+
+export {saveFormInfo,CreateForm};

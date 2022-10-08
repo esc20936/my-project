@@ -2,7 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import EditProfile from '../components/EditProfile';
 
-describe('Pruebas en <CreateProfile />', () => {
+describe('Pruebas en <EditProfile />', () => {
     it('Renders correctly', () => {
         const name = 'Nombre';
         const email = 'Email';

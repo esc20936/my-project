@@ -2,7 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import FormInfo from '../components/FormInfo';
 
-describe('Pruebas en <CreateProfile />', () => {
+describe('Pruebas en <FormInfo />', () => {
     it('Renders correctly', () => {
         const name = 'Nombre';
         const lastName = 'Apellido';

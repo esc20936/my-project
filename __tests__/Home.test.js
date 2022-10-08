@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 import './Mocks/addEventListener.mock';
 import Home from '../components/Home';
 
-describe('Pruebas en <CreateProfile />', () => {
+describe('Pruebas en <Home />', () => {
     it('Renders correctly', () => {
         const name = 'Nombre';
         const email = 'Email';

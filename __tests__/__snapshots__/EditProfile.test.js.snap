@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Pruebas en <CreateProfile /> Renders correctly 1`] = `
+exports[`Pruebas en <EditProfile /> Renders correctly 1`] = `
 <RCTSafeAreaView
   emulateUnlessSupported={true}
   style={
@@ -357,7 +357,7 @@ exports[`Pruebas en <CreateProfile /> Renders correctly 1`] = `
 </RCTSafeAreaView>
 `;
 
-exports[`Pruebas en <CreateProfile /> Renders correctly withoutParams 1`] = `
+exports[`Pruebas en <EditProfile /> Renders correctly withoutParams 1`] = `
 <View>
   <Text>
     error

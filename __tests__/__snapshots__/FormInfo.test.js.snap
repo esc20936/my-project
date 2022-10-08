@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Pruebas en <CreateProfile /> Renders correctly 1`] = `
+exports[`Pruebas en <FormInfo /> Renders correctly 1`] = `
 <View
   style={
     Object {
@@ -523,7 +523,7 @@ exports[`Pruebas en <CreateProfile /> Renders correctly 1`] = `
 </View>
 `;
 
-exports[`Pruebas en <CreateProfile /> Renders correctly withoutParams 1`] = `
+exports[`Pruebas en <FormInfo /> Renders correctly withoutParams 1`] = `
 <View
   style={
     Object {

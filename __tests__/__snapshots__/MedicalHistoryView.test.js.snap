@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Pruebas en <HistoryDetail /> Renders correctly 1`] = `
+exports[`Pruebas en <MedicalHistoryView /> Renders correctly 1`] = `
 <View
   accessible={true}
   focusable={true}
@@ -97,7 +97,7 @@ exports[`Pruebas en <HistoryDetail /> Renders correctly 1`] = `
 </View>
 `;
 
-exports[`Pruebas en <HistoryDetail /> Renders correctly withoutParams 1`] = `
+exports[`Pruebas en <MedicalHistoryView /> Renders correctly withoutParams 1`] = `
 <View
   style={
     Object {

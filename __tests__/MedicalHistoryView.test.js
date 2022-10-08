@@ -13,7 +13,7 @@ jest.mock("@react-navigation/native", () => {
     };
 });
 
-describe('Pruebas en <HistoryDetail />', () => {
+describe('Pruebas en <MedicalHistoryView />', () => {
     it('Renders correctly', () => {
         const name = 'Nombre';
         const date = 'Fecha';

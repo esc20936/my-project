@@ -16,61 +16,61 @@ export default function UserLogin({navigation}){
         const [googleSubmitting,setGoogleSubmitting] = useState(false);
         const [mailSubmitting,setMailSubmitting] = useState(false);
         
-        const handleLogin = () => {
-            setMailSubmitting(true);
-            auth.signInWithEmailAndPassword(username.trim(), password)
-            .then(userCredentials => {
-                const user = userCredentials.user;
-                let name = username.split('.')[0];
-                name = name.split('@')[0];
-                name = name.charAt(0).toUpperCase() + name.slice(1);
-                let email = username;
-                setMailSubmitting(false);
-                navigation.navigate("Home",{email,name});
-            }).catch(err => {
-                setMailSubmitting(false);
-                alert(err.message);
+        // const handleLogin = () => {
+        //     setMailSubmitting(true);
+        //     auth.signInWithEmailAndPassword(username.trim(), password)
+        //     .then(userCredentials => {
+        //         const user = userCredentials.user;
+        //         let name = username.split('.')[0];
+        //         name = name.split('@')[0];
+        //         name = name.charAt(0).toUpperCase() + name.slice(1);
+        //         let email = username;
+        //         setMailSubmitting(false);
+        //         navigation.navigate("Home",{email,name});
+        //     }).catch(err => {
+        //         setMailSubmitting(false);
+        //         alert(err.message);
 
-            });
-        }
+        //     });
+        // }
         
 
-        const handleGoogleSigIn = () => {
+        // const handleGoogleSigIn = () => {
 
-            setGoogleSubmitting(true);
+        //     setGoogleSubmitting(true);
 
-            const config = {
-                iosClientId :'835553252178-6fhf0csikmcuit2gh0l2t589mddatrru.apps.googleusercontent.com',
-                androidClientId : '835553252178-bfkmrbdl0n0t8ue2qsia9akdf6ghtrr5.apps.googleusercontent.com',
-                scopes: ['profile','email']
-            };
+        //     const config = {
+        //         iosClientId :'835553252178-6fhf0csikmcuit2gh0l2t589mddatrru.apps.googleusercontent.com',
+        //         androidClientId : '835553252178-bfkmrbdl0n0t8ue2qsia9akdf6ghtrr5.apps.googleusercontent.com',
+        //         scopes: ['profile','email']
+        //     };
 
 
-            Google.logInAsync(config)
-            .then((result) => {
-                const {type,user} = result;
-                if(type==='success'){
-                    const {email,name,photoUrl} = user;
-                    setTimeout(() => {
+        //     Google.logInAsync(config)
+        //     .then((result) => {
+        //         const {type,user} = result;
+        //         if(type==='success'){
+        //             const {email,name,photoUrl} = user;
+        //             setTimeout(() => {
 
                         
 
-                        navigation.navigate("Home",{ email,name,photoUrl })
-                    },
-                    1000
-                    );
+        //                 navigation.navigate("Home",{ email,name,photoUrl })
+        //             },
+        //             1000
+        //             );
 
-                }else{
-                    Alert.alert("Error","Inicio de sesión cancelado");
-                }
-                setGoogleSubmitting(false);
-            })
-            .catch((error) => {
-                Alert.alert("Error",error.message);
-                setGoogleSubmitting(false);
-            })
+        //         }else{
+        //             Alert.alert("Error","Inicio de sesión cancelado");
+        //         }
+        //         setGoogleSubmitting(false);
+        //     })
+        //     .catch((error) => {
+        //         Alert.alert("Error",error.message);
+        //         setGoogleSubmitting(false);
+        //     })
 
-        }
+        // }
 
 
 
@@ -120,7 +120,7 @@ export default function UserLogin({navigation}){
                     {/* Iniciar Sesion */}
 
                     {!mailSubmitting && ( 
-                            <TouchableOpacity style={styles.logInButton} onPress={handleLogin}>
+                            <TouchableOpacity style={styles.logInButton}>
                                 <Text style={{color:'white'}}>Iniciar Sesión</Text>
                             </TouchableOpacity>
                         )}

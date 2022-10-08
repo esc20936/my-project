@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Pruebas en <HistoryDetail /> Renders correctly 1`] = `
+exports[`Pruebas en <Terminos /> Renders correctly 1`] = `
 <RCTScrollView
   style={
     Object {

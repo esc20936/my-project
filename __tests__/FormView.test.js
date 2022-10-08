@@ -13,7 +13,7 @@ jest.mock("@react-navigation/native", () => {
     };
 });
 
-describe('Pruebas en <HistoryDetail />', () => {
+describe('Pruebas en <FormView />', () => {
     it('Renders correctly', () => {
         const name = 'Nombre';
         const lastName = 'Apellido';

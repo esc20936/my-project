@@ -10,42 +10,44 @@ export default function Camara({navigation}) {
   const [text, setText] = useState("Vacio");
   // const [type, setType] = useState(Camera.Constants.Type.back);
 
-  const askForCamera = () => {
-    (async () => {
-      const {status} = await BarCodeScanner.requestPermissionsAsync();
-      setHasPermission(status=="granted");
-    })()
-  }
+  // const askForCamera = () => {
+  //   (async () => {
+  //     const {status} = await BarCodeScanner.requestPermissionsAsync();
+  //     const res = (status=="granted")
+  //     setHasPermission(res);
+  //     return res;
+  //   })()
+  // }
 
-  useEffect(() => {
-    askForCamera();
-  }, []);
+  // useEffect(() => {
+  //   askForCamera();
+  // }, []);
 
 
-  const handleBarcode = ({type, data}) => {
-    var alphabet = "abcdefghijklmnopqrstuvwxyz0123456789[]{}";
-    var decifrado = "";
-    for (var i = 0; i < data.length; i++) {
-      if(alphabet.includes(data[i].toLocaleLowerCase())){
-        let pos = alphabet.indexOf(data[i].toLocaleLowerCase());
-        decifrado += alphabet[(((pos-5)%alphabet.length) + alphabet.length) % alphabet.length]
-      }else {decifrado += data[i].toLocaleLowerCase();}
-    }
-    // console.log(decifrado)
-    setScanned(true);
-    const parsedData = JSON.parse(decifrado);
-    const name = parsedData.name;
-    const lastName = parsedData.lastname;
-    const age = parsedData.age;
-    const document = parsedData.document;
-    const birth = parsedData.birth;
-    const smoker = parsedData.smoker;
-    const med = parsedData.med;
-    const pregnant = parsedData.pregnant;
-    const titulo = parsedData.titulo;
-    const fechaCreacion = parsedData.fechacreacion;
-    navigation.navigate("UserInfoView", {name,lastName,age,document,birth,smoker,med,pregnant,titulo,fechaCreacion})
-  }
+  // const handleBarcode = ({type, data}) => {
+  //   var alphabet = "abcdefghijklmnopqrstuvwxyz0123456789[]{}";
+  //   var decifrado = "";
+  //   for (var i = 0; i < data.length; i++) {
+  //     if(alphabet.includes(data[i].toLocaleLowerCase())){
+  //       let pos = alphabet.indexOf(data[i].toLocaleLowerCase());
+  //       decifrado += alphabet[(((pos-5)%alphabet.length) + alphabet.length) % alphabet.length]
+  //     }else {decifrado += data[i].toLocaleLowerCase();}
+  //   }
+  //   // console.log(decifrado)
+  //   setScanned(true);
+  //   const parsedData = JSON.parse(decifrado);
+  //   const name = parsedData.name;
+  //   const lastName = parsedData.lastname;
+  //   const age = parsedData.age;
+  //   const document = parsedData.document;
+  //   const birth = parsedData.birth;
+  //   const smoker = parsedData.smoker;
+  //   const med = parsedData.med;
+  //   const pregnant = parsedData.pregnant;
+  //   const titulo = parsedData.titulo;
+  //   const fechaCreacion = parsedData.fechacreacion;
+  //   navigation.navigate("UserInfoView", {name,lastName,age,document,birth,smoker,med,pregnant,titulo,fechaCreacion})
+  // }
 
 
   if (hasPermission === null) {
@@ -55,16 +57,16 @@ export default function Camara({navigation}) {
       </View>
     );
   }
-  if (hasPermission === false) {
-    return (
-      <View style={styles.containerNull}>
-         <Text style={{color: 'white', fontSize:20}}>Sin acceso a la camara</Text>
-         <TouchableOpacity style={styles.scanButton} onPress={()=>{askForCamera()}}>
-          <Text style={styles.scanButtonText}>Dar acceso a la camara</Text>
-        </TouchableOpacity>
-      </View>
-    );
-  }
+  // if (hasPermission === false) {
+  //   return (
+  //     <View style={styles.containerNull}>
+  //        <Text style={{color: 'white', fontSize:20}}>Sin acceso a la camara</Text>
+  //        <TouchableOpacity style={styles.scanButton} onPress={()=>{askForCamera()}}>
+  //         <Text style={styles.scanButtonText}>Dar acceso a la camara</Text>
+  //       </TouchableOpacity>
+  //     </View>
+  //   );
+  // }
   return (
     <View style={styles.containerNull}>
       <View style={styles.BarCodeScanner}>

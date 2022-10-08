@@ -20,15 +20,8 @@ function CreateProfile({navigation}){
 
     
 
-    const handleSignUp = () => {
-        auth.createUserWithEmailAndPassword(email, password).then(userCredentials => {
-            const user = userCredentials.user;
-            let name = email.split('.')[0];
-            navigation.navigate("Home",{email,name})
-        }).catch(err => {alert(err.message);});
-    }
-
-    if(navigation){
+  
+    
 
 
         const pswUtils = useTogglePasswordVisibility();
@@ -64,7 +57,6 @@ function CreateProfile({navigation}){
                     <TextInput style={[styles.input,{marginTop:20}]}
                     placeholder="Correo"  
                     value={email} 
-                    onChangeText={text => setMail(text)}
                     autoCapitalize='none'
                     placeholderTextColor="#fff"
                     />
@@ -88,7 +80,6 @@ function CreateProfile({navigation}){
                         secureTextEntry={passwordVisibility}
                         value={password}
                         enablesReturnKeyAutomatically
-                        onChangeText={text => setPassword(text)}
                         placeholderTextColor="#fff"
                         />
 
@@ -112,7 +103,6 @@ function CreateProfile({navigation}){
                         secureTextEntry={passwordVisibility2}
                         value={passwordC}
                         enablesReturnKeyAutomatically
-                        onChangeText={text => setPasswordC(text)}
                         placeholderTextColor="#fff"
                         />
 
@@ -129,36 +119,12 @@ function CreateProfile({navigation}){
                     {/* Iniciar Sesion */}
                     <View style={styles.buttonContainer} >
 
-                        <TouchableOpacity style={styles.logInButton} onPress={()=>{
-                            if(validate(email)){
-
-                                if(password.length>6){
-                                    if(password===passwordC){
-                                        handleSignUp();
-                                    
-        
-                                    }else{
-                                        Alert.alert("Error","Las contraseñas no coinciden")
-                                    }
-
-                                }else{
-                                    Alert.alert("Error","La contraseña debe tener más de 6 caracteres")
-                                }
-                                
-                                
-                                // navigation.navigate('Home');
-                            }else{
-                                Alert.alert("Error","Correo invalido");
-                            }
-                            
-                            }}>
+                        <TouchableOpacity style={styles.logInButton} >
                                     <Text style={{ color:'white' }}> Crear Perfil </Text>
                         </TouchableOpacity>
 
                                         {/* Crear Perfil */}
-                                        <TouchableOpacity style={[styles.logInButton,{marginTop:20,backgroundColor:'#143590'}]} hitSlop={{backgroundColor:'red'}} onPress={()=>{
-                                            navigation.navigate('UserLogin');
-                                        }}>
+                                        <TouchableOpacity style={[styles.logInButton,{marginTop:20,backgroundColor:'#143590'}]} hitSlop={{backgroundColor:'red'}} >
                                                 <Text style={{color:'#fff'}}>Cancelar</Text>
                                         </TouchableOpacity>
                     </View >
@@ -166,13 +132,7 @@ function CreateProfile({navigation}){
                 
             </KeyboardAvoidingView>
         );
-    }else{
-        return(
-            <View>
-                <Text>error</Text>
-            </View>
-        )
-    }
+   
 }
 
 const styles = StyleSheet.create({
