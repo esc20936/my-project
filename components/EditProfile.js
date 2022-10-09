@@ -68,14 +68,12 @@ export default function EditProfile({ navigation, route }) {
             style={[styles.input, { marginTop: 20 }]}
             placeholder="Usuario"
             value={username}
-            onChangeText={(text) => setUsername(text)}
           />
 
           <TextInput
             style={[styles.input, { marginTop: 20 }]}
             placeholder="Email"
             value={email}
-            onChangeText={(text) => setEmail(text)}
             keyboardType={"email-address"}
           />
 
@@ -91,7 +89,6 @@ export default function EditProfile({ navigation, route }) {
               secureTextEntry={passwordVisibility}
               value={password}
               enablesReturnKeyAutomatically
-              onChangeText={(text) => setPassword(text)}
             />
 
             {/* Area del icono */}
@@ -119,7 +116,6 @@ export default function EditProfile({ navigation, route }) {
               secureTextEntry={passwordVisibility2}
               value={passwordC}
               enablesReturnKeyAutomatically
-              onChangeText={(text) => setPasswordC(text)}
             />
 
             {/* Area del icono */}
@@ -140,18 +136,8 @@ export default function EditProfile({ navigation, route }) {
         <View style={styles.buttonContainer}>
           <TouchableOpacity
             style={styles.logInButton}
-            onPress={() => {
-              if (
-                username !== "" &&
-                password === passwordC
-              ) {
-                Alert.alert("Exito", "Datos actualizados");
-                
-              } else {
-                Alert.alert("Error", "Datos invalidos");
+           
 
-              }
-            }}
           >
             <Text style={{ color: "white" }}> Guardar </Text>
           </TouchableOpacity>
@@ -163,9 +149,7 @@ export default function EditProfile({ navigation, route }) {
               { marginTop: 20, backgroundColor: "white" },
             ]}
             hitSlop={{ backgroundColor: "red" }}
-            onPress={() => {
-              navigation.navigate("Home", { email, name, photoUrl });
-            }}
+          
           >
             <Text style={{ color: "black" }}>Volver</Text>
           </TouchableOpacity>

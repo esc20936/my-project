@@ -103,7 +103,6 @@ exports[`Pruebas en <EditProfile /> Renders correctly 1`] = `
   >
     <TextInput
       allowFontScaling={true}
-      onChangeText={[Function]}
       placeholder="Usuario"
       rejectResponderTermination={true}
       style={
@@ -127,7 +126,6 @@ exports[`Pruebas en <EditProfile /> Renders correctly 1`] = `
     <TextInput
       allowFontScaling={true}
       keyboardType="email-address"
-      onChangeText={[Function]}
       placeholder="Email"
       rejectResponderTermination={true}
       style={
@@ -167,7 +165,6 @@ exports[`Pruebas en <EditProfile /> Renders correctly 1`] = `
         autoCorrect={false}
         enablesReturnKeyAutomatically={true}
         name="password"
-        onChangeText={[Function]}
         placeholder="Contraseña"
         rejectResponderTermination={true}
         secureTextEntry={true}
@@ -227,7 +224,6 @@ exports[`Pruebas en <EditProfile /> Renders correctly 1`] = `
         autoCorrect={false}
         enablesReturnKeyAutomatically={true}
         name="password"
-        onChangeText={[Function]}
         placeholder="Confirmar Contraseña"
         rejectResponderTermination={true}
         secureTextEntry={true}
@@ -281,7 +277,7 @@ exports[`Pruebas en <EditProfile /> Renders correctly 1`] = `
   >
     <View
       accessible={true}
-      focusable={true}
+      focusable={false}
       onClick={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
@@ -315,7 +311,7 @@ exports[`Pruebas en <EditProfile /> Renders correctly 1`] = `
     </View>
     <View
       accessible={true}
-      focusable={true}
+      focusable={false}
       hitSlop={
         Object {
           "backgroundColor": "red",

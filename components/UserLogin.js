@@ -89,7 +89,6 @@ export default function UserLogin({navigation}){
                     <TextInput style={styles.input}
                     placeholder="Correo"  
                     value={username} 
-                    onChangeText={text => setUsername(text)}
                     autoCapitalize='none'
                     placeholderTextColor="#fff"/>
                     
@@ -106,7 +105,6 @@ export default function UserLogin({navigation}){
                         secureTextEntry={passwordVisibility}
                         value={password}
                         enablesReturnKeyAutomatically
-                        onChangeText={text => setPassword(text)}
                         placeholderTextColor="#fff"/>
 
                         {/* Area del icono */}
@@ -134,9 +132,7 @@ export default function UserLogin({navigation}){
 
                 
 
-                    <TouchableOpacity style={[styles.logInButton,{marginTop:20,backgroundColor:'#143590'}]} onPress={()=>{
-                        navigation.navigate('CreateProfile');
-                    }}>
+                    <TouchableOpacity style={[styles.logInButton,{marginTop:20,backgroundColor:'#143590'}]}>
                             <Text style={{color:'#fff'}}>Crear perfil</Text>
                     </TouchableOpacity>
                     

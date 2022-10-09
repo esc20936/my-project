@@ -37,7 +37,7 @@ exports[`Pruebas en <Home /> Renders correctly 1`] = `
     >
       <View
         accessible={true}
-        focusable={true}
+        focusable={false}
         onClick={[Function]}
         onResponderGrant={[Function]}
         onResponderMove={[Function]}
@@ -99,7 +99,7 @@ exports[`Pruebas en <Home /> Renders correctly 1`] = `
     </View>
     <View
       accessible={true}
-      focusable={true}
+      focusable={false}
       onClick={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
@@ -186,7 +186,7 @@ exports[`Pruebas en <Home /> Renders correctly 1`] = `
     </View>
     <View
       accessible={true}
-      focusable={true}
+      focusable={false}
       onClick={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
@@ -225,7 +225,7 @@ exports[`Pruebas en <Home /> Renders correctly 1`] = `
     </View>
     <View
       accessible={true}
-      focusable={true}
+      focusable={false}
       onClick={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
@@ -264,7 +264,7 @@ exports[`Pruebas en <Home /> Renders correctly 1`] = `
     </View>
     <View
       accessible={true}
-      focusable={true}
+      focusable={false}
       onClick={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}

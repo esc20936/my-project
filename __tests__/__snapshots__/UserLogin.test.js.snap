@@ -58,7 +58,6 @@ exports[`Pruebas en <UserLogin /> Renders correctly with params 1`] = `
     <TextInput
       allowFontScaling={true}
       autoCapitalize="none"
-      onChangeText={[Function]}
       placeholder="Correo"
       placeholderTextColor="#fff"
       rejectResponderTermination={true}
@@ -94,7 +93,6 @@ exports[`Pruebas en <UserLogin /> Renders correctly with params 1`] = `
         autoCorrect={false}
         enablesReturnKeyAutomatically={true}
         name="password"
-        onChangeText={[Function]}
         placeholder="Contraseña"
         placeholderTextColor="#fff"
         rejectResponderTermination={true}
@@ -174,7 +172,7 @@ exports[`Pruebas en <UserLogin /> Renders correctly with params 1`] = `
     </View>
     <View
       accessible={true}
-      focusable={true}
+      focusable={false}
       onClick={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}

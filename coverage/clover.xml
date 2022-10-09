@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1665253945424" clover="3.2.0">
-  <project timestamp="1665253945424" name="All files">
-    <metrics statements="198" coveredstatements="161" conditionals="110" coveredconditionals="69" methods="47" coveredmethods="18" elements="355" coveredelements="248" complexity="0" loc="198" ncloc="198" packages="1" files="17" classes="17"/>
+<coverage generated="1665255211937" clover="3.2.0">
+  <project timestamp="1665255211938" name="All files">
+    <metrics statements="165" coveredstatements="160" conditionals="104" coveredconditionals="69" methods="21" coveredmethods="18" elements="290" coveredelements="247" complexity="0" loc="165" ncloc="165" packages="1" files="17" classes="17"/>
     <file name="AppIntroduction.js" path="D:\Documentos\ARCHIVOS\UVG\2022\Semestre 2\Ingeniera de Software 2\healthforms\my-project\components\AppIntroduction.js">
       <metrics statements="5" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="1"/>
       <line num="7" count="2" type="cond" truecount="2" falsecount="0"/>
@@ -67,7 +67,7 @@
       <line num="138" count="2" type="stmt"/>
     </file>
     <file name="EditProfile.js" path="D:\Documentos\ARCHIVOS\UVG\2022\Semestre 2\Ingeniera de Software 2\healthforms\my-project\components\EditProfile.js">
-      <metrics statements="26" coveredstatements="18" conditionals="10" coveredconditionals="4" methods="7" coveredmethods="1"/>
+      <metrics statements="18" coveredstatements="18" conditionals="6" coveredconditionals="4" methods="1" coveredmethods="1"/>
       <line num="20" count="2" type="cond" truecount="2" falsecount="0"/>
       <line num="21" count="1" type="stmt"/>
       <line num="23" count="1" type="cond" truecount="1" falsecount="1"/>
@@ -84,19 +84,11 @@
       <line num="40" count="1" type="stmt"/>
       <line num="41" count="1" type="stmt"/>
       <line num="43" count="1" type="stmt"/>
-      <line num="71" count="0" type="stmt"/>
-      <line num="78" count="0" type="stmt"/>
-      <line num="94" count="0" type="stmt"/>
-      <line num="122" count="0" type="stmt"/>
-      <line num="144" count="0" type="cond" truecount="0" falsecount="2"/>
-      <line num="148" count="0" type="stmt"/>
-      <line num="151" count="0" type="stmt"/>
-      <line num="167" count="0" type="stmt"/>
-      <line num="176" count="1" type="stmt"/>
-      <line num="184" count="1" type="stmt"/>
+      <line num="160" count="1" type="stmt"/>
+      <line num="168" count="1" type="stmt"/>
     </file>
     <file name="FormInfo.js" path="D:\Documentos\ARCHIVOS\UVG\2022\Semestre 2\Ingeniera de Software 2\healthforms\my-project\components\FormInfo.js">
-      <metrics statements="25" coveredstatements="15" conditionals="24" coveredconditionals="12" methods="11" coveredmethods="1"/>
+      <metrics statements="15" coveredstatements="15" conditionals="22" coveredconditionals="12" methods="1" coveredmethods="1"/>
       <line num="6" count="2" type="cond" truecount="2" falsecount="0"/>
       <line num="7" count="1" type="stmt"/>
       <line num="8" count="1" type="stmt"/>
@@ -110,18 +102,8 @@
       <line num="17" count="1" type="stmt"/>
       <line num="18" count="1" type="stmt"/>
       <line num="20" count="1" type="stmt"/>
-      <line num="37" count="0" type="stmt"/>
-      <line num="47" count="0" type="stmt"/>
-      <line num="56" count="0" type="stmt"/>
-      <line num="65" count="0" type="stmt"/>
-      <line num="74" count="0" type="stmt"/>
-      <line num="84" count="0" type="stmt"/>
-      <line num="93" count="0" type="stmt"/>
-      <line num="102" count="0" type="stmt"/>
-      <line num="116" count="0" type="cond" truecount="0" falsecount="2"/>
-      <line num="120" count="0" type="stmt"/>
-      <line num="136" count="1" type="stmt"/>
-      <line num="144" count="2" type="stmt"/>
+      <line num="128" count="1" type="stmt"/>
+      <line num="136" count="2" type="stmt"/>
     </file>
     <file name="FormView.js" path="D:\Documentos\ARCHIVOS\UVG\2022\Semestre 2\Ingeniera de Software 2\healthforms\my-project\components\FormView.js">
       <metrics statements="11" coveredstatements="10" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="1"/>
@@ -144,7 +126,7 @@
       <line num="36" count="2" type="stmt"/>
     </file>
     <file name="Home.js" path="D:\Documentos\ARCHIVOS\UVG\2022\Semestre 2\Ingeniera de Software 2\healthforms\my-project\components\Home.js">
-      <metrics statements="23" coveredstatements="12" conditionals="8" coveredconditionals="5" methods="9" coveredmethods="2"/>
+      <metrics statements="11" coveredstatements="11" conditionals="8" coveredconditionals="5" methods="2" coveredmethods="2"/>
       <line num="14" count="2" type="cond" truecount="2" falsecount="0"/>
       <line num="15" count="1" type="stmt"/>
       <line num="16" count="1" type="stmt"/>
@@ -153,21 +135,9 @@
       <line num="19" count="1" type="stmt"/>
       <line num="20" count="1" type="stmt"/>
       <line num="22" count="1" type="stmt"/>
-      <line num="24" count="1" type="stmt"/>
-      <line num="25" count="0" type="stmt"/>
-      <line num="26" count="0" type="stmt"/>
-      <line num="27" count="0" type="stmt"/>
-      <line num="28" count="0" type="stmt"/>
-      <line num="38" count="0" type="stmt"/>
-      <line num="42" count="0" type="stmt"/>
       <line num="50" count="1" type="stmt"/>
-      <line num="56" count="0" type="stmt"/>
-      <line num="66" count="0" type="stmt"/>
-      <line num="96" count="0" type="stmt"/>
-      <line num="100" count="0" type="stmt"/>
-      <line num="104" count="0" type="stmt"/>
-      <line num="113" count="1" type="stmt"/>
-      <line num="121" count="2" type="stmt"/>
+      <line num="106" count="1" type="stmt"/>
+      <line num="114" count="2" type="stmt"/>
     </file>
     <file name="MedicalHistory.js" path="D:\Documentos\ARCHIVOS\UVG\2022\Semestre 2\Ingeniera de Software 2\healthforms\my-project\components\MedicalHistory.js">
       <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
@@ -224,7 +194,7 @@
       <line num="91" count="1" type="stmt"/>
     </file>
     <file name="UserLogin.js" path="D:\Documentos\ARCHIVOS\UVG\2022\Semestre 2\Ingeniera de Software 2\healthforms\my-project\components\UserLogin.js">
-      <metrics statements="12" coveredstatements="9" conditionals="6" coveredconditionals="5" methods="4" coveredmethods="1"/>
+      <metrics statements="9" coveredstatements="9" conditionals="6" coveredconditionals="5" methods="1" coveredmethods="1"/>
       <line num="12" count="2" type="cond" truecount="2" falsecount="0"/>
       <line num="13" count="1" type="stmt"/>
       <line num="14" count="1" type="stmt"/>
@@ -232,11 +202,8 @@
       <line num="16" count="1" type="stmt"/>
       <line num="17" count="1" type="stmt"/>
       <line num="77" count="1" type="stmt"/>
-      <line num="92" count="0" type="stmt"/>
-      <line num="109" count="0" type="stmt"/>
-      <line num="138" count="0" type="stmt"/>
-      <line num="148" count="1" type="stmt"/>
-      <line num="156" count="1" type="stmt"/>
+      <line num="144" count="1" type="stmt"/>
+      <line num="152" count="1" type="stmt"/>
     </file>
     <file name="firebase.js" path="D:\Documentos\ARCHIVOS\UVG\2022\Semestre 2\Ingeniera de Software 2\healthforms\my-project\components\firebase.js">
       <metrics statements="5" coveredstatements="4" conditionals="2" coveredconditionals="1" methods="0" coveredmethods="0"/>

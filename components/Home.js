@@ -21,26 +21,26 @@ export default function Home({navigation,route}) {
     
     useEffect(() => {
       
-      firebase.db.collection(email).onSnapshot(querySnapshot => {
-        let lista = [];
-        querySnapshot.docs.forEach(doc => {
-          const {titulo,nombre,apellido,edad,dpi,birth,smoker,med,pregnant,date} = doc.data();
-          const data = {
-            name: nombre,
-            lastName: apellido,
-            age: edad,
-            document: dpi,
-            birth: birth,
-            smoker:smoker,
-            med:med,
-            pregnant: pregnant,
-          }
-          lista.push(
-            <FormView name={titulo} date={date} data={data}/>
-          );
-        })
-        setListaFormularios(lista);
-      })
+      // firebase.db.collection(email).onSnapshot(querySnapshot => {
+      //   let lista = [];
+      //   querySnapshot.docs.forEach(doc => {
+      //     const {titulo,nombre,apellido,edad,dpi,birth,smoker,med,pregnant,date} = doc.data();
+      //     const data = {
+      //       name: nombre,
+      //       lastName: apellido,
+      //       age: edad,
+      //       document: dpi,
+      //       birth: birth,
+      //       smoker:smoker,
+      //       med:med,
+      //       pregnant: pregnant,
+      //     }
+      //     lista.push(
+      //       <FormView name={titulo} date={date} data={data}/>
+      //     );
+      //   })
+      //   setListaFormularios(lista);
+      // })
     },[])
 
     // useEffect(() =>{
@@ -52,9 +52,7 @@ export default function Home({navigation,route}) {
         {/* User Info Container.*/}
         <View style={styles.userInfoContainer}>
           <View style={{flexDirection:'row',flex:0.9, backgroundColor:'#143590',alignItems: 'center'}}>
-            <TouchableOpacity style={styles.userImageContainer} activeOpacity={0.7} onPress={() =>{
-              setAvatar(!avatar)
-            }}>
+            <TouchableOpacity style={styles.userImageContainer} activeOpacity={0.7} >
               <Image source={(avatar)? AvatarImg:AvatarImg2} style={styles.userImage}/>
             </TouchableOpacity>
             <View style={styles.userTextInfoContainer}>
@@ -62,12 +60,7 @@ export default function Home({navigation,route}) {
               <Text style={styles.userInfoText}>{AvatarEmail}</Text>
             </View>
           </View>
-          <TouchableOpacity style={styles.settingsIcon} onPress={()=>{
-            navigation.navigate('EditProfile',{name,email,photoUrl});
-            
-            
-            
-            }}>
+          <TouchableOpacity style={styles.settingsIcon} >
             <Ionicons name="md-settings-sharp" size={28} color="#fff" />
           </TouchableOpacity>
         </View>
@@ -93,15 +86,15 @@ export default function Home({navigation,route}) {
 
 
 
-          <TouchableOpacity style={styles.scanButton} onPress={()=>{navigation.navigate("Camara")}}>
+          <TouchableOpacity style={styles.scanButton} >
             <Ionicons name="md-scan" size={24} color="white" />
             <Text style={styles.scanButtonText}>ESCANEAR</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.scanButton2} onPress={()=>{navigation.navigate("CreateForm",{name,email,photoUrl})}}>
+          <TouchableOpacity style={styles.scanButton2} >
             <Text style={styles.scanButtonText2}>Crear Formulario</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={[styles.scanButton2, {marginTop:40}]} onPress={()=>{navigation.navigate("Terminos")}}>
+          <TouchableOpacity style={[styles.scanButton2, {marginTop:40}]} >
             <Text style={styles.scanButtonText2}>Terminos y condiciones</Text>
           </TouchableOpacity>
         </View>

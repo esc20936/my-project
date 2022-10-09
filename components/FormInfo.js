@@ -34,7 +34,6 @@ export default function FormInfo ({navigation,route}) {
                                 <TextInput style={[styles.input,{color: (!buttonEnabled)? 'black':'#c9c9c9'}]}
                                     placeholder="Nombre"  
                                     value={nombre} 
-                                    onChangeText={text => setNombre(text)}
                                     autoCapitalize='none'
                                     editable={buttonEnabled}/>
 
@@ -44,7 +43,6 @@ export default function FormInfo ({navigation,route}) {
                                 <TextInput style={[styles.input,{color: (!buttonEnabled)? 'black':'#c9c9c9'}]}
                                     placeholder="Apellido"  
                                     value={apellido} 
-                                    onChangeText={text => setApellido(text)}
                                     autoCapitalize='none'
                                     editable={buttonEnabled}/>
                                 </View>
@@ -53,7 +51,6 @@ export default function FormInfo ({navigation,route}) {
                                 <TextInput style={[styles.input,{color: (!buttonEnabled)? 'black':'#c9c9c9'}]}
                                     placeholder="Edad"  
                                     value={edad}  
-                                    onChangeText={text => setEdad(text)}
                                     autoCapitalize='none'
                                     editable={buttonEnabled}/>
                                 </View>
@@ -62,7 +59,6 @@ export default function FormInfo ({navigation,route}) {
                                 <TextInput style={[styles.input,{color: (!buttonEnabled)? 'black':'#c9c9c9'}]}
                                     placeholder="DPI"  
                                     value={dpi} 
-                                    onChangeText={text => setDPI(text)}
                                     autoCapitalize='none'
                                     editable={buttonEnabled}/>
                                 </View>
@@ -71,7 +67,6 @@ export default function FormInfo ({navigation,route}) {
                                 <TextInput style={[styles.input,{color: (!buttonEnabled)? 'black':'#c9c9c9'}]}
                                     placeholder="Fecha de nacimiento"  
                                     value={fecha} 
-                                    onChangeText={text => setFecha(text)}
                                     autoCapitalize='none'
                                     editable={buttonEnabled}/>
                                 </View>
@@ -81,7 +76,6 @@ export default function FormInfo ({navigation,route}) {
                                 <TextInput style={[styles.input,{color: (!buttonEnabled)? 'black':'#c9c9c9'}]}
                                     placeholder="Fumador"  
                                     value={fumador} 
-                                    onChangeText={text => setFumador(text)}
                                     autoCapitalize='none'
                                     editable={buttonEnabled}/>
                                 </View>
@@ -90,7 +84,6 @@ export default function FormInfo ({navigation,route}) {
                                 <TextInput style={[styles.input,{color: (!buttonEnabled)? 'black':'#c9c9c9'}]}
                                     placeholder="Consumes medicamento"  
                                     value={medicamento} 
-                                    onChangeText={text => setMedicamento(text)}
                                     autoCapitalize='none'
                                     editable={buttonEnabled}/>
                                 </View>
@@ -99,7 +92,6 @@ export default function FormInfo ({navigation,route}) {
                                 <TextInput style={[styles.input,{color: (!buttonEnabled)? 'black':'#c9c9c9'}]}
                                     placeholder="Embarazada"  
                                     value={embarazada}  
-                                    onChangeText={text => setEmbarazada(text)}
                                     autoCapitalize='none'
                                     editable={buttonEnabled}/>
                                 </View>
@@ -113,11 +105,11 @@ export default function FormInfo ({navigation,route}) {
                 </View>
 
                 <View style={styles.buttonArea}>
-                    <TouchableOpacity style={styles.shareButton} activeOpacity={0.7} onPress={() => {setButtonEnabled(!buttonEnabled); setTextoBoton((buttonEnabled)? "Editar":"Guardar");}}>
+                    <TouchableOpacity style={styles.shareButton} activeOpacity={0.7} >
                         <Text style={styles.shareButtonText}>{textoBoton}</Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={styles.shareButton} onPress={()=>{navigation.navigate("ShareForm", {name,lastName,age,document,birth,smoker,med,pregnant,titulo,fechaCreacion})}}>
+                    <TouchableOpacity style={styles.shareButton} >
                         <Text style={styles.shareButtonText}>Compartir</Text>
                     </TouchableOpacity>
 
