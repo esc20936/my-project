@@ -93,7 +93,7 @@ export default function Home({navigation,route}) {
           <FormView name="Vacuna" date="12/03/2019" />
           <FormView name="General" date="11/04/2022" />
           <FormView name="Extra" date="12/12/2021" /> */}
-          <MedicalHistoryView name={name} date="historial medico" ></MedicalHistoryView>
+          <MedicalHistoryView email={email} name={name} date="Historial médico" ></MedicalHistoryView>
           {listaFormularios}
 
         </ScrollView>
