@@ -8,18 +8,7 @@ function saveFormInfo(navigation,email,title,name,lastName,age,document,birth,sm
     const TT = title;
 
     if(title!=='' && name!=='' && lastName!=='' && parseInt(age)!==NaN && smoker!=='' && document!=='' && Date.parse(birth)!==NaN){
-        // set(ref(db,'users/'+email),{
-        //     [TT] : {
-        //         nombre: name,
-        //         apellidos: lastName,
-        //         edad: age,
-        //         dpi: document,
-        //         birth: birth,
-        //         smoker: smoker,
-        //         med: medicamento,
-        //         pregnant: pregnant
-        //     }  
-        // });
+
         try{
             firebase.db.collection(email).add(
                 {
