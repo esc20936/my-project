@@ -223,16 +223,3 @@ const styles = StyleSheet.create({
 
 });
 
-{/*
-     section1:{
-        flex:0.80,
-        backgroundColor:"lightblue",
-        marginHorizontal: 15,
-        marginVertical: 10,
-        flexDirection:"row",
-        justifyContent:"flex-end",
-        alignItems:"center"
-      },
-
-
-*/}
