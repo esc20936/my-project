@@ -28,6 +28,8 @@ function saveFormInfo(navigation,email,title,name,lastName,age,document,birth,sm
                 apellido: lastName,
                 edad: age,
                 dpi: document,
+                sexo: sexo, 
+                sangre: sangre,
                 birth: birth,
                 smoker: smoker,
                 med: medicamento,
@@ -165,10 +167,6 @@ export default function CreateForm ({navigation, route}) {
  
              </View>
              
- 
-             
- 
- 
  
  
          </View>
