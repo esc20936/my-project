@@ -6,7 +6,6 @@ import { FontAwesome } from '@expo/vector-icons';
 import FormView from './FormView';
 import Camara from './Camara.js';
 import CreateProfile from './CreateProfile';
-import MedicalHistoryView from './MedicalHistoryView';
 import firebase from './firebase2.js';
 
 
@@ -32,12 +31,14 @@ export default function Home({navigation,route}) {
     firebase.db.collection(email).onSnapshot(querySnapshot => {
       let lista = [];
       querySnapshot.docs.forEach(doc => {
-        const {titulo,nombre,apellido,edad,dpi,birth,smoker,med,pregnant,date} = doc.data();
+        const {titulo,nombre,apellido,edad,dpi,genero, sangre, birth,smoker,med,pregnant,date} = doc.data();
         const data = {
           name: nombre,
           lastName: apellido,
           age: edad,
           document: dpi,
+          gender: genero,
+          blood: sangre,
           birth: birth,
           smoker:smoker,
           med:med,
@@ -82,8 +83,13 @@ export default function Home({navigation,route}) {
 
       {/* MAIN AREA   */}
       <View style={styles.mainAreaContainer}>
-        
-        <Text style={styles.formsTitle}>Formularios</Text>
+        <View style={styles.firstRowContainer}>
+          <TouchableOpacity style={styles.searchIconContainer}>
+            <FontAwesome name="search" size={28} color="#fff" />
+          </TouchableOpacity>
+          <Text style={styles.formsTitle}>Formularios</Text>
+        </View>
+
         {/* Form view */}
         <View style={ styles.secondRowContainer }>
 
@@ -93,7 +99,6 @@ export default function Home({navigation,route}) {
           <FormView name="Vacuna" date="12/03/2019" />
           <FormView name="General" date="11/04/2022" />
           <FormView name="Extra" date="12/12/2021" /> */}
-          <MedicalHistoryView email={email} name={name} date="Historial médico" ></MedicalHistoryView>
           {listaFormularios}
 
         </ScrollView>
@@ -107,10 +112,6 @@ export default function Home({navigation,route}) {
         </TouchableOpacity>
         <TouchableOpacity style={styles.scanButton2} onPress={()=>{navigation.navigate("CreateForm",{name,email,photoUrl})}}>
           <Text style={styles.scanButtonText2}>Crear Formulario</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={[styles.scanButton2, {marginTop:40}]} onPress={()=>{navigation.navigate("Terminos")}}>
-          <Text style={styles.scanButtonText2}>Terminos y condiciones</Text>
         </TouchableOpacity>
       </View>
 
