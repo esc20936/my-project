@@ -62,6 +62,8 @@ export default function CreateForm ({navigation, route}) {
     const [apellido,setApellido] = useState('');
     const [edad,setEdad] = useState('');
     const [dpi,setDPI] = useState('');
+    const [sexo, setSexo]= useState('');
+    const [sangre, setSangre]= useState('');
     const [fecha,setFecha] = useState('');
     const [fumador,setFumador] = useState('');
     const [medicamento,setMedicamento] = useState('');
@@ -115,6 +117,20 @@ export default function CreateForm ({navigation, route}) {
                                  placeholder="DPI"  
                                  value={dpi} 
                                  onChangeText={text => setDPI(text)}
+                                 autoCapitalize='none'
+                                 editable={buttonEnabled}/>
+
+                            <TextInput style={[styles.input,{color: (buttonEnabled)? 'black':'#c9c9c9'}]}
+                                 placeholder="Sexo"  
+                                 value={sexo} 
+                                 onChangeText={text => setSexo(text)}
+                                 autoCapitalize='none'
+                                 editable={buttonEnabled}/>
+
+                            <TextInput style={[styles.input,{color: (buttonEnabled)? 'black':'#c9c9c9'}]}
+                                 placeholder="Sangre"  
+                                 value={sangre} 
+                                 onChangeText={text => setSangre(text)}
                                  autoCapitalize='none'
                                  editable={buttonEnabled}/>
  
@@ -216,6 +232,20 @@ export default function CreateForm ({navigation, route}) {
                                 onChangeText={text => setDPI(text)}
                                 autoCapitalize='none'
                                 editable={buttonEnabled}/>
+                            
+                            <TextInput style={[styles.input,{color: (buttonEnabled)? 'black':'#c9c9c9'}]}
+                                placeholder="Sexo"  
+                                value={sexo} 
+                                onChangeText={text => setSexo(text)}
+                                autoCapitalize='none'
+                                editable={buttonEnabled}/>
+
+                            <TextInput style={[styles.input,{color: (buttonEnabled)? 'black':'#c9c9c9'}]}
+                                placeholder="Sangre"  
+                                value={sangre} 
+                                onChangeText={text => setSangre(text)}
+                                autoCapitalize='none'
+                                editable={buttonEnabled}/>    
 
                             <TextInput style={[styles.input,{color: (buttonEnabled)? 'black':'#c9c9c9'}]}
                                 placeholder="Fecha de nacimiento"  
