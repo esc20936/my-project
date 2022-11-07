@@ -43,5 +43,10 @@ describe('Pruebas en <CreateProfile />', () => {
         const result = validate(email);
         expect(result).toBe(false);
     });
+    it('validate nonexistent Email', ()=> {
+        const email = 'ajajajajaja';
+        const result = validate(email);
+        expect(result).toBe(false);
+    });
 
 });
