@@ -7,9 +7,9 @@ import { useNavigation } from '@react-navigation/native';
 const fondo = require('../assets/src/icons/fondo.png');
 const FormView = (props) =>{
     const navigation = useNavigation();
-    const {name,lastName,age,document,birth,smoker,med,pregnant} = props.data;
+    const {name,lastName,age,document,gender,blood,birth,smoker,med,pregnant} = props.data;
     return (
-        <TouchableOpacity activeOpacity={0.7} style={styles.formContainer} onPress={()=>{navigation.navigate("FormInfo",{name,lastName,age,document,birth,smoker,med,pregnant})}}>
+        <TouchableOpacity activeOpacity={0.7} style={styles.formContainer} onPress={()=>{navigation.navigate("FormInfo",{name,lastName,age,document,gender,blood, birth,smoker,med,pregnant})}}>
             <ImageBackground source={fondo} resizeMode="cover" style={{height:190,width:250}}>
             <LinearGradient
                 // Button Linear Gradient

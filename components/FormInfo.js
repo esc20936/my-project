@@ -3,11 +3,13 @@ import React,{useState} from 'react';
 import { KeyboardAvoidingView,StyleSheet, Text,TextInput, View,SafeAreaView,Image,TouchableOpacity,Platform,ScrollView } from 'react-native';
 
 export default function FormInfo ({navigation,route}) {
-    const {name,lastName,age,document,birth,smoker,med,pregnant} = route.params;
+    const {name,lastName,age,document,gender,blood,birth,smoker,med,pregnant} = route.params;
     const [nombre,setNombre] = useState(name);
     const [apellido,setApellido] = useState(lastName);
     const [edad,setEdad] = useState(age);
     const [dpi,setDPI] = useState(document);
+    const [genero, setGenero]= useState(gender);
+    const [sangre, setSangre]= useState(blood);
     const [fecha,setFecha] = useState(birth);
     const [fumador,setFumador] = useState(smoker);
     const [medicamento,setMedicamento] = useState((med==='')? "medicado (vacio)":med);
@@ -53,6 +55,20 @@ export default function FormInfo ({navigation,route}) {
                                 onChangeText={text => setDPI(text)}
                                 autoCapitalize='none'
                                 editable={buttonEnabled}/>
+
+                            <TextInput style={[styles.input,{color: (!buttonEnabled)? 'black':'#c9c9c9'}]}
+                                placeholder="Genero"  
+                                value={genero} 
+                                onChangeText={text => setGenero(text)}
+                                autoCapitalize='none'
+                                editable={buttonEnabled}/>
+
+                            <TextInput style={[styles.input,{color: (!buttonEnabled)? 'black':'#c9c9c9'}]}
+                                placeholder="Sangre"  
+                                value={sangre} 
+                                onChangeText={text => setSangre(text)}
+                                autoCapitalize='none'
+                                editable={buttonEnabled}/>    
 
                             <TextInput style={[styles.input,{color: (!buttonEnabled)? 'black':'#c9c9c9'}]}
                                 placeholder="Fecha de nacimiento"  

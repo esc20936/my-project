@@ -31,12 +31,14 @@ export default function Home({navigation,route}) {
     firebase.db.collection(email).onSnapshot(querySnapshot => {
       let lista = [];
       querySnapshot.docs.forEach(doc => {
-        const {titulo,nombre,apellido,edad,dpi,birth,smoker,med,pregnant,date} = doc.data();
+        const {titulo,nombre,apellido,edad,dpi,genero, sangre, birth,smoker,med,pregnant,date} = doc.data();
         const data = {
           name: nombre,
           lastName: apellido,
           age: edad,
           document: dpi,
+          gender: genero,
+          blood: sangre,
           birth: birth,
           smoker:smoker,
           med:med,
