@@ -17,7 +17,16 @@ jest.mock("@react-navigation/native", () => {
 
 describe('Pruebas en <CreateProfile />', () => {
     it('Renders correctly', () => {
+        const title = 'Title';
         const name = 'Nombre';
+        const lastname = 'Apellido';
+        const edad = 'Age';
+        const dpi = 'Document';
+        const sexo = 'Sexo';
+        const birth = 'Birth';
+        const smoker = 'Smoker';
+        const med = 'medicamento';
+        const pregnant = 'Pregnant';
         const email = 'Email';
         const photoUrl = 'Photo';
         const route = { params: {name,email,photoUrl}};
