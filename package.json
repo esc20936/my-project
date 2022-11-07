@@ -15,6 +15,7 @@
     "appium": "^1.22.3",
     "appium-doctor": "^1.16.0",
     "crypto-js": "^4.1.1",
+    "enzyme": "^3.11.0",
     "expo": "~44.0.0",
     "expo-barcode-scanner": "~11.2.0",
     "expo-camera": "~12.1.2",
