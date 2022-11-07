@@ -1,4 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
+
 import React,{useState} from 'react';
 import { NavigationContainer , StackActions, NavigationActions } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -16,6 +17,7 @@ import CreateForm from "./components/CreateForm.js";
 import Terminos from "./components/Terminos.js";
 import UserInfoView from "./components/UserInfoView.js";
 import MedicalHistory from "./components/MedicalHistory.js";
+import CreateEvent from "./components/CreateEvent.js";
 const Stack = createNativeStackNavigator();
 
 function App() {
@@ -59,6 +61,7 @@ function App() {
         <Stack.Screen name="Terminos"  component={Terminos} options={{ headerShown: true, title:'Términos y condiciones', headerStyle:{ backgroundColor:"#143590"}, headerTitleStyle:{color:"#fff"}, headerTintColor:'#fff' }}/>
         <Stack.Screen name="UserInfoView"  component={UserInfoView} options={{ headerShown: true, title:'Información medica', headerStyle:{ backgroundColor:"#143590"}, headerTitleStyle:{color:"#fff"}, headerTintColor:'#fff' }}/>
         <Stack.Screen name="MedicalHistory" component={MedicalHistory} options={{ headerShown: true, title:'Historial medico', headerStyle:{ backgroundColor:"#143590"}, headerTitleStyle:{color:"#fff"}, headerTintColor:'#fff' }}/>
+        <Stack.Screen name="CreateEvent" component={CreateEvent} options={{ headerShown: true, title:'Crear evento', headerStyle:{ backgroundColor:"#143590"}, headerTitleStyle:{color:"#fff"}, headerTintColor:'#fff' }}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
