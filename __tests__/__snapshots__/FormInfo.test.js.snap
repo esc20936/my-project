@@ -1,0 +1,546 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas en <FormInfo /> Renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "alignContent": "center",
+      "backgroundColor": "#f5f5f5",
+      "flex": 1,
+      "flexDirection": "column",
+      "justifyContent": "flex-start",
+      "margin": 10,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignContent": "center",
+        "backgroundColor": "#f5f5f5",
+        "flex": 1,
+        "flexDirection": "column",
+        "justifyContent": "flex-start",
+        "margin": 10,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flex": 1,
+          "width": "100%",
+        }
+      }
+    >
+      <RCTScrollView
+        style={
+          Object {
+            "backgroundColor": "#fefefe",
+            "flex": 1,
+          }
+        }
+      >
+        <View>
+          <View
+            style={
+              Object {
+                "flex": 1,
+                "justifyContent": "center",
+                "width": "100%",
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "baseline",
+                  "flexDirection": "row",
+                  "justifyContent": "space-evenly",
+                  "marginBottom": 12,
+                  "marginTop": 12,
+                  "paddingHorizontal": 10,
+                }
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "marginBottom": 10,
+                  }
+                }
+              >
+                Nombre:
+              </Text>
+              <TextInput
+                allowFontScaling={true}
+                autoCapitalize="none"
+                editable={true}
+                placeholder="Nombre"
+                rejectResponderTermination={true}
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "#fff",
+                      "borderBottomColor": "#143590",
+                      "borderBottomWidth": 1,
+                      "height": 40,
+                      "marginLeft": 5,
+                      "marginTop": 10,
+                      "width": "50%",
+                    },
+                    Object {
+                      "color": "#c9c9c9",
+                    },
+                  ]
+                }
+                underlineColorAndroid="transparent"
+                value="Nombre"
+              />
+            </View>
+            <View
+              style={
+                Object {
+                  "alignItems": "baseline",
+                  "flexDirection": "row",
+                  "justifyContent": "space-evenly",
+                  "marginBottom": 12,
+                  "marginTop": 12,
+                  "paddingHorizontal": 10,
+                }
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "marginBottom": 10,
+                  }
+                }
+              >
+                Apellido: 
+              </Text>
+              <TextInput
+                allowFontScaling={true}
+                autoCapitalize="none"
+                editable={true}
+                placeholder="Apellido"
+                rejectResponderTermination={true}
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "#fff",
+                      "borderBottomColor": "#143590",
+                      "borderBottomWidth": 1,
+                      "height": 40,
+                      "marginLeft": 5,
+                      "marginTop": 10,
+                      "width": "50%",
+                    },
+                    Object {
+                      "color": "#c9c9c9",
+                    },
+                  ]
+                }
+                underlineColorAndroid="transparent"
+                value="Apellido"
+              />
+            </View>
+            <View
+              style={
+                Object {
+                  "alignItems": "baseline",
+                  "flexDirection": "row",
+                  "justifyContent": "space-evenly",
+                  "marginBottom": 12,
+                  "marginTop": 12,
+                  "paddingHorizontal": 10,
+                }
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "marginBottom": 10,
+                  }
+                }
+              >
+                Edad: 
+              </Text>
+              <TextInput
+                allowFontScaling={true}
+                autoCapitalize="none"
+                editable={true}
+                placeholder="Edad"
+                rejectResponderTermination={true}
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "#fff",
+                      "borderBottomColor": "#143590",
+                      "borderBottomWidth": 1,
+                      "height": 40,
+                      "marginLeft": 5,
+                      "marginTop": 10,
+                      "width": "50%",
+                    },
+                    Object {
+                      "color": "#c9c9c9",
+                    },
+                  ]
+                }
+                underlineColorAndroid="transparent"
+                value="Edad"
+              />
+            </View>
+            <View
+              style={
+                Object {
+                  "alignItems": "baseline",
+                  "flexDirection": "row",
+                  "justifyContent": "space-evenly",
+                  "marginBottom": 12,
+                  "marginTop": 12,
+                  "paddingHorizontal": 10,
+                }
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "marginBottom": 10,
+                  }
+                }
+              >
+                DPI: 
+              </Text>
+              <TextInput
+                allowFontScaling={true}
+                autoCapitalize="none"
+                editable={true}
+                placeholder="DPI"
+                rejectResponderTermination={true}
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "#fff",
+                      "borderBottomColor": "#143590",
+                      "borderBottomWidth": 1,
+                      "height": 40,
+                      "marginLeft": 5,
+                      "marginTop": 10,
+                      "width": "50%",
+                    },
+                    Object {
+                      "color": "#c9c9c9",
+                    },
+                  ]
+                }
+                underlineColorAndroid="transparent"
+                value="DPI"
+              />
+            </View>
+            <View
+              style={
+                Object {
+                  "alignItems": "baseline",
+                  "flexDirection": "row",
+                  "justifyContent": "space-evenly",
+                  "marginBottom": 12,
+                  "marginTop": 12,
+                  "paddingHorizontal": 10,
+                }
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "marginBottom": 10,
+                  }
+                }
+              >
+                nacimiento: 
+              </Text>
+              <TextInput
+                allowFontScaling={true}
+                autoCapitalize="none"
+                editable={true}
+                placeholder="Fecha de nacimiento"
+                rejectResponderTermination={true}
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "#fff",
+                      "borderBottomColor": "#143590",
+                      "borderBottomWidth": 1,
+                      "height": 40,
+                      "marginLeft": 5,
+                      "marginTop": 10,
+                      "width": "50%",
+                    },
+                    Object {
+                      "color": "#c9c9c9",
+                    },
+                  ]
+                }
+                underlineColorAndroid="transparent"
+                value="Fecha de nacimiento"
+              />
+            </View>
+            <View
+              style={
+                Object {
+                  "alignItems": "baseline",
+                  "flexDirection": "row",
+                  "justifyContent": "space-evenly",
+                  "marginBottom": 12,
+                  "marginTop": 12,
+                  "paddingHorizontal": 10,
+                }
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "marginBottom": 10,
+                  }
+                }
+              >
+                Fumador: 
+              </Text>
+              <TextInput
+                allowFontScaling={true}
+                autoCapitalize="none"
+                editable={true}
+                placeholder="Fumador"
+                rejectResponderTermination={true}
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "#fff",
+                      "borderBottomColor": "#143590",
+                      "borderBottomWidth": 1,
+                      "height": 40,
+                      "marginLeft": 5,
+                      "marginTop": 10,
+                      "width": "50%",
+                    },
+                    Object {
+                      "color": "#c9c9c9",
+                    },
+                  ]
+                }
+                underlineColorAndroid="transparent"
+                value="Fumador"
+              />
+            </View>
+            <View
+              style={
+                Object {
+                  "alignItems": "baseline",
+                  "flexDirection": "row",
+                  "justifyContent": "space-evenly",
+                  "marginBottom": 12,
+                  "marginTop": 12,
+                  "paddingHorizontal": 10,
+                }
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "marginBottom": 10,
+                  }
+                }
+              >
+                Medicamento: 
+              </Text>
+              <TextInput
+                allowFontScaling={true}
+                autoCapitalize="none"
+                editable={true}
+                placeholder="Consumes medicamento"
+                rejectResponderTermination={true}
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "#fff",
+                      "borderBottomColor": "#143590",
+                      "borderBottomWidth": 1,
+                      "height": 40,
+                      "marginLeft": 5,
+                      "marginTop": 10,
+                      "width": "50%",
+                    },
+                    Object {
+                      "color": "#c9c9c9",
+                    },
+                  ]
+                }
+                underlineColorAndroid="transparent"
+                value="Consumes medicamento"
+              />
+            </View>
+            <View
+              style={
+                Object {
+                  "alignItems": "baseline",
+                  "flexDirection": "row",
+                  "justifyContent": "space-evenly",
+                  "marginBottom": 12,
+                  "marginTop": 12,
+                  "paddingHorizontal": 10,
+                }
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "marginBottom": 10,
+                  }
+                }
+              >
+                Embarazada: 
+              </Text>
+              <TextInput
+                allowFontScaling={true}
+                autoCapitalize="none"
+                editable={true}
+                placeholder="Embarazada"
+                rejectResponderTermination={true}
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "#fff",
+                      "borderBottomColor": "#143590",
+                      "borderBottomWidth": 1,
+                      "height": 40,
+                      "marginLeft": 5,
+                      "marginTop": 10,
+                      "width": "50%",
+                    },
+                    Object {
+                      "color": "#c9c9c9",
+                    },
+                  ]
+                }
+                underlineColorAndroid="transparent"
+                value="Embarazada"
+              />
+            </View>
+          </View>
+        </View>
+      </RCTScrollView>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "justifyContent": "center",
+      }
+    }
+  >
+    <View
+      accessible={true}
+      focusable={false}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "alignSelf": "center",
+          "backgroundColor": "#143590",
+          "borderRadius": 15,
+          "height": 50,
+          "justifyContent": "center",
+          "margin": 20,
+          "marginTop": 20,
+          "opacity": 1,
+          "width": "30%",
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "white",
+          }
+        }
+      >
+        Editar
+      </Text>
+    </View>
+    <View
+      accessible={true}
+      focusable={false}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "alignSelf": "center",
+          "backgroundColor": "#143590",
+          "borderRadius": 15,
+          "height": 50,
+          "justifyContent": "center",
+          "margin": 20,
+          "marginTop": 20,
+          "opacity": 1,
+          "width": "30%",
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "white",
+          }
+        }
+      >
+        Compartir
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Pruebas en <FormInfo /> Renders correctly withoutParams 1`] = `
+<View
+  style={
+    Object {
+      "alignContent": "center",
+      "backgroundColor": "#f5f5f5",
+      "flex": 1,
+      "flexDirection": "column",
+      "justifyContent": "flex-start",
+      "margin": 10,
+    }
+  }
+>
+  <Text
+    style={
+      Object {
+        "color": "#FFFF",
+        "flex": 1,
+        "fontSize": 25,
+        "fontStyle": "normal",
+        "fontWeight": "bold",
+        "textAlign": "center",
+      }
+    }
+  >
+    No se encontró el formulario
+  </Text>
+</View>
+`;

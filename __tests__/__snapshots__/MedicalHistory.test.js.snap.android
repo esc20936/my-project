@@ -1,0 +1,958 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas en <HistoryDetail /> Renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#f5f5f5",
+      "flex": 1,
+      "justifyContent": "center",
+      "width": "100%",
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#fff",
+        "height": "95%",
+        "width": "90%",
+      }
+    }
+  >
+    <RCTScrollView>
+      <View>
+        <View
+          accessible={true}
+          focusable={false}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "backgroundColor": "#fff",
+              "borderBottomColor": "#d7d6d6",
+              "borderBottomWidth": 2,
+              "height": 100,
+              "opacity": 1,
+              "padding": 10,
+              "width": "100%",
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "flexDirection": "row",
+                "height": "auto",
+                "marginTop": 5,
+                "overflow": "hidden",
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#616161",
+                }
+              }
+            >
+              Titulo:
+            </Text>
+            <Text
+              style={
+                Object {
+                  "marginLeft": 10,
+                }
+              }
+            >
+              Operación Cabeza
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "flexDirection": "row",
+                "height": "auto",
+                "marginTop": 5,
+                "overflow": "hidden",
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#616161",
+                }
+              }
+            >
+              Fecha:
+            </Text>
+            <Text
+              style={
+                Object {
+                  "marginLeft": 10,
+                }
+              }
+            >
+              02/01/2019
+            </Text>
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "flexDirection": "row",
+                  "height": "auto",
+                  "marginTop": 5,
+                  "overflow": "hidden",
+                },
+                Object {
+                  "marginTop": "auto",
+                  "position": "relative",
+                },
+              ]
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#616161",
+                }
+              }
+            >
+              Descripción:
+            </Text>
+            <Text
+              style={
+                Object {
+                  "marginLeft": 10,
+                }
+              }
+            >
+              lorem ipsum dolor sit amet,...
+            </Text>
+          </View>
+        </View>
+        <View
+          accessible={true}
+          focusable={false}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "backgroundColor": "#fff",
+              "borderBottomColor": "#d7d6d6",
+              "borderBottomWidth": 2,
+              "height": 100,
+              "opacity": 1,
+              "padding": 10,
+              "width": "100%",
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "flexDirection": "row",
+                "height": "auto",
+                "marginTop": 5,
+                "overflow": "hidden",
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#616161",
+                }
+              }
+            >
+              Titulo:
+            </Text>
+            <Text
+              style={
+                Object {
+                  "marginLeft": 10,
+                }
+              }
+            >
+              Golpe espalda
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "flexDirection": "row",
+                "height": "auto",
+                "marginTop": 5,
+                "overflow": "hidden",
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#616161",
+                }
+              }
+            >
+              Fecha:
+            </Text>
+            <Text
+              style={
+                Object {
+                  "marginLeft": 10,
+                }
+              }
+            >
+              20/06/2019
+            </Text>
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "flexDirection": "row",
+                  "height": "auto",
+                  "marginTop": 5,
+                  "overflow": "hidden",
+                },
+                Object {
+                  "marginTop": "auto",
+                  "position": "relative",
+                },
+              ]
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#616161",
+                }
+              }
+            >
+              Descripción:
+            </Text>
+            <Text
+              style={
+                Object {
+                  "marginLeft": 10,
+                }
+              }
+            >
+              lorem ipsum dolor sit amet,...
+            </Text>
+          </View>
+        </View>
+        <View
+          accessible={true}
+          focusable={false}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "backgroundColor": "#fff",
+              "borderBottomColor": "#d7d6d6",
+              "borderBottomWidth": 2,
+              "height": 100,
+              "opacity": 1,
+              "padding": 10,
+              "width": "100%",
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "flexDirection": "row",
+                "height": "auto",
+                "marginTop": 5,
+                "overflow": "hidden",
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#616161",
+                }
+              }
+            >
+              Titulo:
+            </Text>
+            <Text
+              style={
+                Object {
+                  "marginLeft": 10,
+                }
+              }
+            >
+              Operación Amigdalas
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "flexDirection": "row",
+                "height": "auto",
+                "marginTop": 5,
+                "overflow": "hidden",
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#616161",
+                }
+              }
+            >
+              Fecha:
+            </Text>
+            <Text
+              style={
+                Object {
+                  "marginLeft": 10,
+                }
+              }
+            >
+              02/07/2020
+            </Text>
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "flexDirection": "row",
+                  "height": "auto",
+                  "marginTop": 5,
+                  "overflow": "hidden",
+                },
+                Object {
+                  "marginTop": "auto",
+                  "position": "relative",
+                },
+              ]
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#616161",
+                }
+              }
+            >
+              Descripción:
+            </Text>
+            <Text
+              style={
+                Object {
+                  "marginLeft": 10,
+                }
+              }
+            >
+              lorem ipsum dolor sit amet,...
+            </Text>
+          </View>
+        </View>
+        <View
+          accessible={true}
+          focusable={false}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "backgroundColor": "#fff",
+              "borderBottomColor": "#d7d6d6",
+              "borderBottomWidth": 2,
+              "height": 100,
+              "opacity": 1,
+              "padding": 10,
+              "width": "100%",
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "flexDirection": "row",
+                "height": "auto",
+                "marginTop": 5,
+                "overflow": "hidden",
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#616161",
+                }
+              }
+            >
+              Titulo:
+            </Text>
+            <Text
+              style={
+                Object {
+                  "marginLeft": 10,
+                }
+              }
+            >
+              Operación pierna
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "flexDirection": "row",
+                "height": "auto",
+                "marginTop": 5,
+                "overflow": "hidden",
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#616161",
+                }
+              }
+            >
+              Fecha:
+            </Text>
+            <Text
+              style={
+                Object {
+                  "marginLeft": 10,
+                }
+              }
+            >
+              02/01/2017
+            </Text>
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "flexDirection": "row",
+                  "height": "auto",
+                  "marginTop": 5,
+                  "overflow": "hidden",
+                },
+                Object {
+                  "marginTop": "auto",
+                  "position": "relative",
+                },
+              ]
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#616161",
+                }
+              }
+            >
+              Descripción:
+            </Text>
+            <Text
+              style={
+                Object {
+                  "marginLeft": 10,
+                }
+              }
+            >
+              lorem ipsum dolor sit amet,...
+            </Text>
+          </View>
+        </View>
+        <View
+          accessible={true}
+          focusable={false}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "backgroundColor": "#fff",
+              "borderBottomColor": "#d7d6d6",
+              "borderBottomWidth": 2,
+              "height": 100,
+              "opacity": 1,
+              "padding": 10,
+              "width": "100%",
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "flexDirection": "row",
+                "height": "auto",
+                "marginTop": 5,
+                "overflow": "hidden",
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#616161",
+                }
+              }
+            >
+              Titulo:
+            </Text>
+            <Text
+              style={
+                Object {
+                  "marginLeft": 10,
+                }
+              }
+            >
+              Operación Cabeza
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "flexDirection": "row",
+                "height": "auto",
+                "marginTop": 5,
+                "overflow": "hidden",
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#616161",
+                }
+              }
+            >
+              Fecha:
+            </Text>
+            <Text
+              style={
+                Object {
+                  "marginLeft": 10,
+                }
+              }
+            >
+              02/01/2019
+            </Text>
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "flexDirection": "row",
+                  "height": "auto",
+                  "marginTop": 5,
+                  "overflow": "hidden",
+                },
+                Object {
+                  "marginTop": "auto",
+                  "position": "relative",
+                },
+              ]
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#616161",
+                }
+              }
+            >
+              Descripción:
+            </Text>
+            <Text
+              style={
+                Object {
+                  "marginLeft": 10,
+                }
+              }
+            >
+              lorem ipsum dolor sit amet,...
+            </Text>
+          </View>
+        </View>
+        <View
+          accessible={true}
+          focusable={false}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "backgroundColor": "#fff",
+              "borderBottomColor": "#d7d6d6",
+              "borderBottomWidth": 2,
+              "height": 100,
+              "opacity": 1,
+              "padding": 10,
+              "width": "100%",
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "flexDirection": "row",
+                "height": "auto",
+                "marginTop": 5,
+                "overflow": "hidden",
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#616161",
+                }
+              }
+            >
+              Titulo:
+            </Text>
+            <Text
+              style={
+                Object {
+                  "marginLeft": 10,
+                }
+              }
+            >
+              Golpe espalda
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "flexDirection": "row",
+                "height": "auto",
+                "marginTop": 5,
+                "overflow": "hidden",
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#616161",
+                }
+              }
+            >
+              Fecha:
+            </Text>
+            <Text
+              style={
+                Object {
+                  "marginLeft": 10,
+                }
+              }
+            >
+              20/06/2019
+            </Text>
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "flexDirection": "row",
+                  "height": "auto",
+                  "marginTop": 5,
+                  "overflow": "hidden",
+                },
+                Object {
+                  "marginTop": "auto",
+                  "position": "relative",
+                },
+              ]
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#616161",
+                }
+              }
+            >
+              Descripción:
+            </Text>
+            <Text
+              style={
+                Object {
+                  "marginLeft": 10,
+                }
+              }
+            >
+              lorem ipsum dolor sit amet,...
+            </Text>
+          </View>
+        </View>
+        <View
+          accessible={true}
+          focusable={false}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "backgroundColor": "#fff",
+              "borderBottomColor": "#d7d6d6",
+              "borderBottomWidth": 2,
+              "height": 100,
+              "opacity": 1,
+              "padding": 10,
+              "width": "100%",
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "flexDirection": "row",
+                "height": "auto",
+                "marginTop": 5,
+                "overflow": "hidden",
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#616161",
+                }
+              }
+            >
+              Titulo:
+            </Text>
+            <Text
+              style={
+                Object {
+                  "marginLeft": 10,
+                }
+              }
+            >
+              Operación Amigdalas
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "flexDirection": "row",
+                "height": "auto",
+                "marginTop": 5,
+                "overflow": "hidden",
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#616161",
+                }
+              }
+            >
+              Fecha:
+            </Text>
+            <Text
+              style={
+                Object {
+                  "marginLeft": 10,
+                }
+              }
+            >
+              02/07/2020
+            </Text>
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "flexDirection": "row",
+                  "height": "auto",
+                  "marginTop": 5,
+                  "overflow": "hidden",
+                },
+                Object {
+                  "marginTop": "auto",
+                  "position": "relative",
+                },
+              ]
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#616161",
+                }
+              }
+            >
+              Descripción:
+            </Text>
+            <Text
+              style={
+                Object {
+                  "marginLeft": 10,
+                }
+              }
+            >
+              lorem ipsum dolor sit amet,...
+            </Text>
+          </View>
+        </View>
+        <View
+          accessible={true}
+          focusable={false}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "backgroundColor": "#fff",
+              "borderBottomColor": "#d7d6d6",
+              "borderBottomWidth": 2,
+              "height": 100,
+              "opacity": 1,
+              "padding": 10,
+              "width": "100%",
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "flexDirection": "row",
+                "height": "auto",
+                "marginTop": 5,
+                "overflow": "hidden",
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#616161",
+                }
+              }
+            >
+              Titulo:
+            </Text>
+            <Text
+              style={
+                Object {
+                  "marginLeft": 10,
+                }
+              }
+            >
+              Operación pierna
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "flexDirection": "row",
+                "height": "auto",
+                "marginTop": 5,
+                "overflow": "hidden",
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#616161",
+                }
+              }
+            >
+              Fecha:
+            </Text>
+            <Text
+              style={
+                Object {
+                  "marginLeft": 10,
+                }
+              }
+            >
+              02/01/2017
+            </Text>
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "flexDirection": "row",
+                  "height": "auto",
+                  "marginTop": 5,
+                  "overflow": "hidden",
+                },
+                Object {
+                  "marginTop": "auto",
+                  "position": "relative",
+                },
+              ]
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#616161",
+                }
+              }
+            >
+              Descripción:
+            </Text>
+            <Text
+              style={
+                Object {
+                  "marginLeft": 10,
+                }
+              }
+            >
+              lorem ipsum dolor sit amet,...
+            </Text>
+          </View>
+        </View>
+      </View>
+    </RCTScrollView>
+  </View>
+</View>
+`;

@@ -1,0 +1,314 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas en <Home /> Renders correctly 1`] = `
+<RCTSafeAreaView
+  emulateUnlessSupported={true}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#143590",
+      "flex": 1,
+      "justifyContent": "flex-start",
+      "paddingTop": 0,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#143590",
+        "flex": 0.15,
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "width": "90%",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#143590",
+          "flex": 0.9,
+          "flexDirection": "row",
+        }
+      }
+    >
+      <View
+        accessible={true}
+        focusable={false}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "left": 10,
+            "opacity": 1,
+          }
+        }
+      >
+        <Image
+          source={1}
+          style={
+            Object {
+              "borderRadius": 150,
+              "height": 50,
+              "width": 50,
+            }
+          }
+        />
+      </View>
+      <View
+        style={
+          Object {
+            "backgroundColor": "#143590",
+            "height": "100%",
+            "justifyContent": "flex-start",
+            "marginLeft": 20,
+            "maxWidth": 200,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#fff",
+              "fontSize": 16,
+              "fontWeight": "bold",
+            }
+          }
+        >
+          Nombre
+        </Text>
+        <Text
+          style={
+            Object {
+              "color": "#bbbfc3",
+              "fontSize": 13,
+            }
+          }
+        >
+          Email
+        </Text>
+      </View>
+    </View>
+    <View
+      accessible={true}
+      focusable={false}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#143590",
+          "opacity": 1,
+          "right": 20,
+        }
+      }
+    >
+      <Text />
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#143590",
+        "flex": 0.8,
+        "width": "90%",
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#fff",
+          "fontSize": 20,
+          "fontWeight": "bold",
+          "marginLeft": 20,
+        }
+      }
+    >
+      Formularios
+    </Text>
+    <View
+      style={
+        Object {
+          "backgroundColor": "#143590",
+          "height": 270,
+          "marginBottom": 20,
+          "marginTop": 10,
+        }
+      }
+    >
+      <RCTScrollView
+        horizontal={true}
+      >
+        <View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "alignSelf": "center",
+                "backgroundColor": "#143590",
+                "borderRadius": 15,
+                "bottom": 20,
+                "height": 190,
+                "justifyContent": "center",
+                "marginLeft": 20,
+                "marginTop": 20,
+                "overflow": "hidden",
+                "width": 250,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#fff",
+                  "fontSize": 25,
+                }
+              }
+            >
+              Error
+            </Text>
+          </View>
+        </View>
+      </RCTScrollView>
+    </View>
+    <View
+      accessible={true}
+      focusable={false}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "alignSelf": "center",
+          "backgroundColor": "#0657a2",
+          "borderRadius": 8,
+          "bottom": 10,
+          "flexDirection": "row",
+          "height": 50,
+          "justifyContent": "center",
+          "marginTop": 10,
+          "opacity": 1,
+          "width": "80%",
+        }
+      }
+    >
+      <Text />
+      <Text
+        style={
+          Object {
+            "color": "white",
+            "fontSize": 15,
+            "marginLeft": 10,
+          }
+        }
+      >
+        ESCANEAR
+      </Text>
+    </View>
+    <View
+      accessible={true}
+      focusable={false}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "alignSelf": "center",
+          "backgroundColor": "#143590",
+          "borderRadius": 8,
+          "bottom": 10,
+          "color": "white",
+          "flexDirection": "row",
+          "height": 50,
+          "justifyContent": "center",
+          "marginTop": 10,
+          "opacity": 1,
+          "width": "80%",
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "white",
+            "fontSize": 15,
+            "marginLeft": 10,
+          }
+        }
+      >
+        Crear Formulario
+      </Text>
+    </View>
+    <View
+      accessible={true}
+      focusable={false}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "alignSelf": "center",
+          "backgroundColor": "#143590",
+          "borderRadius": 8,
+          "bottom": 10,
+          "color": "white",
+          "flexDirection": "row",
+          "height": 50,
+          "justifyContent": "center",
+          "marginTop": 40,
+          "opacity": 1,
+          "width": "80%",
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "white",
+            "fontSize": 15,
+            "marginLeft": 10,
+          }
+        }
+      >
+        Terminos y condiciones
+      </Text>
+    </View>
+  </View>
+</RCTSafeAreaView>
+`;
+
+exports[`Pruebas en <Home /> Renders correctly withoutParams 1`] = `
+<View>
+  <Text>
+    ERROR
+  </Text>
+</View>
+`;
