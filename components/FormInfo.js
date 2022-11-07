@@ -3,18 +3,20 @@ import React,{useState} from 'react';
 import { KeyboardAvoidingView,StyleSheet, Text,TextInput, View,SafeAreaView,Image,TouchableOpacity,Platform,ScrollView } from 'react-native';
 
 export default function FormInfo ({navigation,route}) {
-    const {name,lastName,age,document,birth,smoker,med,pregnant,titulo,fechaCreacion} = route.params;
+    const {name,lastName,age,document,gender,blood,birth,smoker,med,pregnant} = route.params;
     const [nombre,setNombre] = useState(name);
     const [apellido,setApellido] = useState(lastName);
     const [edad,setEdad] = useState(age);
     const [dpi,setDPI] = useState(document);
+    const [genero, setGenero]= useState(gender);
+    const [sangre, setSangre]= useState(blood);
     const [fecha,setFecha] = useState(birth);
     const [fumador,setFumador] = useState(smoker);
     const [medicamento,setMedicamento] = useState((med==='')? "medicado (vacio)":med);
     const [embarazada,setEmbarazada] = useState((pregnant==='')? "embarazada (vacio)":pregnant);
 
     const [textoBoton,setTextoBoton] = useState('Editar');
-    const [buttonEnabled,setButtonEnabled] = useState(true);
+    const [buttonEnabled,setButtonEnabled] = useState(false);
  
     return(
         <View style={styles.container}>
@@ -26,10 +28,6 @@ export default function FormInfo ({navigation,route}) {
                 <View style={styles.infoContainer}>
                     <ScrollView style={styles.infoScroll}>
                         <View style={styles.infoContainer2}>
-                            <View style={styles.row}>
-                            <Text style={styles.fieldLabel}>
-                                Nombre:
-                            </Text>
                             <TextInput style={[styles.input,{color: (!buttonEnabled)? 'black':'#c9c9c9'}]}
                                 placeholder="Nombre"  
                                 value={nombre} 
@@ -37,45 +35,47 @@ export default function FormInfo ({navigation,route}) {
                                 autoCapitalize='none'
                                 editable={buttonEnabled}/>
 
-                            </View>
-                            <View style={styles.row}>
-                            <Text style={styles.fieldLabel}>Apellido: </Text>
                             <TextInput style={[styles.input,{color: (!buttonEnabled)? 'black':'#c9c9c9'}]}
                                 placeholder="Apellido"  
                                 value={apellido} 
                                 onChangeText={text => setApellido(text)}
                                 autoCapitalize='none'
                                 editable={buttonEnabled}/>
-                            </View>
-                            <View style={styles.row}>
-                            <Text style={styles.fieldLabel}>Edad: </Text>
+
                             <TextInput style={[styles.input,{color: (!buttonEnabled)? 'black':'#c9c9c9'}]}
                                 placeholder="Edad"  
                                 value={edad}  
                                 onChangeText={text => setEdad(text)}
                                 autoCapitalize='none'
                                 editable={buttonEnabled}/>
-                            </View>
-                            <View style={styles.row}>
-                            <Text style={styles.fieldLabel}>DPI: </Text>
+
                             <TextInput style={[styles.input,{color: (!buttonEnabled)? 'black':'#c9c9c9'}]}
                                 placeholder="DPI"  
                                 value={dpi} 
                                 onChangeText={text => setDPI(text)}
                                 autoCapitalize='none'
                                 editable={buttonEnabled}/>
-                            </View>
-                            <View style={styles.row}>
-                            <Text style={styles.fieldLabel}>nacimiento: </Text>
+
+                            <TextInput style={[styles.input,{color: (!buttonEnabled)? 'black':'#c9c9c9'}]}
+                                placeholder="Genero"  
+                                value={genero} 
+                                onChangeText={text => setGenero(text)}
+                                autoCapitalize='none'
+                                editable={buttonEnabled}/>
+
+                            <TextInput style={[styles.input,{color: (!buttonEnabled)? 'black':'#c9c9c9'}]}
+                                placeholder="Sangre"  
+                                value={sangre} 
+                                onChangeText={text => setSangre(text)}
+                                autoCapitalize='none'
+                                editable={buttonEnabled}/>    
+
                             <TextInput style={[styles.input,{color: (!buttonEnabled)? 'black':'#c9c9c9'}]}
                                 placeholder="Fecha de nacimiento"  
                                 value={fecha} 
                                 onChangeText={text => setFecha(text)}
                                 autoCapitalize='none'
                                 editable={buttonEnabled}/>
-                            </View>
-                            <View style={styles.row}>
-                            <Text style={styles.fieldLabel}>Fumador: </Text>
 
                             <TextInput style={[styles.input,{color: (!buttonEnabled)? 'black':'#c9c9c9'}]}
                                 placeholder="Fumador"  
@@ -83,25 +83,20 @@ export default function FormInfo ({navigation,route}) {
                                 onChangeText={text => setFumador(text)}
                                 autoCapitalize='none'
                                 editable={buttonEnabled}/>
-                            </View>
-                            <View style={styles.row}>
-                            <Text style={styles.fieldLabel}>Medicamento: </Text>
+
                             <TextInput style={[styles.input,{color: (!buttonEnabled)? 'black':'#c9c9c9'}]}
                                 placeholder="Consumes medicamento"  
                                 value={medicamento} 
                                 onChangeText={text => setMedicamento(text)}
                                 autoCapitalize='none'
                                 editable={buttonEnabled}/>
-                            </View>
-                            <View style={styles.row}>
-                            <Text style={styles.fieldLabel}>Embarazada: </Text>
+
                             <TextInput style={[styles.input,{color: (!buttonEnabled)? 'black':'#c9c9c9'}]}
                                 placeholder="Embarazada"  
                                 value={embarazada}  
                                 onChangeText={text => setEmbarazada(text)}
                                 autoCapitalize='none'
                                 editable={buttonEnabled}/>
-                            </View>
 
                             
                         </View>
@@ -116,7 +111,7 @@ export default function FormInfo ({navigation,route}) {
                     <Text style={styles.shareButtonText}>{textoBoton}</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.shareButton} onPress={()=>{navigation.navigate("ShareForm", {name,lastName,age,document,birth,smoker,med,pregnant,titulo,fechaCreacion})}}>
+                <TouchableOpacity style={styles.shareButton} onPress={()=>{navigation.navigate("ShareForm")}}>
                     <Text style={styles.shareButtonText}>Compartir</Text>
                 </TouchableOpacity>
 
@@ -213,31 +208,18 @@ const styles = StyleSheet.create({
         backgroundColor:'#fefefe',
     }, input:{
         backgroundColor: '#fff',
-        marginTop: 0,
+        marginTop: 22,
         height: 40,
         borderBottomColor:"#143590",
         borderBottomWidth: 1,
-        width:"50%",
-        marginLeft: 5,
-        marginTop: 10,
+        width:"80%",
+        marginLeft: 35,
         
     },buttonArea:{
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
-    },
-    row:{
-        flexDirection: 'row',
-        alignItems: 'baseline',
-        justifyContent: 'space-evenly',
-        marginTop: 12,
-        marginBottom: 12,
-        paddingHorizontal: 10,
-    },
-    fieldLabel:{
-        marginBottom: 10,
-    },
-
+    }
 
 });
 

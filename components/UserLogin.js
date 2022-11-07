@@ -22,6 +22,7 @@ export default function UserLogin({navigation}){
         .then(userCredentials => {
             const user = userCredentials.user;
             let name = username.split('.')[0];
+            name = name.split('@')[0];
             name = name.charAt(0).toUpperCase() + name.slice(1);
             let email = username;
             setMailSubmitting(false);
