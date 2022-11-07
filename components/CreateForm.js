@@ -17,8 +17,10 @@ function saveFormInfo(navigation,email,title,name,lastName,age,document,birth,sm
                 apellido: lastName,
                 edad: age,
                 dpi: document,
-                genero: gender, 
-                sangre: blood,
+
+                sexo: sexo, 
+                sangre: sangre,
+
                 birth: birth,
                 smoker: smoker,
                 med: medicamento,
@@ -51,7 +53,8 @@ export default function CreateForm ({navigation, route}) {
     const [apellido,setApellido] = useState('');
     const [edad,setEdad] = useState('');
     const [dpi,setDPI] = useState('');
-    const [genero, setGenero]= useState('');
+    const [sexo, setSexo]= useState('');
+
     const [sangre, setSangre]= useState('');
     const [fecha,setFecha] = useState('');
     const [fumador,setFumador] = useState('');
@@ -110,9 +113,11 @@ export default function CreateForm ({navigation, route}) {
                                  editable={buttonEnabled}/>
 
                             <TextInput style={[styles.input,{color: (buttonEnabled)? 'black':'#c9c9c9'}]}
-                                 placeholder="Genero"  
-                                 value={genero} 
-                                 onChangeText={text => setGenero(text)}
+
+                                 placeholder="Sexo"  
+                                 value={sexo} 
+                                 onChangeText={text => setSexo(text)}
+
                                  autoCapitalize='none'
                                  editable={buttonEnabled}/>
 
@@ -223,9 +228,11 @@ export default function CreateForm ({navigation, route}) {
                                 editable={buttonEnabled}/>
                             
                             <TextInput style={[styles.input,{color: (buttonEnabled)? 'black':'#c9c9c9'}]}
-                                placeholder="Genero"  
-                                value={genero} 
-                                onChangeText={text => setGenero(text)}
+
+                                placeholder="Sexo"  
+                                value={sexo} 
+                                onChangeText={text => setSexo(text)}
+
                                 autoCapitalize='none'
                                 editable={buttonEnabled}/>
 
