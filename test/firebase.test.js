@@ -1,3 +1,4 @@
+
 import { mount } from 'enzyme'
 import  App from '../App'
 import { firebaseConfig, auth } from '../components/firebase'

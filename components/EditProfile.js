@@ -1,4 +1,3 @@
-import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react";
 import {
   StyleSheet,
@@ -10,11 +9,9 @@ import {
   TouchableOpacity,
   Pressable,
   Alert,
-  KeyboardAvoidingView,
 } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { useTogglePasswordVisibility } from "./hooks/useTogglePasswordVisibility";
-import { Ionicons } from "@expo/vector-icons";
 
 export default function EditProfile({ navigation, route }) {
   const { name, email, photoUrl } = route.params;
@@ -37,11 +34,11 @@ export default function EditProfile({ navigation, route }) {
   const [password, setPassword] = useState("");
   const [passwordC, setPasswordC] = useState("");
   const [username, setUsername] = useState(name);
-  const [DPI, setEmail] = useState(0);
+  const [ setEmail] = useState(0);
 
   return (
     <SafeAreaView style={styles.container}>
-      {/**LOGO AREA */}
+      {/* LOGO AREA */}
       <View style={styles.userInfoContainer}>
         <View
           style={{
@@ -59,7 +56,6 @@ export default function EditProfile({ navigation, route }) {
             <Text style={styles.userInfoText}>{AvatarEmail}</Text>
           </View>
         </View>
-       
       </View>
       {/** Area de Inputs */}
       <View style={styles.containerInputs}>
@@ -140,15 +136,10 @@ export default function EditProfile({ navigation, route }) {
         <TouchableOpacity
           style={styles.logInButton}
           onPress={() => {
-            if (
-              username !== "" &&
-              password === passwordC
-            ) {
+            if (username !== "" && password === passwordC) {
               Alert.alert("Exito", "Datos actualizados");
-              
             } else {
               Alert.alert("Error", "Datos invalidos");
-
             }
           }}
         >
@@ -180,7 +171,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "flex-start",
     backgroundColor: "#fff",
-    marginTop: (Platform.OS === "android")? 20:0,
+    marginTop: Platform.OS === "android" ? 20 : 0,
   },
   userInfoContainer: {
     flex: 0.15,

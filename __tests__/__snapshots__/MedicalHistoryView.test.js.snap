@@ -1,0 +1,129 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas en <MedicalHistoryView /> Renders correctly 1`] = `
+<View
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "alignSelf": "center",
+      "backgroundColor": "#143590",
+      "borderRadius": 15,
+      "bottom": 20,
+      "height": 190,
+      "justifyContent": "center",
+      "marginLeft": 20,
+      "marginTop": 20,
+      "opacity": 1,
+      "overflow": "hidden",
+      "width": 250,
+    }
+  }
+>
+  <View
+    accessibilityIgnoresInvertColors={true}
+    style={
+      Object {
+        "height": 190,
+        "width": 250,
+      }
+    }
+  >
+    <Image
+      resizeMode="cover"
+      source={1}
+      style={
+        Array [
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+          Object {
+            "height": 190,
+            "width": 250,
+          },
+          undefined,
+        ]
+      }
+    />
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "borderRadius": 15,
+          "height": "100%",
+          "justifyContent": "center",
+          "width": "100%",
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#fff",
+            "fontSize": 25,
+          }
+        }
+      >
+        Nombre
+      </Text>
+      <Text
+        style={
+          Object {
+            "alignSelf": "center",
+            "color": "#fff",
+            "fontSize": 17,
+            "justifyContent": "center",
+            "right": 0,
+            "top": 50,
+          }
+        }
+      >
+        Fecha
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Pruebas en <MedicalHistoryView /> Renders correctly withoutParams 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "alignSelf": "center",
+      "backgroundColor": "#143590",
+      "borderRadius": 15,
+      "bottom": 20,
+      "height": 190,
+      "justifyContent": "center",
+      "marginLeft": 20,
+      "marginTop": 20,
+      "overflow": "hidden",
+      "width": 250,
+    }
+  }
+>
+  <Text
+    style={
+      Object {
+        "color": "#fff",
+        "fontSize": 25,
+      }
+    }
+  >
+    Error
+  </Text>
+</View>
+`;
